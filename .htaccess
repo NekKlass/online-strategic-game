@@ -1,0 +1,7 @@
+AddDefaultCharset UTF-8
+
+php_value session.gc_maxlifetime 3600
+php_value session.cookie_lifetime 3600
+
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/javascript
