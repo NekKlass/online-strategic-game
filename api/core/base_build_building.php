@@ -1,6 +1,6 @@
 <?php
 
-function base_build() {
+function process_request() {
 	
 	$x = intval($_POST['x']);
 	$y = intval($_POST['y']);

@@ -6,16 +6,15 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	
 	session_start();
 	
-	//если не залогинился
+	//if thre no login
 	if ( !isset($_SESSION['id']) ) {
 		$_SESSION['id'] = 0;
 	}
 	
-	//обработка запроса
+	//request is empty
 	$request_str = file_get_contents('php://input'); 
 	if ( $request_str == '' ) {
 		
-		//если запрос пустой
 		echo json_encode(array(
 			'status' => 'error',
 			'statusmessage' => 'nologin'
@@ -23,9 +22,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		exit;
 		
 	}
-		
+	
+	//request is too long
 	if ( strlen($request_str) > 100 ) {
-		//если запрос пустой
+		
 		echo json_encode(array(
 			'status' => 'error',
 			'statusmessage' => 'jsonlong'
@@ -33,11 +33,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		exit;
 	}
 	
-	// переработка запроса
+	//preparing values
 	$request = json_decode( $request_str, true, 4 );
 	$request_error = json_last_error();
 	
-	//ошибка
+	//error in json
 	if ( $request_error <> JSON_ERROR_NONE ) {
 		echo json_encode(array(
 			'status' => 'error',
@@ -46,7 +46,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		exit;
 	}		
 		
-	//если выбрано, что делать 
+	//checking if there action
 	if ( empty($request['action']) ) {
 		echo json_encode(array(
 			'status' => 'error',
@@ -64,66 +64,19 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	
 	
-	//выбираем действие
-	switch ( $request['action'] ) {
-		//--------------------------
-		//  авторизационные вещи
-		//--------------------------
-			case 'login':
-				require_once( $core_path . 'core/login.php' );
-				login($request);
-				break;
-			case 'exit':
-				require_once( $core_path . 'core/exit.php' );
-				exit($request);
-				break;
-			case 'register':
-				require_once( $core_path . 'core/register.php' );
-				register($request);
-				break;
-		//--------------------------
-		// все, что связано с базой
-		//--------------------------
-			case 'base-get':
-				require_once( $core_path . 'core/get_base.php' );
-				get_base($request);
-				break;
-			case 'base-get-buildable':
-				require_once( $core_path . 'core/get_buildable.php' );
-				get_buildable($request);
-				break;
-			case 'base-upgrade-building':
-				require_once( $core_path . 'core/base_upgrade.php' );
-				base_upgrade($request);
-				break;
-			case 'base-build':
-				require_once( $core_path . 'core/base_build.php' );
-				base_build($request);
-				break;
-			case 'base-destroy-building':
-				require_once( $core_path . 'core/base_destroy.php' );
-				base_destroy($request);
-				break;
-		//--------------------------
-		//      глобальная карта
-		//--------------------------		
-			case 'get-map':
-				require_once( $core_path . 'core/get_map.php' );
-				get_map($request);
-				break;
-		//--------------------------
-		//         разное
-		//--------------------------
-		case 'get-localization':
-			require_once( $core_path . 'core/get_localization.php' );
-			get_localization($request);
-			break;	
-		default:
-			echo json_encode(array(
-				'status' => 'error',
-				'statusmessage' => 'unknownaction'
-			));
-	}	
+	//performing action
+	require_once( $core_path . 'core/utils/api_files.php' );
+	$file = get_api_file( $request['action'] );
+	if ( $file == '~~unknown~~' ) {
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'unknownaction'
+		));
+		exit;
+	}
+	require_once( $core_path . $file );
+	process_request($request);
+		
 	exit;
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-function base_upgrade () {
+function process_request () {
 	
 	if ( !isset($_POST['x']) || !isset($_POST['y']) ) {
 		echo 'no-cord';

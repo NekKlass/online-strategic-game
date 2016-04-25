@@ -1,6 +1,6 @@
 <?php
 
-function register ( $request ) {
+function process_request ( $request ) {
 	
 	// проверка на пустоту полей
 	if ( empty($request['uname']) || empty($request['upass']) || empty($request['upassconfirm']) || empty($request['umail']) || empty($request['umailconfirm']) ) {

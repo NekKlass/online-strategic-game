@@ -1,6 +1,6 @@
 <?php
 
-function get_buildable() {
+function process_request() {
 	require_once('config.php');
 	
 	$buidable = get_config('GM_BUILDINGS', true);

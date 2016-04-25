@@ -1,6 +1,6 @@
 <?php
 
-function login ( $request ) {
+function process_request ( $request ) {
 	
 	if ( empty($request['uname']) || empty($request['upass']) ) {
 		echo json_encode(array(

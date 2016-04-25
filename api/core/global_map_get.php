@@ -1,6 +1,6 @@
 <?php
 
-function get_map() {
+function process_request() {
 	
 	var_dump($_POST);
 	
