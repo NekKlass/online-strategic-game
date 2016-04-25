@@ -1,4 +1,0 @@
-AddDefaultCharset UTF-8
-
-AddOutputFilterByType DEFLATE text/css
-AddOutputFilterByType DEFLATE application/javascript
