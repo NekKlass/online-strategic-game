@@ -55,7 +55,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		exit;
 	}
 	
-	if ( ($_SESSION['id'] == 0) && ($request['action'] != 'login') && ($request['action'] != 'register') )  {
+	//check if users is logged in
+	//for sys_login and sys_register login is not required
+	if ( ($_SESSION['id'] == 0) && ($request['action'] != 'sys_login') && ($request['action'] != 'sys_register') )  {
 		echo json_encode(array(
 			'status' => 'error',
 			'statusmessage' => 'nologin'

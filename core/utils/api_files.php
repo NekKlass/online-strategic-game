@@ -17,7 +17,6 @@ function get_api_file( $action ) {
 		//---------------------------
 			case 'sys_get_localization':
 				return('core/sys_get_localization.php' );
-				get_localization($request);
 				break;	
 		//---------------------------
 			case 'base_get':
@@ -47,4 +46,5 @@ function get_api_file( $action ) {
 			default:
 				return('~~unknown~~');
 				break;
+	}
 }
