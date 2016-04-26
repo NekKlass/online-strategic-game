@@ -28,25 +28,13 @@ function get_config( $name ) {
 			exit;
 		case 'GM_DEFAULT_BASE':	
 			return array(
-				'x' => 3,
-				'y' => 3,
-				'map' => array(
-					'0' => array(
-						'0' => array('name' => 'base-empty'),
-						'1' => array('name' => 'base-empty'),
-						'2' => array('name' => 'base-empty')
-					),
-					'1' => array(
-						'0' => array('name' => 'base-empty'),
-						'1' => array('name' => 'base-empty'),
-						'2' => array('name' => 'base-empty')
-					),
-					'2' => array(
-						'0' => array('name' => 'base-empty'),
-						'1' => array('name' => 'base-empty'),
-						'2' => array('name' => 'base-empty')
-					)
-				)
+				'0' => array('name' => 'base-empty'),
+				'1' => array('name' => 'base-empty'),
+				'2' => array('name' => 'base-empty'),
+				'3' => array('name' => 'base-empty'),
+				'4' => array('name' => 'base-empty'),
+				'5' => array('name' => 'base-empty'),
+				'6' => array('name' => 'base-empty')
 			);
 			exit;
 		//сколько ресурсов дается при регистрации		
