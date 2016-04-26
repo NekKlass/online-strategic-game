@@ -57,14 +57,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	
 	//check if users is logged in
 	//for sys_login and sys_register login is not required
-	if ( ($_SESSION['id'] == 0) && ($request['action'] != 'sys_login') && ($request['action'] != 'sys_register') )  {
+	if ( ($_SESSION['id'] == 0) && ($request['action'] != 'sys_login') && ($request['action'] != 'sys_register') && ($request['action'] != 'sys_get_login')) {
 		echo json_encode(array(
 			'status' => 'error',
 			'statusmessage' => 'nologin'
 		));
 		exit;
 	}
-	
 	
 	//performing action
 	require_once( $core_path . 'core/utils/api_files.php' );
