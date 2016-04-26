@@ -24,7 +24,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	
 	//request is too long
-	if ( strlen($request_str) > 100 ) {
+	if ( strlen($request_str) > 200 ) {
 		
 		echo json_encode(array(
 			'status' => 'error',
