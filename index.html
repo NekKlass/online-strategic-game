@@ -8,10 +8,96 @@
 	<body>
 	
 		<div class='head'>
-			<a href='login.html' id='login-href'>Войти</a>
-			<a href='register.html' id='register-href'>Регистрация</a>
+			<a href='javascript:void(0)' id='login-href'>Войти</a>
+			<a href='javascript:void(0)' id='register-href'>Регистрация</a>
 			<a href='game.html' id='play-href'>Играть</a>
 			<a href='javascript:void(0)' id='exit-href'>Выход</a>
+		</div>
+		
+		<div id='modal-background'>
+			<div class='modal-form' id='login-form'>
+				<span class='hover-button modal-close'>&#10060;</span>
+				<form action="javascript:void(0)" method="post" class='center' id='login-form'> 
+					<div class='form-line'>
+						<div class='login-form-lable'>Ник</div>
+						<input type='text' name='uname' id='login-uname' required>
+					</div>
+					<div class='form-line'>
+						<div class='login-form-lable'>Пароль</div>
+						<input type='password' name='upass' id='login-upass' required>
+					</div>
+					<div class='form-line'>			
+						<div class='login-form-lable'>Запомнить</div>
+						<input type='checkbox' name='uremember' id='login-uremember'>
+					</div>
+					<div class='form-line'>
+						<input type="submit" value="Войти" id='login-submit'>
+					</div>
+					<div class='form-line fail' id='login-fail'>
+						<p>Неверное имя ползователя или пароль!</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div id='modal-background'>
+			<div class='modal-form' id='register-form'>
+				<span class='hover-button modal-close'>&#10060;</span>
+				<form action='javascript:void(0)' method="post" class='center' onsubmit='javascript:register()'> 
+					<!-------------
+					  input fields 
+					---------------->
+					<div class='form-line'>
+						<div class='register-form-lable'>Ник</div>
+						<input type='text' name='uname' required >
+					</div>
+					<div class='form-line'>
+						<div class='register-form-lable'>Пароль</div>
+						<input type='password' name='upass' required >
+					</div>
+					<div class='form-line'>
+						<div class='register-form-lable'>Подтверждение</div>
+						<input type='password' name='upassconfirm' required >
+					</div>
+					<div class='form-line'>
+						<div class='register-form-lable'>Почта</div>
+						<input type='email' name='umail' required >
+					</div>
+					<div class='form-line'>
+						<div class='register-form-lable'>Подтверждение</div>
+						<input type='email' name='umailconfirm' required >
+					</div>
+					<div class='form-line' id='submit'>
+						<input type="submit" value="Зарегестрироваться">
+					</div>
+					<!-------------
+					  error blocks
+					---------------->
+					<div class='form-line fail' id='empty'>
+						<p>Не все поля заполнены!</p>	
+					</div>
+					<div class='form-line fail' id='invalid-symbols'>
+						<p>Недопустимые символы!</p>	
+					</div>
+					<div class='form-line fail' id='length'>
+						<p>Недопустимая длина!</p>	
+					</div>
+					<div class='form-line fail' id='pass-diff'>
+						<p>Пароли отличаются!</p>	
+					</div>
+					<div class='form-line fail' id='mail-diff'>
+						<p>E-mail отличается!</p>	
+					</div>
+					<div class='form-line fail' id='exist'>
+						<p>Пользователь уже существует!</p>	
+					</div>	
+				</form>
+			</div>
+		</div>	
+		
+		<div id='modal-background'>
+			<div class='modal-form' id='exit-confirm'>
+			<div>	
 		</div>
 		
 		<script src="js/jquery.js"></script>
