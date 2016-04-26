@@ -24,11 +24,48 @@ $('.modal-close').click(function(event){
 	$(this).parent().parent().hide();
 });
 
-//when user click 'login' button
+//stuff for 'login' form
 $('#login-href').click(function(event){
 	login_form.parent().show();
-}); 
+});
 
+$('#login-submit').click(function(event){
+	$.post(
+		api_address + 'api.php',
+		JSON.stringify({ 
+			'action': 'sys_login', 
+			'uname':encodeURI($('#login-uname').val()), 
+			'upass':encodeURI($('#login-upass').val()), 
+			'uremember': $('#login-uremember').is(':checked')
+		}),
+		function (data) {
+			if ( JSON.parse(data)['status'] == 'success' ) {
+				window.location('game.html');
+			} else {
+				$('#login-fail').show();
+			}
+		}
+	)
+});
+
+//stuff for 'register' form
 $('#register-href').click(function(event){
 	register_form.parent().show();
+});
+
+$('#reg-submit').click(function(event){
+	$.post(
+		api_address + 'api.php',
+		JSON.stringify({
+			'action': 'sys_register',
+			'uname': encodeURI($('#reg-uname').val()),
+			'upass': encodeURI($('#reg-upass').val()),
+			'upassconfirm': encodeURI($('#reg-upassconfirm').val()),
+			'umail': encodeURI($('#reg-umail').val()),
+			'umailconfirm': encodeURI($('#reg-umailconfirm').val())
+		}),
+		function (data) {
+			alert(data);
+		}
+	);
 });

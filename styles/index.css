@@ -47,7 +47,7 @@ body, html {
 }
 .login-form-lable {
 	width: 75px;
-    float: left;
+	float: left;
 }
 .register-form-lable {
 	width: 115px;
@@ -55,4 +55,11 @@ body, html {
 }
 .fail {
 	display: none;
+	background-color: rgba(255, 0, 0, 0.26);
+	padding: 4px;
+	text-align: center;
+	border-radius: 20px;
+	border-style: solid;
+	border-color: rgba(255, 0, 0, 0.22);
+	margin: 4px;
 }

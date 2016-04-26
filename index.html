@@ -20,15 +20,15 @@
 				<form action="javascript:void(0)" method="post" class='center' id='login-form'> 
 					<div class='form-line'>
 						<div class='login-form-lable'>Ник</div>
-						<input type='text' name='uname' id='login-uname' required>
+						<input type='text' name='login-uname' id='login-uname' required>
 					</div>
 					<div class='form-line'>
 						<div class='login-form-lable'>Пароль</div>
-						<input type='password' name='upass' id='login-upass' required>
+						<input type='password' name='login-upass' id='login-upass' required>
 					</div>
 					<div class='form-line'>			
 						<div class='login-form-lable'>Запомнить</div>
-						<input type='checkbox' name='uremember' id='login-uremember'>
+						<input type='checkbox' name='login-uremember' id='login-uremember'>
 					</div>
 					<div class='form-line'>
 						<input type="submit" value="Войти" id='login-submit'>
@@ -43,31 +43,31 @@
 		<div id='modal-background'>
 			<div class='modal-form' id='register-form'>
 				<span class='hover-button modal-close'>&#10060;</span>
-				<form action='javascript:void(0)' method="post" class='center' onsubmit='javascript:register()'> 
+				<form action='javascript:void(0)' method="post" class='center' onsubmit='javascript:void(0)'> 
 					<!-------------
 					  input fields 
 					---------------->
 					<div class='form-line'>
 						<div class='register-form-lable'>Ник</div>
-						<input type='text' name='uname' required >
+						<input type='text' id='reg-uname' required >
 					</div>
 					<div class='form-line'>
 						<div class='register-form-lable'>Пароль</div>
-						<input type='password' name='upass' required >
+						<input type='password' id='reg-upass' required >
 					</div>
 					<div class='form-line'>
 						<div class='register-form-lable'>Подтверждение</div>
-						<input type='password' name='upassconfirm' required >
+						<input type='password' id='reg-upassconfirm' required >
 					</div>
 					<div class='form-line'>
 						<div class='register-form-lable'>Почта</div>
-						<input type='email' name='umail' required >
+						<input type='email' id='reg-umail' required >
 					</div>
 					<div class='form-line'>
 						<div class='register-form-lable'>Подтверждение</div>
-						<input type='email' name='umailconfirm' required >
+						<input type='email' id='reg-umailconfirm' required >
 					</div>
-					<div class='form-line' id='submit'>
+					<div class='form-line' id='reg-submit'>
 						<input type="submit" value="Зарегестрироваться">
 					</div>
 					<!-------------
