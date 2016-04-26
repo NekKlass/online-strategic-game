@@ -7,7 +7,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	session_start();
 	
 	//if thre no login
-	if ( !isset($_SESSION['id']) ) {
+	if ( empty($_SESSION['id']) ) {
 		$_SESSION['id'] = 0;
 	}
 	

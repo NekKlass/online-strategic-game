@@ -7,4 +7,5 @@ function process_request() {
 		'statusmessage' => 'success',
 		'data' => get_config('GM_LOCALIZATION')
 	));
+	exit;
 }
