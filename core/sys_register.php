@@ -2,51 +2,68 @@
 
 function process_request ( $request ) {
 	
-	// проверка на пустоту полей
+	//check if fields empty
 	if ( empty($request['uname']) || empty($request['upass']) || empty($request['upassconfirm']) || empty($request['umail']) || empty($request['umailconfirm']) ) {
 		echo json_encode(array(
 			'status' => 'error',
-			'statusinfo' => get_code('emptyjson')
+			'statusmessage' => 'emptyfields'
 		));
 		exit;
 	}
 	
-	//проверка на символы
+	//checking for invalid symbols
 	if ( preg_match('#^[a-zA-Z][a-zA-Z0-9-_\.]$#', $request['upass']) ) {
-		echo 'invalid-symbols';
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'invalid-symbols'
+		));
 		exit;
 	}
 	
-	// проверяем на длину
+	//checking 'uname' length 
 	if ( (strlen($request['uname']) < 5) || (strlen($request['uname']) > 30) ) {
-		echo 'uname-length';
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'uname-length'
+		));
 		exit;
 	}
 	
+	//checking 'upass' length 
 	if ( (strlen($request['upass']) < 5) || (strlen($request['upass']) > 30) ) {
-		echo 'upass-length';
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'upass-length'
+		));
 		exit;
 	}
 	
-	// если вдруг пароли отличаются
+	//checking if passwords differ
 	if ( !($request['upass'] == $request['upassconfirm']) ) {
-		echo 'pass-diff';
-		exit;
-	}
-	// если вдруг адресы почты отличаются
-	if ( $request['umail'] !== $request['umailconfirm'] ) {
-		echo 'mail-diff';
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'pass-diff'
+		));
 		exit;
 	}
 	
-	require_once('config.php');
-	require_once('db.php');
+	//checking if mail adresses differ
+	if ( $request['umail'] !== $request['umailconfirm'] ) {
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'mail-diff'
+		));
+		exit;
+	}
+	
+	require_once('utils/config.php');
+	require_once('utils/db.php');
 	
 	if (empty( db_custom("SELECT `id` FROM `users` WHERE `uname` LIKE ?",array($request['uname'])) )){
 		$uname = trim($request['uname']);
 		$uname = stripcslashes($uname);
 		$uname = htmlspecialchars($uname);
-		//сохраняем инфу
+		//saving
 		db_custom_no_return( "INSERT INTO `users` (`id`, `uname`, `upass`, `umail`, `reg_time`) VALUES (NULL, ?, ?, ?, ?)", 
 			array( $uname, password_hash($request['upass'], PASSWORD_DEFAULT), $request['umail'], time() ) 
 		);
@@ -58,10 +75,17 @@ function process_request ( $request ) {
 		db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `rescount`, `base`, `res_update_time`) VALUES ( ?, ?, ?, ?, ?, ? )", 
 			array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_config('GM_DEFAULT_RES')), json_encode(get_config('GM_DEFAULT_BASE')), $_SERVER['REQUEST_TIME'] )   
 		); 
-		//конец сохранения инфы
-		echo 'success';
+		//reporting success
+		echo json_encode(array(
+			'status' => 'success',
+			'statusmessage' => 'success'
+		));
+		exit;
 	} else {
-		echo 'exist';
+		echo json_encode(array(
+			'status' => 'error',
+			'statusmessage' => 'user-exist'
+		));
 		exit;
 	}
 	exit;
