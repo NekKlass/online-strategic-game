@@ -70,7 +70,7 @@ function process_request ( $request ) {
 		$id = db_custom( "SELECT `id` FROM `users` WHERE `uname` LIKE ?", 
 			array( $uname ) 
 		);
-		require('game/s_gen_base_cord.php');
+		require('utils/s_gen_base_cord.php');
 		$cord = s_gen_base_cord();
 		db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `rescount`, `base`, `res_update_time`) VALUES ( ?, ?, ?, ?, ?, ? )", 
 			array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_config('GM_DEFAULT_RES')), json_encode(get_config('GM_DEFAULT_BASE')), $_SERVER['REQUEST_TIME'] )   
