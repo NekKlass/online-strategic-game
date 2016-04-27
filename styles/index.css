@@ -1,6 +1,29 @@
+/* default */
 body, html {
 	margin:0;
 }
+
+/* forms */
+#login-form {
+	width: 270px;
+}
+.login-form-lable {
+	width: 75px;
+	float: left;
+}
+#register-form {
+	width: 320px;
+}
+.register-form-lable {
+	width: 115px;
+	float: left;
+}
+.form-line {
+	line-height: 28px;
+	padding-top: 1px;
+}
+
+/* modal stuff */
 #modal-background {
 	display: none;
 	position: fixed;
@@ -21,12 +44,18 @@ body, html {
 	border: 1px solid #888;
 	
 }
-#login-form {
-	width: 270px;
+.fail {
+	display: none;
+	background-color: rgba(255, 0, 0, 0.26);
+	padding: 4px;
+	text-align: center;
+	border-radius: 20px;
+	border-style: solid;
+	border-color: rgba(255, 0, 0, 0.22);
+	margin: 4px;
 }
-#register-form {
-	width: 320px;
-}
+
+/* button */
 .hover-button {
 	color: #BFBFBF;
 	float: right;
@@ -40,26 +69,4 @@ body, html {
 	text-decoration: none;
 	cursor: pointer;
 	transition-duration: 0.3s;
-}
-.form-line {
-	line-height: 28px;
-	padding-top: 1px;
-}
-.login-form-lable {
-	width: 75px;
-	float: left;
-}
-.register-form-lable {
-	width: 115px;
-	float: left;
-}
-.fail {
-	display: none;
-	background-color: rgba(255, 0, 0, 0.26);
-	padding: 4px;
-	text-align: center;
-	border-radius: 20px;
-	border-style: solid;
-	border-color: rgba(255, 0, 0, 0.22);
-	margin: 4px;
 }
