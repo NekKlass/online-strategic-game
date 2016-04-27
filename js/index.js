@@ -65,7 +65,36 @@ $('#reg-submit').click(function(event){
 			'umailconfirm': encodeURI($('#reg-umailconfirm').val())
 		}),
 		function (data) {
-			alert(data);
+			data = JSON.parse(data);
+			if ( data['status'] == 'success' ) {
+				
+			} else {
+				switch ( data['statusmessage'] ) {
+					case 'emptyfields':
+						$('#reg-emptyfields').show();
+						break;
+					case 'invalid-symbols':
+						$('#reg-invalid-symbols').show();
+						break;
+					case 'uname-length':
+						$('#reg-uname-length').show();
+						break;
+					case 'upass-length':
+						$('#reg-upass-length').show();
+						break;
+					case 'pass-diff':
+						$('#reg-pass-diff').show();
+						break;
+					case 'mail-diff':
+						$('#reg-mail-diff').show();
+						break;
+					case 'user-exist':
+						$('#reg-user-exist').show();
+						break;
+					default: 
+						alert( data );
+				}
+			}
 		}
 	);
 });
