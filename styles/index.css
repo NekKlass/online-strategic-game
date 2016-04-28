@@ -54,6 +54,10 @@ body, html {
 	border-color: rgba(255, 0, 0, 0.22);
 	margin: 4px;
 }
+.success {
+	background-color: rgba(0, 212, 0, 0.26);
+	border-color: rgba(0, 212, 0, 0.22);
+}
 
 /* button */
 .hover-button {

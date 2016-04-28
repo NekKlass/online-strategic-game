@@ -25,7 +25,7 @@ $('.modal-close').click(function(event){
 });
 
 //stuff for 'login' form
-$('#login-href').click(function(event){
+$('#login-form').submit(function(event){
 	login_form.parent().show();
 });
 
@@ -53,7 +53,7 @@ $('#register-href').click(function(event){
 	register_form.parent().show();
 });
 
-$('#reg-submit').click(function(event){
+$('#register-form').submit(function(event){
 	$.post(
 		api_address + 'api.php',
 		JSON.stringify({
@@ -67,7 +67,7 @@ $('#reg-submit').click(function(event){
 		function (data) {
 			data = JSON.parse(data);
 			if ( data['status'] == 'success' ) {
-				
+				$('#reg-success').show();
 			} else {
 				switch ( data['statusmessage'] ) {
 					case 'emptyfields':
