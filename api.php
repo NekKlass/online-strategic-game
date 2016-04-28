@@ -3,6 +3,7 @@
 $core_path = '';
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+	$start_time = microtime( true );
 	
 	session_start();
 	
@@ -69,6 +70,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	//performing action
 	require_once( $core_path . 'core/utils/api_files.php' );
 	$file = get_api_file( $request['action'] );
+	
 	if ( $file == '~~unknown~~' ) {
 		echo json_encode(array(
 			'status' => 'error',
@@ -77,8 +79,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		exit;
 	}
 	require_once( $core_path . $file );
-	process_request($request);
-		
+	$response = process_request($request);
+	
+	$response['time'] = microtime( true ) - $start_time;
+	echo json_encode($response);
+	
 	exit;
 }
 ?>

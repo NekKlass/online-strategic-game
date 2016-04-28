@@ -3,11 +3,10 @@
 function process_request ( $request ) {
 	
 	if ( empty($request['uname']) || empty($request['upass']) ) {
-		echo json_encode(array(
+		return array(
 			'status' => 'error',
 			'statusmessage' => 'nologindata'
-		));
-		exit;
+		);
 	}
 	
 	$uname = urldecode( $request['uname'] );
@@ -20,26 +19,27 @@ function process_request ( $request ) {
 	);
 	
 	if ( empty($login_data) ) {
-		echo json_encode(array(
+		return array(
 			'status' => 'error',
 			'statusmessage' => 'loginfail'
-		));
-		exit;
+		);
 	}
 	
 	if ( password_verify($upass, $login_data[0]['upass']) ) {
-		echo json_encode(array(
-			'status' => 'success',
-			'statusmessage' => 'success'
-		));
+		
 		$_SESSION = array();
 		$_SESSION['id'] = $login_data[0]['id'];
 		$_SESSION['uname'] = $login_data[0]['uname'];
+		return array(
+			'status' => 'success',
+			'statusmessage' => 'success'
+		);
+		
 	} else {
-		echo json_encode(array(
+		return array(
 			'status' => 'error',
 			'statusmessage' => 'loginfail'
-		));
+		);
 	}
 	
 }

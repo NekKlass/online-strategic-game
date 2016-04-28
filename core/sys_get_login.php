@@ -2,7 +2,7 @@
 
 function process_request ( $request ) {
 	
-	echo json_encode(array(
+	return array(
 		'status' => 'success',
 		'statusmessage' => 'success',
 		'data' => array(
@@ -10,7 +10,7 @@ function process_request ( $request ) {
 			'id' => $_SESSION['id'],
 			'uname' => $_SESSION['uname']
 		)
-	));
+	);
 	
 }
 
