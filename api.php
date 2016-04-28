@@ -9,6 +9,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	//if thre no login
 	if ( empty($_SESSION['id']) ) {
 		$_SESSION['id'] = 0;
+		$_SESSION['uname'] = '';
 	}
 	
 	//request is empty

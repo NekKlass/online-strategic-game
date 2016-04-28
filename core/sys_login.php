@@ -15,7 +15,7 @@ function process_request ( $request ) {
 	
 	require_once('utils/db.php');
 	
-	$login_data = db_custom( "SELECT `upass`, `id` FROM `users` WHERE `uname` LIKE ? LIMIT 1 ",
+	$login_data = db_custom( "SELECT `upass`, `uname`, `id` FROM `users` WHERE `uname` LIKE ? LIMIT 1 ",
 		array($uname)
 	);
 	
@@ -34,10 +34,11 @@ function process_request ( $request ) {
 		));
 		$_SESSION = array();
 		$_SESSION['id'] = $login_data[0]['id'];
+		$_SESSION['uname'] = $login_data[0]['uname'];
 	} else {
 		echo json_encode(array(
 			'status' => 'error',
-			'statusmessage' => get_code('loginfail')
+			'statusmessage' => 'loginfail'
 		));
 	}
 	
