@@ -5,19 +5,24 @@ var exit_confitm = $('#exit-confirm');
 var modal_background = $('#modal-background');
 
 //hide 'login', 'exit', 'register', 'play' buttons depending on if user is logged in
-$.post(
-	api_address + 'api.php',
-	JSON.stringify({ 'action': 'sys_get_login' }),
-	function ( data ) {
-		if ( JSON.parse(data)['data']['login'] == true ) {
-			$('#login-href').hide();
-			$('#register-href').hide();
-		} else {
-			$('#play-href').hide();
-			$('#exit-href').hide();
+init();
+function init(){
+	$.post(
+		api_address + 'api.php',
+		JSON.stringify({ 'action': 'sys_get_login' }),
+		function ( data ) {
+			var response = JSON.parse(data);
+			if ( response['data']['login'] == true ) {
+				$('#head-uname').parent().show();
+				$('#head-uname').text( response['data']['uname'] );
+				$('#nologin').hide();
+			} else {
+				$('#head-uname').parent().hide();
+				$('#nologin').show();
+			}
 		}
-	}
-);
+	);
+}
 
 //thing to close modal
 $('.modal-close').click(function(event){
@@ -25,7 +30,7 @@ $('.modal-close').click(function(event){
 });
 
 //stuff for 'login' form
-$('#login-form').submit(function(event){
+$('#login-href').click(function(event){
 	login_form.parent().show();
 });
 
@@ -40,7 +45,7 @@ $('#login-submit').click(function(event){
 		}),
 		function (data) {
 			if ( JSON.parse(data)['status'] == 'success' ) {
-				window.location('game.html');
+				location.href = 'game.html';
 			} else {
 				$('#login-fail').show();
 			}
@@ -97,4 +102,15 @@ $('#register-form').submit(function(event){
 			}
 		}
 	);
+});
+
+//stuff for 'exit' button
+$('#exit-href').click(function(event){
+	$.post(
+		api_address + 'api.php',
+		JSON.stringify({
+			'action': 'sys_exit'
+		})
+	);
+	init();
 });
