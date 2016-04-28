@@ -68,7 +68,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	
 	//performing action
-	require_once( $core_path . 'core/utils/api_files.php' );
+	require( $core_path . 'core/utils/api_files.php' );
 	$file = get_api_file( $request['action'] );
 	
 	if ( $file == '~~unknown~~' ) {
@@ -78,7 +78,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		));
 		exit;
 	}
-	require_once( $core_path . $file );
+	require( $core_path . $file );
 	$response = process_request($request);
 	
 	$response['time'] = microtime( true ) - $start_time;
