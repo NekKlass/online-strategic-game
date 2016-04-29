@@ -3,7 +3,7 @@
 function s_gen_base_cord () {
 	
 	$data = array();
-	require_once('config.php');
+
 	$x = 0;
 	$y = 0;
 	

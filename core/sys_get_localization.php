@@ -1,7 +1,7 @@
 <?php
 
 function process_request() {
-	require_once('core/config.php');
+	require_once('config/config.php');
 	return array(
 		'status' => 'success',
 		'statusmessage' => 'success',

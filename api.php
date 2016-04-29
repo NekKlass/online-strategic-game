@@ -2,6 +2,8 @@
 
 $core_path = '';
 
+header('Content-Type: text/html; charset=utf-8');
+
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$start_time = microtime( true );
 	
@@ -68,7 +70,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	
 	//performing action
-	require( $core_path . 'core/utils/api_files.php' );
+	require( $core_path . 'core/config/api_files.php' );
 	$file = get_api_file( $request['action'] );
 	
 	if ( $file == '~~unknown~~' ) {
