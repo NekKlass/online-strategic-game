@@ -1,7 +1,7 @@
 <?php
 
 function process_request() {
-	require_once('config.php');
+	require_once('config/config.php');
 	
 	$buidable = get_config('GM_BUILDINGS', true);
 	
@@ -42,7 +42,7 @@ function process_request() {
 		}
 	}
 	
-	echo json_encode( $response );
+	return $response;
 }
 
 
