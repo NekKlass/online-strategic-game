@@ -74,7 +74,7 @@ function get_res( callback ) {
 function get_base( callback ) {
 	$.post(
 		api_address + 'api.php',
-		JSON.stringify({ 'action' : 'get_base' }),
+		JSON.stringify({ 'action' : 'base_get' }),
 		function (data) {
 			base = JSON.parse(data);
 			fill_base();
@@ -230,7 +230,7 @@ function notify(message) {
 function update_buildable() {
 	$.post(
 		api_address + 'api.php',
-		JSON.stringify({ 'action': 'get_buildable'}),
+		JSON.stringify({ 'action': 'base_get_buildable'}),
 		function (data) {
 			buildable = JSON.parse(data);
 		}
