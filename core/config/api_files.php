@@ -31,6 +31,10 @@ function get_api_file( $action ) {
 				return( 'core/base_get_buildable.php' );
 				break;
 		//---------------------------
+			case 'base_get_res':
+				return( 'core/base_get_res.php' );
+				break;
+		//---------------------------
 			case 'base_upgrade_building':
 				return( 'core/base_upgrade_building.php' );
 				break;
