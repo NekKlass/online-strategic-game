@@ -8,11 +8,13 @@ var block_map_global = $('#map-global');
 var block_sidebar = $('#side-bar');	
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
+var api_address = 'http://localhost/online-strategic-game-api/';
+
 block_map_global.hide();
 
 $.post(
-	'game.php',
-	{ 'action' : 'get_localization'},
+	api_address + 'api.php',
+	JSON.stringify({ 'action' : 'sys_get_localization'}),
 	function ( data ) {
 		localization = JSON.parse(data);
 		get_res();
@@ -47,8 +49,8 @@ function resize() {
 
 function get_res( callback ) {
 	$.post(
-		'game.php',
-		{ 'action' : 'get_res' },
+		api_address + 'api.php',
+		JSON.stringify({ 'action' : 'base_get_res' }),
 		function (data){
 			if (data == 'nologin')
 				window.location.href = 'login.php';
@@ -71,8 +73,8 @@ function get_res( callback ) {
 
 function get_base( callback ) {
 	$.post(
-		'game.php',
-		{ 'action' : 'get_base' },
+		api_address + 'api.php',
+		JSON.stringify({ 'action' : 'get_base' }),
 		function (data) {
 			base = JSON.parse(data);
 			fill_base();
@@ -227,8 +229,8 @@ function notify(message) {
 
 function update_buildable() {
 	$.post(
-		'game.php',
-		{ 'action': 'get_buildable'},
+		api_address + 'api.php',
+		JSON.stringify({ 'action': 'get_buildable'}),
 		function (data) {
 			buildable = JSON.parse(data);
 		}
@@ -238,8 +240,8 @@ function update_buildable() {
 function build_base (x ,y, name) {
 	get_res();
 	$.post(
-		'game.php',
-		{ 'action': 'base_build', 'x': x, 'y': y, 'what': name },
+		api_address + 'api.php',
+		JSON.stringify({ 'action': 'base_build', 'x': x, 'y': y, 'what': name }),
 		function (data) {
 			switch (data) {
 				case 'success':
@@ -266,8 +268,8 @@ function build_base (x ,y, name) {
 
 function base_destroy( x, y ) {
 	$.post(
-		'game.php',
-		{ 'action': 'base_destroy', 'x': x, 'y': y },
+		api_address + 'api.php',
+		JSON.stringify({ 'action': 'base_destroy', 'x': x, 'y': y }),
 		function (data) {
 			switch (data) {
 				case 'success':
