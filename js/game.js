@@ -44,7 +44,7 @@ function first_upper( str ){
 }
 
 function resize() {
-	block_map.css('height', $('body').height() - $('#info-block').height() );
+	block_map.css('height', $('body').height() - $('#info-block').outerHeight() );
 }
 
 function get_res( callback ) {
