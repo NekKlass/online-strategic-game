@@ -8,7 +8,7 @@ function process_request () {
 	return array(
 		'status' => 'success',
 		'statusmessage' => 'success',
-		'data' => $data[0]['rescount']
+		'data' => json_decode( $data[0]['rescount'], true )
 	);
 
 }
