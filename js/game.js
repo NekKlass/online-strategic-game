@@ -16,7 +16,7 @@ $.post(
 	api_address + 'api.php',
 	JSON.stringify({ 'action' : 'sys_get_localization'}),
 	function ( data ) {
-		localization = JSON.parse(data);
+		localization = JSON.parse(data)['data'];
 		get_res();
 		get_base();
 		resize();
@@ -54,7 +54,7 @@ function get_res( callback ) {
 		function (data){
 			if (data == 'nologin')
 				window.location.href = 'login.php';
-			var res = JSON.parse(data);
+			var res = JSON.parse(data)['data'];
 			block_res.empty();
 			$.each(
 				res,
