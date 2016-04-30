@@ -1,6 +1,7 @@
 var base, localization, buildable; //data
 
 var loaded = false;
+var block_info = $('#info-block');
 var block_map = $('#map-block');
 var block_res = $('#res'); 
 var block_map_base = $('#map-base');
@@ -44,8 +45,8 @@ function first_upper( str ){
 }
 
 function resize() {
-	block_map.css('height', $('body').height() - $('#info-block').outerHeight() );
-	$('#side-bar').css( 'top', $('#info-block').outerHeight());
+	block_map.css('height', $('body').height() - block_info.outerHeight() );
+	$('#side-bar').css( 'top', block_info.outerHeight());
 }
 
 function get_res( callback ) {
