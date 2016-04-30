@@ -9,7 +9,7 @@ function process_request() {
 		if ( $name != 'base-empty' ) {
 			foreach ( $item as $item_name => $item_value ) {
 				switch ( $item_name ) {
-					//заполнение ценами улучшения
+					//filling with prices
 					case 'upgrade-price':
 						for ( $i = 1; $i < $item['max-level']; $i++ ) {
 							$upgrade_prices = $item_value($i);
@@ -32,7 +32,7 @@ function process_request() {
 						$response[$name][$item_name] = $item_value;
 				}
 			}
-			//заполнение доходами
+			//filling with income
 			if ( !empty($income[$name]) ) {
 				$item_income = $income[$name]( 1, 1 );
 				foreach ( $item_income as $key => $value ) {
