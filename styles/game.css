@@ -10,6 +10,25 @@ html, body {
 /*--------------------
 	Блоки
 ----------------------*/
+	/* tabs */
+		#tabs ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
+		#tabs ul a {
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		#tabs a:hover {
+			background-color: #111;
+		}
 	/* Инфоблок */
 		#info-block {
 			border-image: url(http://localhost/online-strategic-game-web-resources/border/wood.png) 18 18;

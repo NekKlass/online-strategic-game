@@ -7,38 +7,30 @@
 	</head>
 	<body>
 		
-		<div id='info-block'>
-			<div id='res' >
-				<button onclick='javascript:get_res()'>Обновить ресурсы</button>
-				<button onclick='javascript:get_base()'>Обновить карту</button>
-			</div>
-		</div>
-				
-		<div id='map-block'>
-			<div id='map-zoomer'>
-				<div id='map-zoomer-in'>&#10133;</div>
-				<div id='map-zoomer-out'>&#10134;</div>
-			</div>
-			<table id='map-base' class='map js-draggable'>
-		
-			</table>
-			<table id='map-global' class='map js-draggable'>
-		
-			</table>
-		</div>
-		
-		<div id='side-bar'>
-			<div id='side-bar-head'>Меню</div>
-			<div class='collapse-content'>
-				<div class='123'>
-					<img width='48' height='48'src='images/base-btn.png' id='side-bar-item-base' alt='База'>
-				</div>
-				<div class='123'>
-					<img width='48' height='48'src='images/map-btn.png' id='side-bar-item-global' alt='Карта'>
+		<div id='tabs'>
+			<ul>
+				<li><a href='#overview'>Основное</a></li>
+				<li><a href='#base'>База</a></li>
+				<li><a href='#global'>Карта</a></li>
+			</ul>
+			<div id='overview'>
+				<div id='res' >
+					<button onclick='javascript:get_res()'>Обновить ресурсы</button>
+					
 				</div>
 			</div>
-			<span id='side-bar-collapse' class='collapse-button'>Переключить</span>
+			<div id='base'>
+				<table id='map-base' class='map js-draggable'>
+					<button onclick='javascript:get_base()'>Обновить карту</button>
+				</table>
+			</div>
+			<div id='global'>
+				<table id='map-global' class='map js-draggable'>
+					<button onclick='javascript:get_base()'>Обновить карту</button>
+				</table>
+			</div>
 		</div>
+
 		
 		<div id='modal-background-main' class='modal-background'>
 			<div id='modal-main' class='modal-window line-fix'>

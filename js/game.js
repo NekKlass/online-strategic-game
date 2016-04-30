@@ -13,6 +13,8 @@ var api_address = 'http://localhost/online-strategic-game-api/';
 
 block_map_global.hide();
 
+$('#tabs').tabs();
+
 $.post(
 	api_address + 'api.php',
 	JSON.stringify({ 'action' : 'sys_get_localization'}),
@@ -45,8 +47,7 @@ function first_upper( str ){
 }
 
 function resize() {
-	block_map.css('height', $('body').height() - block_info.outerHeight() );
-	$('#side-bar').css( 'top', block_info.outerHeight());
+	//block_map.css('height', $('body').height() - block_info.outerHeight() );
 }
 
 function get_res( callback ) {
