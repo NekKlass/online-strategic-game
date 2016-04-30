@@ -12,10 +12,11 @@ html, body {
 ----------------------*/
 	/* Инфоблок */
 		#info-block {
-				border-image: url(http://localhost/online-strategic-game-web-resources/border/wood.png) 18 18/6px;
-				border-style: solid;
-				background-image: url(http://localhost/online-strategic-game-web-resources/background/wood.png);
-				color: white;
+			border-image: url(http://localhost/online-strategic-game-web-resources/border/wood.png) 18 18;
+			border-style: solid;
+			background-image: url(http://localhost/online-strategic-game-web-resources/background/wood.png);
+			color: white;
+			border-width: 8px;
 		}
 		#res {
 			padding: 5px;
