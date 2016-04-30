@@ -8,23 +8,22 @@
 	<body>
 		
 		<div id='tabs'>
-			<ul>
+			<ul id='tab-control'>
 				<li><a href='#overview'>Основное</a></li>
 				<li><a href='#base'>База</a></li>
 				<li><a href='#global'>Карта</a></li>
 			</ul>
-			<div id='overview'>
+			<div id='overview' class='tab'>
 				<div id='res' >
 					<button onclick='javascript:get_res()'>Обновить ресурсы</button>
-					
 				</div>
 			</div>
-			<div id='base'>
+			<div id='base' class='tab'>
 				<table id='map-base' class='map js-draggable'>
 					<button onclick='javascript:get_base()'>Обновить карту</button>
 				</table>
 			</div>
-			<div id='global'>
+			<div id='global' class='tab'>
 				<table id='map-global' class='map js-draggable'>
 					<button onclick='javascript:get_base()'>Обновить карту</button>
 				</table>

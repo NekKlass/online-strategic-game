@@ -11,6 +11,9 @@ html, body {
 	Блоки
 ----------------------*/
 	/* tabs */
+		#tabs {
+			height: 100%
+		}
 		#tabs ul {
 			list-style-type: none;
 			margin: 0;

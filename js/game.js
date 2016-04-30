@@ -47,7 +47,7 @@ function first_upper( str ){
 }
 
 function resize() {
-	//block_map.css('height', $('body').height() - block_info.outerHeight() );
+	$('.tab').css('height', $('body').height() - $('#tab-control').outerHeight() );
 }
 
 function get_res( callback ) {
