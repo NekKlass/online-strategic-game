@@ -52,26 +52,6 @@ html, body {
 			border-width: 1px;
 			text-align: center;
 		}
-	/* Зумер карты */
-		#map-zoomer {
-			display: none;
-			position:fixed;
-			background-color: wheat;
-			padding: 5px;
-			z-index: 1;
-		}
-		#map-zoomer-in {
-			display: inline-block;
-			font-size: 14px;
-			font-weight: bold;
-			padding: 2px;
-		}
-		#map-zoomer-out {
-			display: inline-block;
-			font-size: 14px;
-			font-weight: bold;
-			padding: 2px;
-		}
 	/* Модальноблоки */
 		.modal-background {
 			display: none;
