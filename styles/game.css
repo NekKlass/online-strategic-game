@@ -30,7 +30,7 @@ html, body {
 			text-decoration: none;
 			outline-style: none;
 		}
-		#tabs a:hover {
+		#tabs .ui-state-hover a {
 			background-color: #111;
 		}
 		#tabs .ui-tabs-active a {
