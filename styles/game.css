@@ -36,8 +36,7 @@ html, body {
 		#tabs .ui-state-hover a {
 			background-color: #111;
 		}
-	/* Инфоблок */
-		#res {
+		.tab {
 			padding: 5px;
 		}
 	/* Картоблок */
