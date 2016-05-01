@@ -56,7 +56,8 @@ function first_upper( str ){
 }
 
 function resize() {
-	$('.tab').css('height', $('body').height() - $('#tab-control').outerHeight(true) - ( $('.tab').outerHeight() - $('.tab').height() ) );
+	var tabs = $('.tab')
+	tabs.css('height', $('body').height() - $('#tab-control').outerHeight(true) - ( tabs.outerHeight() - tabs.height() ) );
 }
 
 function get_res( callback ) {
