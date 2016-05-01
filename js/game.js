@@ -65,7 +65,7 @@ function get_res( callback ) {
 					block_res.append( '<div>' + first_upper(localization[key]['ru']) +': ' + value + '</div>' );
 				}
 			);
-			block_res.append("<button onclick='javascript:get_res()'>Обновить ресурсы</button> <button onclick='javascript:get_base()'>Обновить карту</button>");
+			block_res.append('<button onclick=\'javascript:get_res()\'>Обновить ресурсы</button>');
 			resize();
 			if ( callback) {
 				callback();
