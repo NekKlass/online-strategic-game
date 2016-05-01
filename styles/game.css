@@ -33,6 +33,9 @@ html, body {
 		#tabs a:hover {
 			background-color: #111;
 		}
+		#tabs .ui-tabs-active a {
+			background-color: #111
+		}
 	/* Инфоблок */
 		#info-block {
 			border-image: url(http://localhost/online-strategic-game-web-resources/border/wood.png) 18 18;
