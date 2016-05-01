@@ -42,7 +42,11 @@ function process_request() {
 		}
 	}
 	
-	return $response;
+	return array(
+		'status' => 'success',
+		'statusmessage' => 'success',
+		'data' => $response
+	);
 }
 
 
