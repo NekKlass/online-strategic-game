@@ -19,7 +19,7 @@ html, body {
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
-			background-color: #333;
+			background-color: #444;
 		}
 		#tabs ul a {
 			float: left;
@@ -30,11 +30,11 @@ html, body {
 			text-decoration: none;
 			outline-style: none;
 		}
+		#tabs .ui-tabs-active a {
+			background-color: #222;
+		}
 		#tabs .ui-state-hover a {
 			background-color: #111;
-		}
-		#tabs .ui-tabs-active a {
-			background-color: #111
 		}
 	/* Инфоблок */
 		#info-block {
