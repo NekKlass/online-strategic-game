@@ -37,13 +37,6 @@ html, body {
 			background-color: #111;
 		}
 	/* Инфоблок */
-		#info-block {
-			border-image: url(http://localhost/online-strategic-game-web-resources/border/wood.png) 18 18;
-			border-style: solid;
-			background-image: url(http://localhost/online-strategic-game-web-resources/background/wood.png);
-			color: white;
-			border-width: 8px;
-		}
 		#res {
 			padding: 5px;
 		}
@@ -57,18 +50,6 @@ html, body {
 		#map-base td {
 			border-style: solid;
 			border-width: 1px;
-			text-align: center;
-		}
-	/* Сайдбарблок */
-		#side-bar {
-			position: fixed;
-			right: 0;
-			top: 100px;
-			background-color: wheat;
-			padding: 4px;
-			width: 100px;
-		}
-		#side-bar-head {
 			text-align: center;
 		}
 	/* Зумер карты */
