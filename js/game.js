@@ -4,7 +4,7 @@ var loaded = false;
 var block_info = $('#info-block');
 var block_map = $('#map-block');
 var block_res = $('#res'); 
-var block_map_base = $('#map-base');
+var block_base = $('#base-content');
 var block_map_global = $('#map-global');
 var block_sidebar = $('#side-bar');	
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
@@ -79,46 +79,20 @@ function get_base( callback ) {
 		api_address + 'api.php',
 		JSON.stringify({ 'action' : 'base_get' }),
 		function (data) {
-			base = JSON.parse(data);
-			fill_base();
-			if ( callback ) {
-				callback();
-			}
+			base = JSON.parse(data)['data'];
+			$.each(
+				base,
+				function( key, value ) {
+					block_base.append(
+						'<div id=\'base-'+ key +'\' class=\'base-item\'>' +
+							'<div>' + first_upper(localization[ value['name'] ]['ru']) + '</div>' + 
+							'<button type=\'button\' id=\'base-act-' + key + '\'>Действия</button>' +
+						'</div>'
+					);
+				}
+			);
 		}
 	);	
-}
-
-function fill_base() {
-    var x, y;
-    var width, height;
-    block_map_base.find('tr').remove();
-    for (x = 0; x < base['x']; x++) {
-        block_map_base.append("<tr id='x" + x + "'></tr>");
-        for (y = 0; y < base['y']; y++) {
-            $('#x' + x).append("<td class='base-block' id='y" + y + "'></td>");
-			var map_block = $('#x' + x + ' #y' + y);
-            if (x in base['map']) {
-                if (y in base['map'][x]) {
-					map_block.append('<img src=\'images/base-' + base['map'][x][y]['name'] + '.png\'>');
-                } else map_block.append('Пусто<br>');
-            } else map_block.append('Пусто<br>');
-			map_block.css( 'width', 100 / base['x'] + '%');
-			map_block.parent().css( 'height', 100 / base['y'] + '%');
-            //map_block.append("<button onclick='javascript:base_modal(" + x + ',' + y + ")'>Изменить</button>");
-        }
-    }
-	if ( !isMobile ) {
-		$('.base-block button').hide();
-		$('.base-block').hover(
-			function (){
-				if ( loaded ) {
-					$(this).find('button').show();
-				}
-			},
-			function () {
-				$(this).find('button').hide();
-			});
-	}
 }
 
 function base_modal(x,y){
