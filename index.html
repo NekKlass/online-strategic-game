@@ -16,20 +16,23 @@
 			<li><a>Вы:&nbsp;<span id='head-uname'></span></a></li>
 		</ul>
 		
-		<div id='modal-background'>
-			<div class='modal-form' id='login-form'>
-				<span class='hover-button modal-close'>&#10060;</span>
-				<form action="javascript:void(0)" method="post" id='login-form'> 
+		<div class='modal-background'>
+			<div id='login-modal' class='modal-box'>
+				<div class='modal-head'>
+					<div class='modal-title'>Вход</div>
+					<span class='hover-button modal-close'>&#10060;</span>
+				</div>
+				<form action="javascript:void(0)" method='post' id='login-form' class='modal-content'> 
 					<div class='form-line'>
-						<div class='login-form-lable'>Ник</div>
+						<div class='form-lable'>Ник</div>
 						<input type='text' name='login-uname' id='login-uname' required>
 					</div>
 					<div class='form-line'>
-						<div class='login-form-lable'>Пароль</div>
+						<div class='form-lable'>Пароль</div>
 						<input type='password' name='login-upass' id='login-upass' required>
 					</div>
 					<div class='form-line'>			
-						<div class='login-form-lable'>Запомнить</div>
+						<div class='form-lable'>Запомнить</div>
 						<input type='checkbox' name='login-uremember' id='login-uremember'>
 					</div>
 					<div class='form-line'>
@@ -42,31 +45,34 @@
 			</div>
 		</div>
 		
-		<div id='modal-background'>
-			<div class='modal-form' id='register-form'>
-				<span class='hover-button modal-close'>&#10060;</span>
-				<form id='register-form' action='javascript:void(0)' method="post"> 
+		<div class='modal-background'>
+			<div id='register-modal' class='modal-box' >
+				<div class='modal-head'>
+					<div class='modal-title'>Регистрация</div>
+					<span class='hover-button modal-close'>&#10060;</span>
+				</div>
+				<form action='javascript:void(0)' method='post' id='register-form' class='modal-content'> 
 					<!-------------
 					  input fields 
 					---------------->
 					<div class='form-line'>
-						<div class='register-form-lable'>Ник</div>
+						<div class='form-lable'>Ник</div>
 						<input type='text' id='reg-uname' required >
 					</div>
 					<div class='form-line'>
-						<div class='register-form-lable'>Пароль</div>
+						<div class='form-lable'>Пароль</div>
 						<input type='password' id='reg-upass' required >
 					</div>
 					<div class='form-line'>
-						<div class='register-form-lable'>Подтверждение</div>
+						<div class='form-lable'>Подтверждение</div>
 						<input type='password' id='reg-upassconfirm' required >
 					</div>
 					<div class='form-line'>
-						<div class='register-form-lable'>Почта</div>
+						<div class='form-lable'>Почта</div>
 						<input type='email' id='reg-umail' required >
 					</div>
 					<div class='form-line'>
-						<div class='register-form-lable'>Подтверждение</div>
+						<div class='form-lable'>Подтверждение</div>
 						<input type='email' id='reg-umailconfirm' required >
 					</div>
 					<div class='form-line' id='reg-submit'>
@@ -103,7 +109,7 @@
 			</div>
 		</div>	
 		
-		<div id='modal-background'>
+		<div class='modal-background'>
 			<div class='modal-form' id='exit-confirm'>
 			<div>	
 		</div>

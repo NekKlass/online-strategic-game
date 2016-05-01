@@ -1,6 +1,6 @@
 var api_address = 'http://localhost/online-strategic-game-api/';
-var login_form = $('#login-form'); 
-var register_form = $('#register-form');
+var login_modal = $('#login-modal'); 
+var register_modal = $('#register-modal');
 var exit_confitm = $('#exit-confirm');
 var modal_background = $('#modal-background');
 
@@ -26,15 +26,15 @@ function init(){
 
 //thing to close modal
 $('.modal-close').click(function(event){
-	$(this).parent().parent().hide();
+	$(this).parents('.modal-background').hide();
 });
 
 //stuff for 'login' form
 $('#login-href').click(function(event){
-	login_form.parent().show();
+	login_modal.parent().show();
 });
 
-$('#login-submit').click(function(event){
+$('#login-form').submit(function(event){
 	$.post(
 		api_address + 'api.php',
 		JSON.stringify({ 
@@ -55,7 +55,7 @@ $('#login-submit').click(function(event){
 
 //stuff for 'register' form
 $('#register-href').click(function(event){
-	register_form.parent().show();
+	register_modal.parent().show();
 });
 
 $('#register-form').submit(function(event){
