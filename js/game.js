@@ -58,14 +58,9 @@ function get_res( callback ) {
 			if (data == 'nologin')
 				window.location.href = 'login.php';
 			var res = JSON.parse(data)['data'];
-			block_res.empty();
-			$.each(
-				res,
-				function ( key, value ){
-					block_res.append( '<div>' + first_upper(localization[key]['ru']) +': ' + value + '</div>' );
-				}
-			);
-			block_res.append('<button onclick=\'javascript:get_res()\'>Обновить ресурсы</button>');
+			$('#res-metal').text(res['metal']);
+			$('#res-food').text(res['food']);
+			$('#res-water').text(res['water']);
 			resize();
 			if ( callback) {
 				callback();
