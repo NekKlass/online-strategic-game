@@ -39,6 +39,17 @@ html, body {
 		.tab {
 			padding: 5px;
 		}
+	/* tab overview */
+	/* tab base */
+		.base-item {
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
+			margin: 10px;
+			padding: 10px;
+			border-color: #444;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 4px;
+		}
 	/* map block */
 		#map-block {
 			background-color: rgba(0, 255, 0, 0.22);
