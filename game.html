@@ -9,11 +9,11 @@
 		
 		<div id='tabs'>
 			<ul id='tab-control'>
-				<li><a href='#overview'>Основное</a></li>
-				<li><a href='#base'>База</a></li>
-				<li><a href='#global'>Карта</a></li>
+				<li><a href='#tab-overview'>Основное</a></li>
+				<li><a href='#tab-base'>База</a></li>
+				<li><a href='#tab-global'>Карта</a></li>
 			</ul>
-			<div id='overview' class='tab'>
+			<div id='tab-overview' class='tab'>
 				<div id='res' >
 					<div>Металл: <span id='res-metal'></span></div>
 					<div>Еда: <span id='res-food'></span></div>
@@ -21,11 +21,11 @@
 					<button onclick='javascript:get_res()'>Обновить ресурсы</button>
 				</div>
 			</div>
-			<div id='base' class='tab'>
+			<div id='tab-base' class='tab'>
 				<div id='base-content'>
 				</div>
 			</div>
-			<div id='global' class='tab'>
+			<div id='tab-global' class='tab'>
 				<table id='map-global' class='map js-draggable'>
 					<button onclick='javascript:get_base()'>Обновить карту</button>
 				</table>
