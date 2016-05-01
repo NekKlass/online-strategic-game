@@ -13,9 +13,10 @@ function s_update_res ( $id ) {
 	
 	$time = $_SERVER['REQUEST_TIME'] - $data[0]['res_update_time'];
 	
-	foreach ( $base as $keysec => $valuesec ) {
-		if ( $buildings[$valuesec['name']]['ifincome'] == true ) {
-			$income = $buildings[ $valuesec['name'] ]['income']( $valuesec['level'], $time);
+	$size = count($base);
+	for ( $i = 0; $i < $size; $i++ ) {
+		if ( $buildings[$base[$i]['name']]['ifincome'] == true ) {
+			$income = $buildings[ $base[$i]['name'] ]['income']( $base[$i]['level'], $time);
 			foreach ( $income as $key => $value ) {
 				$res[$key] = $res[$key] + $value;
 			}
