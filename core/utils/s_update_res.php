@@ -21,11 +21,15 @@ function s_update_res ( $id ) {
 			}
 		}
 	}
+	
 	db_custom_no_return("UPDATE `bases` SET `rescount` = ?, `res_update_time` = ? WHERE `id` = ?", array( 
 		json_encode($res),
 		$_SERVER['REQUEST_TIME'],
 		$id
 	));
+	
+	return $res;
+	
 }
 
 ?>
