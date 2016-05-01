@@ -62,9 +62,6 @@ function get_res( callback ) {
 			$('#res-food').text(res['food']);
 			$('#res-water').text(res['water']);
 			resize();
-			if ( callback) {
-				callback();
-			}
 		}
 	);
 }
