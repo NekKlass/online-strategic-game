@@ -1,5 +1,5 @@
 /*--------------------
-	Стандартные
+	default
 ----------------------*/
 html, body {
 	margin: 0;
@@ -8,7 +8,7 @@ html, body {
 	margin: 0;
 }
 /*--------------------
-	Блоки
+	blocks
 ----------------------*/
 	/* tabs */
 		#tabs {
@@ -39,7 +39,7 @@ html, body {
 		.tab {
 			padding: 5px;
 		}
-	/* Картоблок */
+	/* map block */
 		#map-block {
 			background-color: rgba(0, 255, 0, 0.22);
 		}
@@ -51,7 +51,7 @@ html, body {
 			border-width: 1px;
 			text-align: center;
 		}
-	/* Модальноблоки */
+	/* modal blocks */
 		.modal-background {
 			display: none;
 			position: fixed;
@@ -81,9 +81,9 @@ html, body {
 			text-align: center
 		}
 /*--------------------
-	Дизайнерское
+	design
 ----------------------*/
-	/* Кнопки */
+	/* close button */
 		.hover-button {
 			color: #BFBFBF;
 			float: right;
@@ -110,7 +110,7 @@ html, body {
 		.confirm-yes {
 			background-color: #128616;
 		}
-	/* Блоки */
+	/* blocks */
 		.upgrade-block {    
 			background-color: pink;
 			padding: 8px;
@@ -126,12 +126,12 @@ html, body {
 			text-align: center;
 			display: inline-block;
 		}
-	/* Остальное */
+	/* other */
 		.draggable-handle{
 			cursor: move;
 		}
 /*--------------------
-	Починка
+	repairing
 ----------------------*/
 .img-center {
 	display: block;
