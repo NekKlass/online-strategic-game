@@ -13,7 +13,16 @@ var api_address = 'http://localhost/online-strategic-game-api/';
 
 block_map_global.hide();
 
-$('#tabs').tabs();
+$('#tabs').tabs({
+	'hide': {
+		'effect': 'slide',
+		'duration': 200
+	},
+	'show': {
+		'effect': 'slide',
+		'duration': 200
+	}
+});
 
 $.post(
 	api_address + 'api.php',
