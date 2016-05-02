@@ -124,7 +124,7 @@ function get_base( callback ) {
 						$('#base-upgrade-'+key).click(function(event){
 							$.post(
 								api_address + 'api.php',
-								JSON.stringify({ 'action': 'base_upgrade_building' }),
+								JSON.stringify({ 'action': 'base_upgrade_building', 'position': key }),
 								function (data){
 									alert(data);
 								}
