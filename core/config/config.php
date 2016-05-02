@@ -11,7 +11,7 @@ function get_config( $name ) {
 		case 'GM_DB_USER':
 			return 'game';
 		case 'GM_DB_PASS':
-			return ;
+			return '';
 		case 'GM_SQL_ADRESS':
 			return 'mysql:host='. get_config('GM_DB_HOST') . ';dbname=' . get_config('GM_DB_NAME');
 		case 'GM_SQL_OPTIONS':
