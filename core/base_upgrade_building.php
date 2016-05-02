@@ -1,40 +1,47 @@
 <?php
 
-function process_request () {
+function process_request ($request) {
 	
-	if ( !isset($_POST['x']) || !isset($_POST['y']) ) {
-		echo 'no-cord';
-		exit;
+	if ( !isset($request['position']) ) {
+		return array(
+			'status' => 'error',
+			'statusmessage' => 'noposition'
+		);
 	}
 	
-	$x = intval($_POST['x']);
-	$y = intval($_POST['y']);
+	$position = intval($request['position']);
 	
-	require_once('config.php');
-	$data = db_custom( "SELECT `rescount`, `base` FROM `bases` WHERE `id` = ?", array($_SESSION['id']) );
+	require('utils/db.php');
+	$data = db_custom( 'SELECT `rescount`, `base` FROM `bases` WHERE `id` = ?', array($_SESSION['id']) );
 	$data = $data['0'];
 	
 	$base = json_decode( $data['base'], true );
 	$rescount = json_decode( $data['rescount'], true );
 	
-	if ( ($x > ($base['x'] - 1)) || ($y > ($base['y'] - 1)) || ($x < 0) || ($y < 0) ) {
-		echo 'cord-outbound';
-		exit;
+	if ( $position >= count($base) ) {
+		return array( 
+			'status' => 'error',
+			'statusmessage' => 'positionoutbound'
+		);
 	}
 	
-	$name = $base['map'][$x][$y]['name'];
-	$level = $base['map'][$x][$y]['level'];
+	$name = $base[$position]['name'];
+	$level = $base[$position]['level'];
 	$upgrade_info = get_config( 'GM_BUILDINGS' )[$name];
 	$price = $upgrade_info['upgrade-price']($level);
 	
 	if ( $upgrade_info['upgradable'] == false ) {
-		echo 'not-upgradable';
-		exit;
+		return array(
+			'status' => 'error',
+			'statusmesage' => 'notupgradable'
+		);
 	}
 	
 	if ( $level >= $upgrade_info['max-level'] ) {
-		echo 'max';
-		exit;
+		return array(
+			'status' => 'error',
+			'statusmesage' => 'maxlevel'
+		);
 	}
 	
 	$if_upgrade = true;
@@ -49,16 +56,22 @@ function process_request () {
 		foreach ( $price as $key => $value ) {
 			$rescount[$key] = $rescount[$key] - $value;
 		}
-		$base['map'][$x][$y]['level'] = $base['map'][$x][$y]['level'] + 1;
+		$base[$position]['level']++;
 		db_custom_no_return( "UPDATE `bases` SET `rescount` = ?, `base` = ? WHERE `id` = ?", 
 			array( 
 				json_encode($rescount),
 				json_encode($base),
 				$_SESSION['id']) 
 		);
-		echo 'success';
+		return array(
+			'status' => 'success',
+			'statusmessage' => 'success'
+		);
 	} else {
-		echo 'not-enough';
+		return array(
+			'status' => 'success',
+			'statusmessage' => 'notenough'
+		);
 	}
 	
 }
