@@ -132,6 +132,7 @@ function get_base( callback ) {
 									switch( response['statusmessage'] ) {
 										case 'success':
 											get_base();
+											$('#base-act-'+key).trigger('click');
 											break;
 										default:
 											alert(response['statusmessage']);
