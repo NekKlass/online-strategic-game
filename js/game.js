@@ -96,6 +96,7 @@ function get_base( callback ) {
 		JSON.stringify({ 'action' : 'base_get' }),
 		function (data) {
 			base = JSON.parse(data)['data'];
+			block_base.empty();
 			$.each(
 				base,
 				function( key, value ) {
@@ -127,7 +128,15 @@ function get_base( callback ) {
 								api_address + 'api.php',
 								JSON.stringify({ 'action': 'base_upgrade_building', 'position': key }),
 								function (data){
-									alert(data);
+									var response = JSON.parse(data);
+									switch( response['statusmessage'] ) {
+										case 'success':
+											get_base();
+											break;
+										default:
+											alert(response['statusmessage']);
+											break;
+									}
 								}
 							);
 						});
