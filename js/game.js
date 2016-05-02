@@ -1,12 +1,10 @@
 var base, localization, buildable; //data
 
-var loaded = false;
-var block_info = $('#info-block');
-var block_map = $('#map-block');
-var block_res = $('#res'); 
-var block_base = $('#base-content');
-var block_map_global = $('#map-global');
-var block_sidebar = $('#side-bar');	
+// values
+var tabs = $('.tab');
+var tab_overview = $('#tab-overview');
+var tab_base = $('#base-content');
+var tab_map_global = $('#map-global');
 
 var modal = $('#modal');
 var modal_title = modal.find('#modal-title');
@@ -15,8 +13,6 @@ var modal_content = modal.find('#modal-content');
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
 var api_address = 'http://localhost/online-strategic-game-api/';
-
-block_map_global.hide();
 
 $('#tabs').tabs({
 	'hide': {
@@ -42,7 +38,6 @@ $.post(
 		get_base();
 		resize();
 		update_buildable();
-		loaded = true;
 	}
 );
 
@@ -65,22 +60,11 @@ $(window).resize(function(){
 	resize();
 });
 
-$('#side-bar-item-base').click(function(){
-	block_map_global.hide();
-	block_map_base.show();	
-});
-
-$('#side-bar-item-global').click(function(){
-	block_map_global.show();
-	block_map_base.hide();	
-});
-
 function first_upper( str ){
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function resize() {
-	var tabs = $('.tab')
 	tabs.css('height', $('body').height() - $('#tab-control').outerHeight(true) - ( tabs.outerHeight() - tabs.height() ) );
 }
 
@@ -106,11 +90,11 @@ function get_base( callback ) {
 		JSON.stringify({ 'action' : 'base_get' }),
 		function (data) {
 			base = JSON.parse(data)['data'];
-			block_base.find('.base-item:not(.base-item-build)').remove();
+			tab_base.find('.base-item:not(.base-item-build)').remove();
 			$.each(
 				base,
 				function( key, value ) {
-					block_base.prepend(
+					tab_base.prepend(
 						'<div id=\'base-'+ key +'\' class=\'base-item\'>' +
 							'<div>' + first_upper(localization[ value['name'] ]['ru']) + '</div>' + 
 							'<div>Уровень: ' + value['level'] + '</div>' +
