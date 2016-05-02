@@ -15,10 +15,6 @@ function get_api_file( $action ) {
 				return( 'core/sys_register.php');
 				break;
 		//---------------------------
-			case 'sys_get_localization':
-				return( 'core/sys_get_localization.php' );
-				break;
-		//---------------------------
 			case 'sys_get_login':
 				return( 'core/sys_get_login.php' );
 				break;

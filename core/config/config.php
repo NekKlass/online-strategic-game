@@ -98,38 +98,6 @@ function get_config( $name ) {
 					}
 				)
 			);
-		case 'GM_LOCALIZATION':
-			return array(
-				'metal' => array(
-					'ru' => 'металл',
-					'en' => 'metal'
-				),
-				'food' => array(
-					'ru' => 'еда',
-					'en' => 'food'
-				),
-				'water' => array(
-					'ru' => 'вода',
-					'en' => 'water'
-				),
-				'base-empty' => array(
-					'ru' => 'пусто',
-					'en' => 'empty'
-				),
-				'miner-metal' => array(
-					'ru' => 'рудная шахта',
-					'en' => 'ore mine'
-				),
-				'miner-food' => array(
-					'ru' => 'ферма еды',
-					'en' => 'food farm'
-				),
-				'miner-water' => array(
-					'ru' => 'водонапорная башня',
-					'en' => 'water tower'
-				)
-			);
-			exit;
 	}
 }
 
