@@ -4,28 +4,21 @@ function get_config( $name ) {
 	switch ( $name ) {
 		case 'GM_GAME_NAME':
 			return('Strategy game');
-			exit;
 		case 'GM_DB_HOST':
 			return '127.0.0.1';
-			exit;
 		case 'GM_DB_NAME':
 			return 'game';
-			exit;
 		case 'GM_DB_USER':
 			return 'game';
-			exit;
 		case 'GM_DB_PASS':
 			return ;
-			exit;
 		case 'GM_SQL_ADRESS':
 			return 'mysql:host='. get_config('GM_DB_HOST') . ';dbname=' . get_config('GM_DB_NAME');
-			exit;
 		case 'GM_SQL_OPTIONS':
 			return array(
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 			);
-			exit;
 		case 'GM_DEFAULT_BASE':	
 			return array(
 				'0' => array('name' => 'base-empty'),
@@ -36,7 +29,6 @@ function get_config( $name ) {
 				'5' => array('name' => 'base-empty'),
 				'6' => array('name' => 'base-empty')
 			);
-			exit;
 		//сколько ресурсов дается при регистрации		
 		case 'GM_DEFAULT_RES':
 			return array(
@@ -44,7 +36,6 @@ function get_config( $name ) {
 				'food' => 1000,
 				'water' => 1000
 			);
-			exit;	
 		case 'GM_BUILDINGS':
 			//постройки
 			return array(
@@ -107,7 +98,6 @@ function get_config( $name ) {
 					}
 				)
 			);
-			exit;
 		case 'GM_LOCALIZATION':
 			return array(
 				'metal' => array(
