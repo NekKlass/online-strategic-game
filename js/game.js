@@ -102,6 +102,7 @@ function get_base( callback ) {
 					block_base.append(
 						'<div id=\'base-'+ key +'\' class=\'base-item\'>' +
 							'<div>' + first_upper(localization[ value['name'] ]['ru']) + '</div>' + 
+							'<div>Уровень: ' + value['level'] + '</div>' +
 							'<button type=\'button\' id=\'base-act-' + key + '\'>Действия</button>' +
 						'</div>'
 					);
