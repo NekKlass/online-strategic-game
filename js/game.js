@@ -225,7 +225,7 @@ function update_buildable() {
 		api_address + 'api.php',
 		JSON.stringify({ 'action': 'base_get_buildable'}),
 		function (data) {
-			buildable = JSON.parse(data);
+			buildable = JSON.parse(data)['data'];
 		}
 	);
 }
