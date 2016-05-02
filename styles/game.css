@@ -50,6 +50,16 @@ html, body {
 			border-width: 1px;
 			border-radius: 4px;
 		}
+		.base-item-build {
+			background-color: #00CC00;
+			text-align: center;
+		}
+		.base-item-build-button {
+			background-color: #008500;
+			border-style: solid;
+			border-color: #269926;
+			color: white;
+		}
 /* modal stuff */
 .modal-background {
 	display: none;

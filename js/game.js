@@ -96,11 +96,11 @@ function get_base( callback ) {
 		JSON.stringify({ 'action' : 'base_get' }),
 		function (data) {
 			base = JSON.parse(data)['data'];
-			block_base.empty();
+			block_base.find('.base-item:not(.base-item-build)').remove();
 			$.each(
 				base,
 				function( key, value ) {
-					block_base.append(
+					block_base.prepend(
 						'<div id=\'base-'+ key +'\' class=\'base-item\'>' +
 							'<div>' + first_upper(localization[ value['name'] ]['ru']) + '</div>' + 
 							'<div>Уровень: ' + value['level'] + '</div>' +
