@@ -20,7 +20,7 @@ function process_request() {
 						break;
 					case 'income':
 						if ( $item['ifincome'] == true ) {
-							for ( $i = 1; $i < $item['max-level']; $i++ ) {
+							for ( $i = 1; $i <= $item['max-level']; $i++ ) {
 								$income = $item_value($i, 1);
 								foreach ( $upgrade_prices as $income_name => $income_value ) {
 									$response[$name]['income'][$i][$income_name] = $income_value;
