@@ -3,6 +3,9 @@ tab.overview = {};
 tab.overview.content = $('#tab-overview');
 tab.overview.load = function ( api_address ) {
 	tab.overview.resources.load(api_address);
+	$('#tab-overview-res-update').click(function(event){
+		tab.overview.resources.load(api_address)
+	});
 }
 
 tab.overview.resources = {};
