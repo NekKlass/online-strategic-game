@@ -20,8 +20,8 @@ $('#tabs').tabs({
 });
 
 
-tab_overview.load( api_address );
-tab_base.load( api_address );
+tab.overview.load( api_address );
+tab.base.load( api_address );
 resize();
 update_buildable();
 
