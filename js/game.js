@@ -4,10 +4,6 @@ var base, buildable; //data
 var tabs = $('.tab');
 var tab_map_global = $('#map-global');
 
-var modal = $('#modal');
-var modal_title = modal.find('#modal-title');
-var modal_content = modal.find('#modal-content');
-
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
 var api_address = 'http://localhost/online-strategic-game-api/';
@@ -21,10 +17,6 @@ $('#tabs').tabs({
 		'effect': 'slide',
 		'duration': 200
 	}
-});
-
-$('.modal-close').click(function(event){
-	$(this).parents('.modal-background').hide();
 });
 
 
@@ -41,11 +33,6 @@ function update_buildable() {
 			buildable = JSON.parse(data)['data'];
 		}
 	);
-}
-
-function modal_prepare(){
-	modal_title.empty();
-	modal_content.empty();
 }
 
 $(window).resize(function(){
