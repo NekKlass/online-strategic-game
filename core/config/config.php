@@ -4,21 +4,6 @@ function get_config( $name ) {
 	switch ( $name ) {
 		case 'GM_GAME_NAME':
 			return('Strategy game');
-		case 'GM_DB_HOST':
-			return '127.0.0.1';
-		case 'GM_DB_NAME':
-			return 'game';
-		case 'GM_DB_USER':
-			return 'game';
-		case 'GM_DB_PASS':
-			return '';
-		case 'GM_SQL_ADRESS':
-			return 'mysql:host='. get_config('GM_DB_HOST') . ';dbname=' . get_config('GM_DB_NAME');
-		case 'GM_SQL_OPTIONS':
-			return array(
-				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-			);
 		case 'GM_DEFAULT_BASE':	
 			return array(
 				'0' => array('name' => 'base-empty'),
