@@ -1,7 +1,7 @@
 tab.base = {};
 
 tab.base.content = $('#tab-base');
-tab.base.load = function ( api_address ) {
+tab.base.load = function () {
 	$.post(
 		api_address + 'api.php',
 		JSON.stringify({ 'action' : 'base_get' }),

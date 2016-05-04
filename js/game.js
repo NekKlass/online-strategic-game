@@ -6,8 +6,6 @@ var tab_map_global = $('#map-global');
 
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
-var api_address = 'http://localhost/online-strategic-game-api/';
-
 $('#tabs').tabs({
 	'hide': {
 		'effect': 'slide',
@@ -20,8 +18,8 @@ $('#tabs').tabs({
 });
 
 
-tab.overview.load( api_address );
-tab.base.load( api_address );
+tab.overview.load();
+tab.base.load();
 resize();
 update_buildable();
 

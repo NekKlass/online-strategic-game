@@ -1,7 +1,7 @@
 tab.overview = {};
 
 tab.overview.content = $('#tab-overview');
-tab.overview.load = function ( api_address ) {
+tab.overview.load = function () {
 	tab.overview.resources.load(api_address);
 	$('#tab-overview-res-update').click(function(event){
 		tab.overview.resources.load(api_address)
@@ -9,7 +9,7 @@ tab.overview.load = function ( api_address ) {
 }
 
 tab.overview.resources = {};
-tab.overview.resources.load = function( api_address ) {
+tab.overview.resources.load = function() {
 	$.post(
 		api_address + 'api.php',
 		JSON.stringify({ 'action' : 'base_get_res' }),
