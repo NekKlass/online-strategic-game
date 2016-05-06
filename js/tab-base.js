@@ -34,9 +34,9 @@ tab.base.parse = function(){
 			);
 		}
 	);
-	$('.base-act').click(tab.base.modal);
+	$('.base-act').click(tab.base.upgrade);
 }
-tab.base.modal = function ( event ) {
+tab.base.upgrade = function ( event ) {
 	var position = $( event.target ).attr('position');
 	modal.prepare();
 	modal.title.text('Изменить постройку');
