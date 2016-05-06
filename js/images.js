@@ -1,5 +1,4 @@
 var images = {};
-images.buildings = {};
 
 var imageConstructor = function( path ){
 	var image = new Image();
@@ -7,6 +6,7 @@ var imageConstructor = function( path ){
 	return image;
 }
 
+images.buildings = {};
 images.buildings['miner-metal'] = imageConstructor( 'buildings/miner-metal.png' );
 images.buildings['miner-food'] = imageConstructor( 'buildings/miner-food.png' );
 images.buildings['miner-water'] = imageConstructor( 'buildings/miner-water.png' );
