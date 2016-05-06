@@ -73,6 +73,11 @@ html, body {
 			border-color: #269926;
 			color: white;
 		}
+		.base-act {
+			border: none;
+			padding: 0;
+			background-color: transparent;
+		}
 /* modal stuff */
 .modal-background {
 	display: none;
