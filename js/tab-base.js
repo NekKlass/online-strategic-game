@@ -20,7 +20,7 @@ tab.base.parse = function(){
 				'<div class=\'base-item\'>' +
 					'<table><tr>' +
 						'<td class=\'base-item-image\'>' +
-							images[ value['name'] ].outerHTML +
+							images.buildings[ value['name'] ].outerHTML +
 						'</td>' +
 						'<td>' +
 							'<div>' + localization[ value['name'] ] + '</div>' + 
