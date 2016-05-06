@@ -37,7 +37,7 @@ tab.base.parse = function(){
 	$('.base-act').click(tab.base.upgrade);
 }
 tab.base.upgrade = function ( event ) {
-	var position = $( event.target ).attr('position');
+	var position = $( event.target.parentNode ).attr('position');
 	modal.prepare();
 	modal.title.text('Изменить постройку');
 	var str = '';
