@@ -18,9 +18,16 @@ tab.base.parse = function(){
 		function( key, value ) {
 			tab.base.content.prepend(
 				'<div class=\'base-item\'>' +
-					'<div>' + localization[ value['name'] ] + '</div>' + 
-					'<div>Уровень: ' + value['level'] + '</div>' +
-					'<button type=\'button\' class=\'base-act\' position=\'' + key + '\'>Действия</button>' +
+					'<table><tr>' +
+						'<td class=\'base-item-image\'>' +
+							images[ value['name'] ].outerHTML +
+						'</td>' +
+						'<td>' +
+							'<div>' + localization[ value['name'] ] + '</div>' + 
+							'<div>Уровень: ' + value['level'] + '</div>' +
+							'<button type=\'button\' class=\'base-act\' position=\'' + key + '\'>Действия</button>' +
+						'</td>' +
+					'</tr></table>' +
 				'</div>'
 			);
 		}
