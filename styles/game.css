@@ -38,6 +38,7 @@ html, body {
 		}
 		.tab {
 			padding: 5px;
+			overflow-y: auto;
 		}
 	/* tab overview */
 	/* tab base */
