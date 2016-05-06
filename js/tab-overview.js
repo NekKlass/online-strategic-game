@@ -6,6 +6,7 @@ tab.overview.load = function () {
 	$('#tab-overview-res-update').click(function(event){
 		tab.overview.resources.load(api_address)
 	});
+	$('#tab-overview-res-update').html( images.icons['refresh'].outerHTML );
 }
 
 tab.overview.resources = {};
