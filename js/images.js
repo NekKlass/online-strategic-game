@@ -10,3 +10,5 @@ images.buildings = {};
 images.buildings['miner-metal'] = imageConstructor( 'buildings/miner-metal.png' );
 images.buildings['miner-food'] = imageConstructor( 'buildings/miner-food.png' );
 images.buildings['miner-water'] = imageConstructor( 'buildings/miner-water.png' );
+
+images.icons = {};
