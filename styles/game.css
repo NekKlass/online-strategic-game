@@ -40,6 +40,13 @@ html, body {
 			padding: 5px;
 			overflow-y: auto;
 		}
+		.img-button {
+			width: 50px;
+			height: 50px;
+			border: none;
+			padding: 0;
+			background-color: transparent;
+		}
 	/* tab overview */
 	/* tab base */
 		.base-item {
@@ -72,13 +79,6 @@ html, body {
 			border-style: solid;
 			border-color: #269926;
 			color: white;
-		}
-		.base-act {
-			width: 50px;
-			height: 50px;
-			border: none;
-			padding: 0;
-			background-color: transparent;
 		}
 /* modal stuff */
 .modal-background {
