@@ -43,17 +43,21 @@ tab.base.upgrade = function ( event ) {
 	modal.prepare();
 	modal.title.text('Изменить постройку');
 	var str = '';
-	$.each(
-		buildable[ tab.base.base[position]['name'] ]['upgrade-price'][ tab.base.base[position]['level'] ],
-		function ( key, value ) {
-			str = str + '<div>' + localization[key] + ': ' + value + '</div>';
-		}
-	);
-	modal.content.append(
-		'<div>'+
-			str +
-			'<div><button class=\'base-upgrade-btn\' position=\'' + position + '\' type=\'button\'>Улучшить</button><div>' +
-		'<div>'
-	);
+	if ( buildable[ name ]['max-level'] > level ) {
+		$.each(
+			buildable[ tab.base.base[position]['name'] ]['upgrade-price'][ tab.base.base[position]['level'] ],
+			function ( key, value ) {
+				str = str + '<div>' + localization[key] + ': ' + value + '</div>';
+			}
+		);
+		modal.content.append(
+			'<div>'+
+				str +
+				'<div><button class=\'base-upgrade-btn\' position=\'' + position + '\' type=\'button\'>Улучшить</button><div>' +
+			'<div>'
+		);
+	} else {
+		modal.content.append('Достигнут максимальный уровень!')
+	}
 	modal.show();
 }
