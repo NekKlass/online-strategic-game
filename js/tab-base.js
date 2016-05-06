@@ -25,7 +25,9 @@ tab.base.parse = function(){
 						'<td>' +
 							'<div>' + localization[ value['name'] ] + '</div>' + 
 							'<div>Уровень: ' + value['level'] + '</div>' +
-							'<button type=\'button\' class=\'base-act\' position=\'' + key + '\'>Действия</button>' +
+							'<button type=\'button\' class=\'base-act\' position=\'' + key + '\'>' + 
+								images.icons['upgrade'].outerHTML + 
+							'</button>' +
 						'</td>' +
 					'</tr></table>' +
 				'</div>'
