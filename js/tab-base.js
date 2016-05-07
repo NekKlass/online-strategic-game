@@ -68,8 +68,34 @@ tab.base.upgrade_dlg = function ( event ) {
                 '</button><div>' +
             '<div>'
         );
+        $('#base-upgrade-btn').click(tab.base.upgrade);
     } else {
         modal.content.append('Достигнут максимальный уровень!');
     }
     modal.show();
 }
+
+tab.base.upgrade = function ( event ) {
+    var target = event.target;
+    if ( target.localName == 'img' ) {
+        var position = $( target.parentNode ).attr('position');
+    } else {
+       var position = $( target ).attr('position');
+    }
+    $.post(
+        api_address + 'api.php',
+        JSON.stringify({ 'action': 'base_upgrade_building', 'position': position }),
+        function (data) {
+            var response = JSON.parse(data);
+            switch ( response['statusmessage'] ) {
+                case 'success':
+                    tab.base.load();
+                    modal.close();
+                    break;
+            }
+        }
+    );
+}
+
+
+
