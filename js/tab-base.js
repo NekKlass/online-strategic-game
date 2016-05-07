@@ -102,6 +102,26 @@ tab.base.upgrade = function ( event ) {
 tab.base.build_dlg = function ( event ) {
     modal.prepare();
     modal.title.text('Построить');
+    modal.content.append(
+        '<div id=\'base-build-tabs\'>' +
+            '<ul id=\'base-build-list\'>' +
+            '</ul>' +
+        '</div>'
+    );
+    var tabs = $('#base-build-tabs');
+    var list = tabs.find('#base-build-list');
+    $.each(
+        buildable,
+        function ( key, value ) {
+            list.append('<li><a href=\'#build-tab-' + key + '\'>' + localization[key] + '</a></li>');
+            tabs.append(
+                '<div id=\'build-tab-' + key + '\'>' +
+                    '<div>Цена: ' + value['build-price'].metal + '</div>' +
+                '</div>'
+            );
+        }
+    );
+    tabs.tabs();
     modal.show();
 }
 
