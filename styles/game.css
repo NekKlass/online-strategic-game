@@ -85,8 +85,8 @@ html, body {
             width: inherit;
             height: inherit;
         }
-        .base-item-build {
-            text-align: center;
+        #base-build-btn {
+            margin: auto;
         }
         #base-build-tabs  {
             display: inline-flex;
