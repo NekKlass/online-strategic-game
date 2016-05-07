@@ -24,10 +24,6 @@ function get_config( $name ) {
         case 'GM_BUILDINGS':
             //постройки
             return array(
-                'base-empty' => array(
-                    'upgradable' => false,
-                    'ifincome' => false
-                ),
                 'miner-metal' => array (
                     'build-price' => array(
                         'metal' => 300
