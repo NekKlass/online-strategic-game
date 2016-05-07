@@ -69,7 +69,7 @@ tab.base.upgrade_dlg = function ( event ) {
             '<div>'
         );
     } else {
-        modal.content.append('Достигнут максимальный уровень!')
+        modal.content.append('Достигнут максимальный уровень!');
     }
     modal.show();
 }
