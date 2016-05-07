@@ -14,6 +14,10 @@ modal.show = function () {
     modal.block.parent().show();
 }
 
+modal.close = function () {
+    modal.block.parents('.modal-background').hide();
+}
+
 $('.modal-close').click(function(event){
-    $(this).parents('.modal-background').hide();
+    modal.close();
 });
