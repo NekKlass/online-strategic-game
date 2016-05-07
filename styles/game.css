@@ -70,9 +70,6 @@ html, body {
         .base-item-content{
             vertical-align: top;
         }
-        .base-item table {
-            width: 100%;
-        }
         .base-item-head {
             text-align: center;
             font-size: 1.3em;
