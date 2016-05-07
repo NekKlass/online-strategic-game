@@ -2,6 +2,7 @@ tab.base = {};
 
 tab.base.content = $('#tab-base');
 tab.base.load = function () {
+    $('#base-build-btn').html( images.icons['build'].outerHTML );
     $.post(
         api_address + 'api.php',
         JSON.stringify({ 'action' : 'base_get' }),
