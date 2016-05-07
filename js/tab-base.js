@@ -39,9 +39,9 @@ tab.base.parse = function(){
             );
         }
     );
-    $('.base-act').click(tab.base.upgrade);
+    $('.base-act').click(tab.base.upgrade_dlg);
 }
-tab.base.upgrade = function ( event ) {
+tab.base.upgrade_dlg = function ( event ) {
     var target = event.target;
     if ( target.localName == 'img' ) {
         var position = $( target.parentNode ).attr('position');
