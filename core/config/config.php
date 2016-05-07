@@ -60,7 +60,7 @@ function get_config( $name ) {
                     'ifincome' => true,
                     'income' => function ( $level, $time ) {
                         return array(
-                            'metal' => $level * $time
+                            'food' => $level * $time
                         );
                     }
                 ),
@@ -78,7 +78,7 @@ function get_config( $name ) {
                     'ifincome' => true,
                     'income' => function ( $level, $time ) {
                         return array(
-                            'metal' => $level * $time
+                            'water' => $level * $time
                         );
                     }
                 )
