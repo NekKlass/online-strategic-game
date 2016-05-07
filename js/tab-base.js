@@ -112,9 +112,33 @@ tab.base.build_dlg = function ( event ) {
         buildable,
         function ( key, value ) {
             list.append('<li><a href=\'#build-tab-' + key + '\'>' + localization[key] + '</a></li>');
+            //build price
+            var price = '';
+            $.each(
+                value['build-price'],
+                function ( priceKey, priceValue ) {
+                    price = price + '<div>' + localization[priceKey] + ': ' + priceValue + '</div>';
+                }
+            );
+            var income = '';
+            if ( value['ifincome'] == true ) {
+                income = '<div class=\'base-build-item-info\'>' +
+                '<div>Доход</div>';
+                $.each(
+                    value['income'][1],
+                    function ( incomeKey, incomeValue ) {
+                        income = income + '<div>' + localization[incomeKey] + ': ' + incomeValue + '</div>';
+                    }
+                );
+                income = income + '</div';
+            }
             tabs.append(
-                '<div id=\'build-tab-' + key + '\'>' +
-                    '<div>Цена: ' + value['build-price'].metal + '</div>' +
+                '<div id=\'build-tab-' + key + '\' class=\'base-build-item\'>' +
+                    '<div class=\'base-build-item-info\'>' +
+                        '<div>Стоимость</div>' +
+                        price +
+                    '</div>' +
+                    income +
                 '</div>'
             );
         }
