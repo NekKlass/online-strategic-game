@@ -14,3 +14,5 @@ images.buildings['miner-water'] = imageConstructor( 'buildings/miner-water.png' 
 images.icons = {};
 images.icons['refresh'] = imageConstructor( 'icons/refresh.png' );
 images.icons['upgrade'] = imageConstructor( 'icons/upgrade.png' );
+images.icons['build'] = imageConstructor( 'icons/build.png' );
+
