@@ -96,6 +96,12 @@ html, body {
             margin: 0;
             list-style-type: none;
         }
+        .base-build-item {
+            display:flex;
+        }
+        .base-build-item  .base-build-item-info {
+            margin: 10px;
+        }
 /* modal stuff */
 .modal-background {
     display: none;
