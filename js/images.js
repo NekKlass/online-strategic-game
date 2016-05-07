@@ -1,9 +1,9 @@
 var images = {};
 
 var imageConstructor = function( path ){
-	var image = new Image();
-	image.src = resources_address + path;
-	return image;
+    var image = new Image();
+    image.src = resources_address + path;
+    return image;
 }
 
 images.buildings = {};

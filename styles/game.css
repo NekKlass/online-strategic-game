@@ -1,132 +1,132 @@
 /*--------------------
-	default
+    default
 ----------------------*/
 html, body {
-	margin: 0;
-	height: 100%;
-	padding: 0;
-	margin: 0;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 /*--------------------
-	blocks
+    blocks
 ----------------------*/
-	/* tabs */
-		#tabs {
-			height: 100%
-		}
-		#tabs ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			background-color: #444;
-		}
-		#tabs ul a {
-			float: left;
-			display: block;
-			color: white;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			outline-style: none;
-		}
-		#tabs .ui-tabs-active a {
-			background-color: #222;
-		}
-		#tabs .ui-state-hover a {
-			background-color: #111;
-		}
-		.tab {
-			padding: 5px;
-			overflow-y: auto;
-		}
-		.img-button {
-			width: 50px;
-			height: 50px;
-			border: none;
-			padding: 0;
-			background-color: transparent;
-		}
-	/* tab overview */
-	/* tab base */
-		.base-item {
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
-			margin: 10px;
-			padding: 10px;
-			border-color: #444;
-			border-style: solid;
-			border-width: 1px;
-			border-radius: 4px;
-		}
-		.base-item table {
-			width: 100%;
-		}
-		.base-item-image {
-			width: 170px;
-			height: 170px;
-		}
-		.base-item-image img {
-			width: inherit;
-			height: inherit;
-			margin: 10px;
-		}
-		.base-item-build {
-			background-color: #00CC00;
-			text-align: center;
-		}
-		.base-item-build-button {
-			background-color: #008500;
-			border-style: solid;
-			border-color: #269926;
-			color: white;
-		}
+    /* tabs */
+        #tabs {
+            height: 100%
+        }
+        #tabs ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #444;
+        }
+        #tabs ul a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            outline-style: none;
+        }
+        #tabs .ui-tabs-active a {
+            background-color: #222;
+        }
+        #tabs .ui-state-hover a {
+            background-color: #111;
+        }
+        .tab {
+            padding: 5px;
+            overflow-y: auto;
+        }
+        .img-button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+        }
+    /* tab overview */
+    /* tab base */
+        .base-item {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
+            margin: 10px;
+            padding: 10px;
+            border-color: #444;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+        }
+        .base-item table {
+            width: 100%;
+        }
+        .base-item-image {
+            width: 170px;
+            height: 170px;
+        }
+        .base-item-image img {
+            width: inherit;
+            height: inherit;
+            margin: 10px;
+        }
+        .base-item-build {
+            background-color: #00CC00;
+            text-align: center;
+        }
+        .base-item-build-button {
+            background-color: #008500;
+            border-style: solid;
+            border-color: #269926;
+            color: white;
+        }
 /* modal stuff */
 .modal-background {
-	display: none;
-	position: fixed;
-	z-index: 2;
-	padding-top: 100px;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,0.4);
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 .modal-box {
-	background-color: #fefefe;
-	margin: auto;
-	border: 1px solid #888;
-	display: table;
-	box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    display: table;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
 }
 .modal-content {
-	margin: 20px;
+    margin: 20px;
 }
 .modal-head {
-	padding: 10px;
-	background-color: #333;
-	color: white;
+    padding: 10px;
+    background-color: #333;
+    color: white;
 }
 .modal-title {
-	display: inline;
+    display: inline;
 }
 .hover-button {
-	color: #BFBFBF;
-	float: right;
-	font-size: 14px;
-	font-weight: bold;
-	transition-duration: 0.3s;
-	padding: 2px;
+    color: #BFBFBF;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    transition-duration: 0.3s;
+    padding: 2px;
 }
 .hover-button:hover, .hover-button:focus {
-	color: #404040;
-	text-decoration: none;
-	cursor: pointer;
-	transition-duration: 0.3s;
+    color: #404040;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
-		
+
 
 
 
