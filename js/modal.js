@@ -21,3 +21,9 @@ modal.close = function () {
 $('.modal-close').click(function(event){
     modal.close();
 });
+
+modal.block.parents('.modal-background').click(function(event){
+    if ( event.target.id == 'modal-background' ){
+        modal.close();
+    }
+});
