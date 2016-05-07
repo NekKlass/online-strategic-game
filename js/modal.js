@@ -11,7 +11,7 @@ modal.prepare = function () {
 }
 
 modal.show = function () {
-    modal.block.parent().show();
+    modal.block.parent().css( 'display', 'flex' );
 }
 
 modal.close = function () {
