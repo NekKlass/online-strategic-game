@@ -14,7 +14,8 @@ $('#tabs').tabs({
     'show': {
         'effect': 'slide',
         'duration': 200
-    }
+    },
+    'active': 0
 });
 
 
