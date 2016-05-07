@@ -29,6 +29,12 @@ $('.modal-close').click(function(event){
     $(this).parents('.modal-background').hide();
 });
 
+$('.modal-background').click(function(event){
+    if ( event.target.className == 'modal-background' ){
+        $('.modal-background').hide();
+    }
+});
+
 //stuff for 'login' form
 $('#login-href').click(function(event){
     login_modal.parent().css( 'display', 'flex' );
