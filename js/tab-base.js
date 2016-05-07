@@ -63,7 +63,7 @@ tab.base.upgrade_dlg = function ( event ) {
         modal.content.append(
             '<div>'+
                 str +
-                '<div><button class=\'base-upgrade-btn img-button\' position=\'' + position + '\' type=\'button\'>' +
+                '<div><button id=\'base-upgrade-btn\' class=\' img-button\' position=\'' + position + '\' type=\'button\'>' +
                     images.icons['upgrade'].outerHTML +
                 '</button><div>' +
             '<div>'
