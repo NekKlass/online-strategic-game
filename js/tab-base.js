@@ -42,7 +42,12 @@ tab.base.parse = function(){
     $('.base-act').click(tab.base.upgrade);
 }
 tab.base.upgrade = function ( event ) {
-    var position = $( event.target.parentNode ).attr('position');
+    var target = event.target;
+    if ( target.localName == 'img' ) {
+        var position = $( target.parentNode ).attr('position');
+    } else {
+       var position = $( target ).attr('position');
+    }
     var level = tab.base.base[position]['level'];
     var name = tab.base.base[position]['name'];
     modal.prepare();
