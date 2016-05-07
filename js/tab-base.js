@@ -51,7 +51,7 @@ tab.base.upgrade = function ( event ) {
     var level = tab.base.base[position]['level'];
     var name = tab.base.base[position]['name'];
     modal.prepare();
-    modal.title.text('Изменить постройку');
+    modal.title.text('Улучшить постройку');
     var str = '';
     if ( buildable[ name ]['max-level'] > level ) {
         $.each(
@@ -63,7 +63,9 @@ tab.base.upgrade = function ( event ) {
         modal.content.append(
             '<div>'+
                 str +
-                '<div><button class=\'base-upgrade-btn\' position=\'' + position + '\' type=\'button\'>Улучшить</button><div>' +
+                '<div><button class=\'base-upgrade-btn img-button\' position=\'' + position + '\' type=\'button\'>' +
+                    images.icons['upgrade'].outerHTML +
+                '</button><div>' +
             '<div>'
         );
     } else {
