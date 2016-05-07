@@ -26,8 +26,8 @@ tab.base.parse = function(){
                         '</div>' +
                         '<div class=\'base-item-content\'>' +
                             '<div class=\'base-item-head\'>' + localization[ value['name'] ] + '</div>' +
-                            '<div>' +
-                                '<div class=\'base-item-act-block\'>' +
+                            '<div class=\'base-item-act-block\'>' +
+                                '<div>' +
                                     '<div>Уровень: ' + value['level'] + '</div>' +
                                     '<button type=\'button\' class=\'base-act img-button\' position=\'' + key + '\'>' +
                                         images.icons['upgrade'].outerHTML +

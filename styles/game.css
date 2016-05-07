@@ -63,7 +63,8 @@ html, body {
         }
         .base-item-act-block{
             padding: 5px;
-            display: inline-block;
+            display: flex;
+            flex-wrap: wrap;
             text-align: center;
         }
         .base-item-content{
