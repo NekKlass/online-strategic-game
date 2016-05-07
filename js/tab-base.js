@@ -21,11 +21,10 @@ tab.base.parse = function(){
         function( key, value ) {
             tab.base.content.prepend(
                 '<div class=\'base-item\'>' +
-                    '<table><tr>' +
-                        '<td class=\'base-item-image\'>' +
+                        '<div class=\'base-item-image\'>' +
                             images.buildings[ value['name'] ].outerHTML +
-                        '</td>' +
-                        '<td class=\'base-item-content\'>' +
+                        '</div>' +
+                        '<div class=\'base-item-content\'>' +
                             '<div class=\'base-item-head\'>' + localization[ value['name'] ] + '</div>' +
                             '<div>' +
                                 '<div class=\'base-item-act-block\'>' +
@@ -35,8 +34,7 @@ tab.base.parse = function(){
                                     '</button>' +
                                 '</div>' +
                             '</div>' +
-                        '</td>' +
-                    '</tr></table>' +
+                        '</div>' +
                 '</div>'
             );
         }
