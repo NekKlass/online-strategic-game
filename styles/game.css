@@ -62,6 +62,7 @@ html, body {
         .base-item-act-block{
             padding: 5px;
             display: inline-block;
+            text-align: center;
         }
         .base-item-content{
             vertical-align: top;
