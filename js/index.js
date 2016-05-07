@@ -31,7 +31,7 @@ $('.modal-close').click(function(event){
 
 //stuff for 'login' form
 $('#login-href').click(function(event){
-    login_modal.parent().show();
+    login_modal.parent().css( 'display', 'flex' );
 });
 
 $('#login-form').submit(function(event){
@@ -55,7 +55,7 @@ $('#login-form').submit(function(event){
 
 //stuff for 'register' form
 $('#register-href').click(function(event){
-    register_modal.parent().show();
+    register_modal.parent().css( 'display', 'flex' );
 });
 
 $('#register-form').submit(function(event){
