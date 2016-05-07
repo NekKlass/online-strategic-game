@@ -59,8 +59,19 @@ html, body {
             border-width: 1px;
             border-radius: 4px;
         }
+        .base-item-act-block{
+            padding: 5px;
+            display: inline-block;
+        }
+        .base-item-content{
+            vertical-align: top;
+        }
         .base-item table {
             width: 100%;
+        }
+        .base-item-head {
+            text-align: center;
+            font-size: 1.3em;
         }
         .base-item-image {
             width: 170px;

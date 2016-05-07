@@ -22,12 +22,16 @@ tab.base.parse = function(){
                         '<td class=\'base-item-image\'>' +
                             images.buildings[ value['name'] ].outerHTML +
                         '</td>' +
-                        '<td>' +
-                            '<div>' + localization[ value['name'] ] + '</div>' +
-                            '<div>Уровень: ' + value['level'] + '</div>' +
-                            '<button type=\'button\' class=\'base-act img-button\' position=\'' + key + '\'>' +
-                                images.icons['upgrade'].outerHTML +
-                            '</button>' +
+                        '<td class=\'base-item-content\'>' +
+                            '<div class=\'base-item-head\'>' + localization[ value['name'] ] + '</div>' +
+                            '<div>' +
+                                '<div class=\'base-item-act-block\'>' +
+                                    '<div>Уровень: ' + value['level'] + '</div>' +
+                                    '<button type=\'button\' class=\'base-act img-button\' position=\'' + key + '\'>' +
+                                        images.icons['upgrade'].outerHTML +
+                                    '</button>' +
+                                '</div>' +
+                            '</div>' +
                         '</td>' +
                     '</tr></table>' +
                 '</div>'
