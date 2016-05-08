@@ -16,3 +16,4 @@ images.icons['refresh'] = imageConstructor( 'icons/refresh.png' );
 images.icons['upgrade'] = imageConstructor( 'icons/upgrade.png' );
 images.icons['build'] = imageConstructor( 'icons/build.png' );
 images.icons['yes'] = imageConstructor( 'icons/yes.png' );
+images.icons['no'] = imageConstructor( 'icons/no.png' );
