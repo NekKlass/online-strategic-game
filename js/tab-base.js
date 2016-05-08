@@ -161,7 +161,7 @@ tab.base.build_dlg = function ( event ) {
             function(){
                 $.post(
                     api_address + 'api.php',
-                    JSON.stringify({ 'action': 'base_base_building', 'name': name }),
+                    JSON.stringify({ 'action': 'base_build_building', 'name': name }),
                     function (data) {
                         alert(data);
                     }
