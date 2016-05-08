@@ -11,6 +11,7 @@ function process_request() {
         //upgrade-price
         $building['upgradable'] = $item['upgradable'];
         if ( $item['upgradable'] == true ) {
+            $building['max-level'] = $item['max-level'];
             for ( $i = 1; $i < $item['max-level']; $i++ ) {
                 $building['upgrade-price'][$i] = $item['upgrade-price']( $i );
             }
