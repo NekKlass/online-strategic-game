@@ -142,7 +142,7 @@ tab.base.build_dlg = function ( event ) {
                         income +
                     '</div>' +
                     '<div class=\'base-build-item-info\'>' +
-                        '<button class=\'img-button base-build-build-img-button\'>' +
+                        '<button class=\'base-build-confirm img-button\' name=\'' + key + '\' class=\'img-button base-build-build-img-button\'>' +
                             images.icons['build'].outerHTML +
                         '</button>' +
                     '</div' +
@@ -150,6 +150,27 @@ tab.base.build_dlg = function ( event ) {
             );
         }
     );
+    $('.base-build-confirm').click(function(event){
+        var target = event.target;
+        if ( target.localName == 'img' ) {
+            var name = $( target.parentNode ).attr('name');
+        } else {
+            var name = $( target ).attr('name');
+        }
+        confirm_dlg.show(
+            function(){
+                $.post(
+                    api_address + 'api.php',
+                    JSON.stringify({ 'action': 'base_base_building', 'name': name }),
+                    function (data) {
+                        alert(data);
+                    }
+                );
+                modal.close();
+            },
+            function(){}
+        );
+    });
     tabs.tabs();
     modal.show();
 }
