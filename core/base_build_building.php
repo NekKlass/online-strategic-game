@@ -1,42 +1,33 @@
 <?php
 
-function process_request() {
+function process_request ( $request ) {
 
-    $x = intval($_POST['x']);
-    $y = intval($_POST['y']);
-    $name = $_POST['what'];
-
-    if ( (empty($name)) || ($name == 'base-empty') ) {
-        echo 'empty';
-        exit;
+    if ( empty($request['name']) ) {
+        return array(
+            'status' => 'array',
+            'statusmessage' => 'noname'
+        );
     }
+    $name = (string)$request['name'];
 
-    require_once('s_update_res.php');
-    require_once('config.php');
+    require_once('utils/s_update_res.php');
+    require_once('config/config.php');
 
     s_update_res( $_SESSION['id'] );
 
     $info = get_config('GM_BUILDINGS');
 
     if ( empty($info[$name]) ) {
-        echo 'unknown';
-        exit;
+        return array(
+            'status' => 'array',
+            'statusmessage' => 'unknown'
+        );
     }
     $info = $info[$name]['build-price'];
 
     $data = db_custom( "SELECT `rescount`, `base` FROM `bases` WHERE `id` = ?", array($_SESSION['id']) );
     $base = json_decode( $data[0]['base'] , true );
     $rescount = json_decode( $data[0]['rescount'] , true );
-
-    if ( ($x > ($base['x'] - 1)) || ($y > ($base['y'] - 1)) || ($x < 0) || ($y < 0) ) {
-        echo 'cord-outbound';
-        exit;
-    }
-
-    if ( $base['map'][$x][$y]['name'] <> 'base-empty') {
-        echo 'already';
-        exit;
-    }
 
     $if_build = true;
     foreach ( $info as $key => $value ) {
@@ -49,15 +40,21 @@ function process_request() {
         foreach ( $info as $key => $value ) {
             $rescount[$key] = $rescount[$key] - $value;
         }
-        $base['map'][$x][$y]['name'] = $name;
-        $base['map'][$x][$y]['level'] = 1;
+        $building['name'] = $name;
+        $building['level'] = 1;
+        array_push( $base, $building );
         db_custom_no_return( "UPDATE `bases` SET `rescount` = ?, `base` = ? WHERE `id` = ?",
             array( json_encode($rescount), json_encode($base), $_SESSION['id'] )
         );
-        echo 'success';
+        return array(
+            'status' => 'success',
+            'statusmessage' => 'success'
+        );
     } else {
-        echo 'not-enough';
-        exit;
+        return array(
+            'status' => 'error',
+            'statusmessage' => 'not-enough'
+        );
     }
 
 
