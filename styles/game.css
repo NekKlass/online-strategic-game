@@ -96,11 +96,14 @@ html, body {
             margin: 0;
             list-style-type: none;
         }
-        .base-build-item {
+        .base-build-item-info {
             display:flex;
         }
-        .base-build-item  .base-build-item-info {
+        .base-build-item  .base-build-item-info-item {
             margin: 10px;
+        }
+        .base-build-build-img-button {
+            margin: auto;
         }
 /* modal stuff */
 .modal-background {

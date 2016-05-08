@@ -122,7 +122,7 @@ tab.base.build_dlg = function ( event ) {
             );
             var income = '';
             if ( value['ifincome'] == true ) {
-                income = '<div class=\'base-build-item-info\'>' +
+                income = '<div class=\'base-build-item-info-item\'>' +
                 '<div>Доход</div>';
                 $.each(
                     value['income'][1],
@@ -130,15 +130,22 @@ tab.base.build_dlg = function ( event ) {
                         income = income + '<div>' + localization[incomeKey] + ': ' + incomeValue + '</div>';
                     }
                 );
-                income = income + '</div';
+                income = income + '</div>';
             }
             tabs.append(
                 '<div id=\'build-tab-' + key + '\' class=\'base-build-item\'>' +
                     '<div class=\'base-build-item-info\'>' +
-                        '<div>Стоимость</div>' +
-                        price +
+                        '<div class=\'base-build-item-info-item\'>' +
+                            '<div>Стоимость</div>' +
+                            price +
+                        '</div>' +
+                        income +
                     '</div>' +
-                    income +
+                    '<div class=\'base-build-item-info\'>' +
+                        '<button class=\'img-button base-build-build-img-button\'>' +
+                            images.icons['build'].outerHTML +
+                        '</button>' +
+                    '</div' +
                 '</div>'
             );
         }
