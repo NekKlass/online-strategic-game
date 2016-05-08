@@ -18,7 +18,7 @@ modal.close = function () {
     modal.block.parents('.modal-background').hide();
 }
 
-$('.modal-close').click(function(event){
+$('#modal-close').click(function(event){
     modal.close();
 });
 
