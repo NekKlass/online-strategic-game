@@ -19,7 +19,7 @@ tab.base.parse = function(){
     $.each(
         tab.base.base,
         function( key, value ) {
-            tab.base.content.prepend(
+            tab.base.content.find('#base-build').before(
                 '<div class=\'base-item\'>' +
                         '<div class=\'base-item-image\'>' +
                             images.buildings[ value['name'] ].outerHTML +
