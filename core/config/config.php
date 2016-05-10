@@ -24,7 +24,7 @@ function get_config( $name ) {
         case 'GM_BUILDINGS':
             //постройки
             return array(
-                'miner-metal' => array (
+                'iron-mine' => array (
                     'build-price' => array(
                         'metal' => 300
                     ),
@@ -42,7 +42,7 @@ function get_config( $name ) {
                         );
                     }
                 ),
-                'miner-food' => array (
+                'food-farm' => array (
                     'build-price' => array(
                         'metal' => 300
                     ),
@@ -60,7 +60,7 @@ function get_config( $name ) {
                         );
                     }
                 ),
-                'miner-water' => array (
+                'water-well' => array (
                     'build-price' => array(
                         'metal' => 300
                     ),
