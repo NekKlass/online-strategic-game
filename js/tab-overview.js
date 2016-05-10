@@ -18,11 +18,11 @@ tab.overview.resources.load = function() {
             //parsing
             var res = JSON.parse(data)['data'];
             //saving
-            tab.overview.resources.metal = res['metal'];
+            tab.overview.resources.iron = res['iron'];
             tab.overview.resources.food = res['food'];
             tab.overview.resources.water = res['water'];
             //displaying
-            tab.overview.content.find('#res-metal').text( tab.overview.resources.metal );
+            tab.overview.content.find('#res-iron').text( tab.overview.resources.iron );
             tab.overview.content.find('#res-food').text( tab.overview.resources.food );
             tab.overview.content.find('#res-water').text( tab.overview.resources.water );
         }
