@@ -7,7 +7,7 @@ function get_config( $name ) {
         //сколько ресурсов дается при регистрации
         case 'GM_DEFAULT_RES':
             return array(
-                'metal' => 1000,
+                'iron' => 1000,
                 'food' => 1000,
                 'water' => 1000
             );
@@ -16,31 +16,31 @@ function get_config( $name ) {
             return array(
                 'iron-mine' => array (
                     'build-price' => array(
-                        'metal' => 300
+                        'iron' => 300
                     ),
                     'upgradable' => true,
                     'max-level' => '15',
                     'upgrade-price' => function ( $level ) {
                         return array(
-                            'metal' => intval( ($level + 1)*100 ),
+                            'iron' => intval( ($level + 1)*100 ),
                         );
                     },
                     'ifincome' => true,
                     'income' => function ( $level, $time ) {
                         return array(
-                            'metal' => $level * $time
+                            'iron' => $level * $time
                         );
                     }
                 ),
                 'food-farm' => array (
                     'build-price' => array(
-                        'metal' => 300
+                        'iron' => 300
                     ),
                     'upgradable' => true,
                     'max-level' => '40',
                     'upgrade-price' => function ( $level ) {
                         return array(
-                            'metal' => intval( ($level + 1)*100 ),
+                            'iron' => intval( ($level + 1)*100 ),
                         );
                     },
                     'ifincome' => true,
@@ -52,13 +52,13 @@ function get_config( $name ) {
                 ),
                 'water-well' => array (
                     'build-price' => array(
-                        'metal' => 300
+                        'iron' => 300
                     ),
                     'upgradable' => true,
                     'max-level' => '40',
                     'upgrade-price' => function ( $level ) {
                         return array(
-                            'metal' => intval( ($level + 1)*100 ),
+                            'iron' => intval( ($level + 1)*100 ),
                         );
                     },
                     'ifincome' => true,
