@@ -4,16 +4,6 @@ function get_config( $name ) {
     switch ( $name ) {
         case 'GM_GAME_NAME':
             return('Strategy game');
-        case 'GM_DEFAULT_BASE':
-            return array(
-                '0' => array('name' => 'base-empty'),
-                '1' => array('name' => 'base-empty'),
-                '2' => array('name' => 'base-empty'),
-                '3' => array('name' => 'base-empty'),
-                '4' => array('name' => 'base-empty'),
-                '5' => array('name' => 'base-empty'),
-                '6' => array('name' => 'base-empty')
-            );
         //сколько ресурсов дается при регистрации
         case 'GM_DEFAULT_RES':
             return array(
