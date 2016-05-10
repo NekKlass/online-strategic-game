@@ -1,8 +1,8 @@
 var localization = {
-    'metal': 'Металл',
+    'iron': 'Железо',
     'food': 'Еда',
     'water': 'Вода',
-    'miner-metal': 'Железная шахта',
-    'miner-food': 'Ферма еды',
-    'miner-water': 'Водонапорная башня'
+    'iron-mine': 'Железная шахта',
+    'food-farm': 'Ферма еды',
+    'water-well': 'Колодец'
 };
