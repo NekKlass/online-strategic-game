@@ -66,8 +66,8 @@ function process_request ( $request ) {
         );
         require('utils/s_gen_base_cord.php');
         $cord = s_gen_base_cord();
-        db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `rescount`, `res_update_time`) VALUES ( ?, ?, ?, ?, ? )",
-            array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_config('GM_DEFAULT_RES')), $_SERVER['REQUEST_TIME'] )
+        db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `rescount`, `base`, `res_update_time`) VALUES ( ?, ?, ?, ?, ?, ? )",
+            array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_config('GM_DEFAULT_RES')), array() , $_SERVER['REQUEST_TIME'] )
         );
         //reporting success
         return array(
