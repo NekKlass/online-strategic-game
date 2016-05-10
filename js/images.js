@@ -7,9 +7,9 @@ var imageConstructor = function( path ){
 }
 
 images.buildings = {};
-images.buildings['miner-metal'] = imageConstructor( 'buildings/miner-metal.png' );
-images.buildings['miner-food'] = imageConstructor( 'buildings/miner-food.png' );
-images.buildings['miner-water'] = imageConstructor( 'buildings/miner-water.png' );
+images.buildings['iron-mine'] = imageConstructor( 'buildings/iron-mine.png' );
+images.buildings['food-farm'] = imageConstructor( 'buildings/food-farm.png' );
+images.buildings['water-well'] = imageConstructor( 'buildings/water-well.png' );
 
 images.icons = {};
 images.icons['refresh'] = imageConstructor( 'icons/refresh.png' );
