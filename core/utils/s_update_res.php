@@ -2,7 +2,7 @@
 
 function s_update_res ( $id ) {
 
-    require_once('core/config/config.php');
+    require_once('core/config.php');
     require_once('db.php');
 
     $data = db_custom("SELECT `rescount`, `res_update_time`, `base` FROM `bases` WHERE `id` = ?", array($id) );

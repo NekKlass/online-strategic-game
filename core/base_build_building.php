@@ -11,7 +11,7 @@ function process_request ( $request ) {
     $name = (string)$request['name'];
 
     require_once('utils/s_update_res.php');
-    require_once('config/config.php');
+    require_once('config.php');
 
     s_update_res( $_SESSION['id'] );
 

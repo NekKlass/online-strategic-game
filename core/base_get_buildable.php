@@ -1,7 +1,7 @@
 <?php
 
 function process_request() {
-    require_once('config/config.php');
+    require_once('config.php');
 
     $buidable = get_config('GM_BUILDINGS', true);
 

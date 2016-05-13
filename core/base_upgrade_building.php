@@ -25,7 +25,7 @@ function process_request ($request) {
         );
     }
 
-    require('config/config.php');
+    require('config.php');
     $name = $base[$position]['name'];
     $level = $base[$position]['level'];
     $upgrade_info = get_config( 'GM_BUILDINGS' )[$name];
