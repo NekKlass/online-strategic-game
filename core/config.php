@@ -1,6 +1,6 @@
 <?php
 
-function get_config( $name ) {
+function get_config( $name, $par = null ) {
     switch ( $name ) {
         case 'GM_GAME_NAME':
             return('Strategy game');
@@ -69,6 +69,9 @@ function get_config( $name ) {
                     }
                 )
             );
+        case 'api_file':
+            require_once( 'config/api_files.php' );
+            return get_api_file( $par );
     }
 }
 
