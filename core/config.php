@@ -14,6 +14,9 @@ function get_config( $name, $par = null ) {
         case 'db':
             require_once( 'utils/db.php' );
             return true;
+        case 'res_update':
+            require_once( 'utils/s_update_res.php' );
+            return true;
         case 'db_config':
             require_once('config/db_config.php');
             return get_db_conf();
