@@ -2,8 +2,6 @@
 
 function get_stuff( $name, $par = null ) {
     switch ( $name ) {
-        case 'GM_GAME_NAME':
-            return('Strategy game');
         //сколько ресурсов дается при регистрации
         case 'GM_DEFAULT_RES':
             return array(
