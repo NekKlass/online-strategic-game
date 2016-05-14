@@ -3,8 +3,7 @@
 //send request to db and get reponse
 function db_custom ( $querry, $parametres ) {
 
-    require_once('core/config/db_config.php');
-    $config = get_db_conf();
+    $config = get_config( 'db_config' );
 
     $pdo = new PDO( $config['adress'], $config['user'], $config['pass'], $config['options'] );
     $data = $pdo -> prepare( $querry );
@@ -17,8 +16,7 @@ function db_custom ( $querry, $parametres ) {
 //send request to db and do not get response
 function db_custom_no_return ( $querry, $parametres ) {
 
-    require_once('core/config/db_config.php');
-    $config = get_db_conf();
+    $config = get_config( 'db_config' );
 
     $pdo = new PDO( $config['adress'], $config['user'], $config['pass'], $config['options'] );
     $data = $pdo -> prepare( $querry );

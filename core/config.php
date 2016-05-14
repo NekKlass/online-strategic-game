@@ -11,6 +11,9 @@ function get_config( $name, $par = null ) {
                 'food' => 1000,
                 'water' => 1000
             );
+        case 'db_config':
+            require_once('config/db_config.php');
+            return get_db_conf();
         case 'GM_BUILDINGS':
             //постройки
             return array(
