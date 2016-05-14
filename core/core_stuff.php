@@ -21,6 +21,9 @@ function get_stuff( $name, $par = null ) {
         case 'GM_BUILDINGS':
             require_once( 'config/buildings.php' );
             return get_buildings();
+        case 'tech_tree':
+            require_once ( 'config/tech_tree.php' );
+            return get_tech_tree();
         case 'api_file':
             require_once( 'config/api_files.php' );
             return get_api_file( $par );

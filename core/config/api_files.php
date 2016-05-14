@@ -47,6 +47,10 @@ function get_api_file( $action ) {
                 return( 'core/get_map.php' );
                 break;
         //---------------------------
+            case 'tech_tree_get':
+                return( 'core/tech_tree_get.php' );
+                break;
+        //---------------------------
             default:
                 return( '~~unknown~~' );
                 break;
