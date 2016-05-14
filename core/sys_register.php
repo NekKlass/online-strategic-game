@@ -50,8 +50,7 @@ function process_request ( $request ) {
         );
     }
 
-    require('config.php');
-    require('utils/db.php');
+    get_config( 'db' );
 
     if (empty( db_custom("SELECT `id` FROM `users` WHERE `uname` LIKE ?",array($request['uname'])) )){
         $uname = trim($request['uname']);

@@ -12,7 +12,7 @@ function process_request ( $request ) {
     $uname = urldecode( $request['uname'] );
     $upass = urldecode( $request['upass'] );
 
-    require('utils/db.php');
+    get_config( 'db' );
 
     $login_data = db_custom( "SELECT `upass`, `uname`, `id` FROM `users` WHERE `uname` LIKE ? LIMIT 1 ",
         array($uname)

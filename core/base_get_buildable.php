@@ -1,9 +1,8 @@
 <?php
 
 function process_request() {
-    require_once('config.php');
 
-    $buidable = get_config('GM_BUILDINGS', true);
+    $buidable = get_config( 'GM_BUILDINGS' );
 
     foreach ( $buidable as $name => $item ) {
         //build-price

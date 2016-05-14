@@ -11,7 +11,7 @@ function process_request ($request) {
 
     $position = intval($request['position']);
 
-    require('utils/db.php');
+    get_config( 'db' );
     $data = db_custom( 'SELECT `rescount`, `base` FROM `bases` WHERE `id` = ?', array($_SESSION['id']) );
     $data = $data['0'];
 

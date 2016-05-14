@@ -1,7 +1,7 @@
 <?php
 
 function process_request () {
-    require_once('utils/db.php');
+    get_config( 'db' );
     $data = db_custom( "SELECT `base` FROM `bases` WHERE `id` = ?", array($_SESSION['id']) );
     return array(
         'status' => 'success',

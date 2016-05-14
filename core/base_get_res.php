@@ -2,7 +2,7 @@
 
 function process_request () {
 
-    require_once('utils/s_update_res.php');
+    get_config( 'res_update' );
     $res = s_update_res( $_SESSION['id'] );
 
     return array(

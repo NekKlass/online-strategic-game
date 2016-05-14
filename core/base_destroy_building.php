@@ -10,7 +10,7 @@ function process_request() {
     $x = intval($_POST['x']);
     $y = intval($_POST['y']);
 
-    require_once('config.php');
+    get_config( 'db.php' );
     $data = db_custom( "SELECT `base` FROM `bases` WHERE `id` = ?", array($_SESSION['id']) );
     $base = json_decode( $data[0]['base'], true );
 

@@ -10,8 +10,7 @@ function process_request ( $request ) {
     }
     $name = (string)$request['name'];
 
-    require_once('utils/s_update_res.php');
-    require_once('config.php');
+    get_config( 'res_update' );
 
     s_update_res( $_SESSION['id'] );
 
