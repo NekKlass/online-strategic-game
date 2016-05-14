@@ -21,6 +21,7 @@ $('#tabs').tabs({
 
 tab.overview.load();
 tab.base.load();
+tab.tech.load();
 resize();
 update_buildable();
 

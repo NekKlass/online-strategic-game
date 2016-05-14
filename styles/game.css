@@ -105,9 +105,14 @@ html, body {
         .base-build-build-img-button {
             margin: auto;
         }
+    /* tab tech */
+        #tab-tech {
+            overflow-y: auto;
+            overflow-y: auto;
+        }
 /* modal stuff */
     /* background */
-    .modal-background {
+        .modal-background {
         display: none;
         position: fixed;
         z-index: 1;
