@@ -2,7 +2,7 @@
 
 function process_request() {
 
-    $buidable = get_config( 'GM_BUILDINGS' );
+    $buidable = get_stuff( 'GM_BUILDINGS' );
 
     foreach ( $buidable as $name => $item ) {
         //build-price

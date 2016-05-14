@@ -10,11 +10,11 @@ function process_request ( $request ) {
     }
     $name = (string)$request['name'];
 
-    get_config( 'res_update' );
+    get_stuff( 'res_update' );
 
     s_update_res( $_SESSION['id'] );
 
-    $info = get_config('GM_BUILDINGS');
+    $info = get_stuff('GM_BUILDINGS');
 
     if ( empty($info[$name]) ) {
         return array(

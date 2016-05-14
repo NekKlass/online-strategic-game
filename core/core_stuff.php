@@ -1,6 +1,6 @@
 <?php
 
-function get_config( $name, $par = null ) {
+function get_stuff( $name, $par = null ) {
     switch ( $name ) {
         case 'GM_GAME_NAME':
             return('Strategy game');

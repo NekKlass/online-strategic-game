@@ -2,10 +2,10 @@
 
 function s_update_res ( $id ) {
 
-    get_config( 'db' );
+    get_stuff( 'db' );
 
     $data = db_custom("SELECT `rescount`, `res_update_time`, `base` FROM `bases` WHERE `id` = ?", array($id) );
-    $buildings = get_config('GM_BUILDINGS');
+    $buildings = get_stuff('GM_BUILDINGS');
 
     $base = json_decode($data[0]['base'], true);
     $res = json_decode($data[0]['rescount'], true);

@@ -2,7 +2,7 @@
 
 function process_request () {
 
-    get_config( 'res_update' );
+    get_stuff( 'res_update' );
     $res = s_update_res( $_SESSION['id'] );
 
     return array(

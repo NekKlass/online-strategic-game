@@ -70,8 +70,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     }
 
     //performing action
-    require( $core_path . 'core/config.php' );
-    $file = get_config( 'api_file', $request['action'] );
+    require( $core_path . 'core/core_stuff.php' );
+    $file = get_stuff( 'api_file', $request['action'] );
 
     if ( $file == '~~unknown~~' ) {
         echo json_encode(array(

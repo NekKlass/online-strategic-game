@@ -11,7 +11,7 @@ function process_request ($request) {
 
     $position = intval($request['position']);
 
-    get_config( 'db' );
+    get_stuff( 'db' );
     $data = db_custom( 'SELECT `rescount`, `base` FROM `bases` WHERE `id` = ?', array($_SESSION['id']) );
     $data = $data['0'];
 
@@ -28,7 +28,7 @@ function process_request ($request) {
     require('config.php');
     $name = $base[$position]['name'];
     $level = $base[$position]['level'];
-    $upgrade_info = get_config( 'GM_BUILDINGS' )[$name];
+    $upgrade_info = get_stuff( 'GM_BUILDINGS' )[$name];
     $price = $upgrade_info['upgrade-price']($level);
 
     if ( $upgrade_info['upgradable'] == false ) {

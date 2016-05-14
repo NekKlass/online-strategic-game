@@ -50,7 +50,7 @@ function process_request ( $request ) {
         );
     }
 
-    get_config( 'db' );
+    get_stuff( 'db' );
 
     if (empty( db_custom("SELECT `id` FROM `users` WHERE `uname` LIKE ?",array($request['uname'])) )){
         $uname = trim($request['uname']);
@@ -66,7 +66,7 @@ function process_request ( $request ) {
         require('utils/s_gen_base_cord.php');
         $cord = s_gen_base_cord();
         db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `rescount`, `base`, `res_update_time`) VALUES ( ?, ?, ?, ?, ?, ? )",
-            array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_config('GM_DEFAULT_RES')), array() , $_SERVER['REQUEST_TIME'] )
+            array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_stuff('GM_DEFAULT_RES')), array() , $_SERVER['REQUEST_TIME'] )
         );
         //reporting success
         return array(
