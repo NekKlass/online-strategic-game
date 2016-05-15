@@ -12,6 +12,9 @@ function get_stuff( $name, $par = null ) {
         case 'db':
             require_once( 'utils/db.php' );
             return true;
+        case 'get_localization':
+            require_once( 'config/get_localization.php' );
+            return get_localization();
         case 'res_update':
             require_once( 'utils/s_update_res.php' );
             return true;

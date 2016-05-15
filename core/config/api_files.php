@@ -19,6 +19,10 @@ function get_api_file( $action ) {
                 return( 'core/sys_get_login.php' );
                 break;
         //---------------------------
+            case 'sys_get_localization':
+                return( 'core/sys_get_localization.php' );
+                break;
+        //---------------------------
             case 'base_get':
                 return( 'core/base_get.php' );
                 break;
