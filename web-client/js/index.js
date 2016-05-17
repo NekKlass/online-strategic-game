@@ -1,4 +1,3 @@
-var api_address = 'http://localhost/online-strategic-game-api/';
 var login_modal = $('#login-modal');
 var register_modal = $('#register-modal');
 var exit_confitm = $('#exit-confirm');
