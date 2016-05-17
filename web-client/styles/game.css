@@ -48,6 +48,9 @@ html, body {
             background-color: transparent;
             outline-width: 0;
         }
+        #tab-tech {
+            padding: 0;
+        }
     /* tab overview */
     /* tab base */
         .base-item {
