@@ -64,13 +64,13 @@ html, body {
             border-width: 1px;
             border-radius: 4px;
         }
-        .base-item-act-block{
+        .base-item-act-block {
             padding: 5px;
             display: flex;
             flex-wrap: wrap;
             text-align: center;
         }
-        .base-item-content{
+        .base-item-content {
             flex-grow: 1;
             vertical-align: top;
         }
