@@ -48,9 +48,6 @@ html, body {
             background-color: transparent;
             outline-width: 0;
         }
-        #tab-tech {
-            padding: 0;
-        }
     /* tab overview */
     /* tab base */
         .base-item {
@@ -110,8 +107,17 @@ html, body {
         }
     /* tab tech */
         #tab-tech {
+            padding: 0;
+        }
+        #tab-tech-content {
             overflow-y: auto;
             overflow-y: auto;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .tab-tech-tree-item {
+            position: absolute;
         }
 /* modal stuff */
     /* background */
