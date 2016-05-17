@@ -3,17 +3,23 @@
 function get_tech_tree(){
     return array(
     
-        '0' => array(
+        array(
+            'tier' => 0,
+            'branch' => 0,
             'require' => array(),
             'unlock' => false
         ),
         
-        '1a' => array(
+        array(
+            'tier' => 1,
+            'branch' => 0,
             'require' => array( '0a' ),
             'unlock' => false
         ),
         
-        '1b' => array(
+        array(
+            'tier' => 1,
+            'branch' => 1,
             'require' => array( '0a' ),
             'unlock' => true
         )
