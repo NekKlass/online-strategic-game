@@ -34,7 +34,7 @@ tab.tech.draw = function () {
                 function ( key, value ) {
                     tab.tech.content.append(
                         '<div class=\'tab-tech-tree-item tab-tech-tree-' + tierKey + ' tab-tech-tree-' + tierKey + '-' + key + '\'>' +
-                            tierKey + '@' + value.branch +
+                            '<img width=\'50\' height=\'50\' src=\'' + resources_address +'tech/' + tierKey + '-' + key + '.png\'>' +
                         '</div>'
                     );
                     $('.tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
