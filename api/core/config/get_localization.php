@@ -32,6 +32,15 @@ function get_localization () {
         '1-0-description' => array(
             'ru' => 'Маленькая яма для добычи всего подряд.',
             'en' => 'Little pit for collecting everything.'
+        ),
+        //--------------------
+        '1-1-name' => array(
+            'ru' => 'Инструменты',
+            'en' => 'instruments'
+        ),
+        '1-1-description' => array(
+            'ru' => 'Инструменты - самая великая технология.',
+            'en' => 'Instrumants are the gratest technology.'
         )
     );
 }
