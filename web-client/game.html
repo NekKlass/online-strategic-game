@@ -10,18 +10,18 @@
         <div id='tabs'>
 
             <ul id='tab-control'>
-                <li><a href='#tab-overview'>Основное</a></li>
-                <li><a href='#tab-base'>База</a></li>
-                <li><a href='#tab-global'>Карта</a></li>
-                <li><a href='#tab-tech'>Исследования</a></li>
-                <li><a href='#tab-settings'>Настройки</a></li>
+                <li><a href='#tab-overview'><span locale-name='client-tab-overview' locale-uppercase='true'></span></a></li>
+                <li><a href='#tab-base'><span locale-name='client-tab-base' locale-uppercase='true'></span></a></li>
+                <li><a href='#tab-global'><span locale-name='client-tab-global' locale-uppercase='true'></span></a></li>
+                <li><a href='#tab-tech'><span locale-name='client-tab-tech' locale-uppercase='true'></span></a></li>
+                <li><a href='#tab-settings'><span locale-name='client-tab-settings' locale-uppercase='true'></span></a></li>
             </ul>
 
             <div id='tab-overview' class='tab'>
                 <div id='res'>
-                    <div>Железо: <span id='res-iron'></span></div>
-                    <div>Еда: <span id='res-food'></span></div>
-                    <div>Вода: <span id='res-water'></span></div>
+                    <div><span locale-name='metal' locale-uppercase='true'></span>: <span id='res-iron'></span></div>
+                    <div><span locale-name='food' locale-uppercase='true'></span>: <span id='res-food'></span></div>
+                    <div><span locale-name='water' locale-uppercase='true'></span>: <span id='res-water'></span></div>
                     <button id='tab-overview-res-update' class='img-button'></button>
                 </div>
             </div>
@@ -45,6 +45,13 @@
             </div>
 
             <div id='tab-settings' class='tab'>
+                <div>
+                    <div>Изменить язык</div>
+                    <select id='tab-settings-lang-selector'>
+                        <option value='ru'>Русский</option>
+                        <option value='en'>English</option>
+                    </select>
+                </div>
             </div>
 
         </div>
@@ -95,6 +102,8 @@
         <script src='js/tab-base.js'></script>
         <script src='js/tab-tech.js'></script>
         <script src='js/tab-settings.js'></script>
+
+        <script src='js/localization.js'></script>
 
         <script src='js/game.js'></script>
 
