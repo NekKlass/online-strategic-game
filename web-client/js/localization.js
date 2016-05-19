@@ -21,3 +21,7 @@ localization['client-tab-settings'] = {
     'ru': 'Настройки',
     'en': 'settings'
 }
+localization['client-change-language'] = {
+    'ru': 'Изменить язык',
+    'en': 'Change language'
+}
