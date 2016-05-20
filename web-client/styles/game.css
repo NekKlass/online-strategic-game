@@ -118,6 +118,13 @@ html, body {
         }
         .tab-tech-tree-item {
             position: absolute;
+            display: flex;
+        }
+        .tab-tech-tree-item-name {
+            display: flex;
+        }
+        .tab-tech-tree-item-name span {
+            margin: auto 0;
         }
     /* tab settings */
 /* modal stuff */

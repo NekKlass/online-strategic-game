@@ -34,14 +34,16 @@ tab.tech.draw = function () {
                 function ( key, value ) {
                     tab.tech.content.append(
                         '<div class=\'tab-tech-tree-item tab-tech-tree-' + tierKey + ' tab-tech-tree-' + tierKey + '-' + key + '\'>' +
-                            '<img width=\'50\' height=\'50\' src=\'' + resources_address +'tech/' + tierKey + '-' + key + '.png\'>' +
+                            '<div><img width=\'50\' height=\'50\' src=\'' + resources_address +'tech/' + tierKey + '-' + key + '.png\'></div>' +
+                            '<div class=\'tab-tech-tree-item-name\'><span locale-name=\'tech-' + tierKey + '-' + key + '-name\' locale-uppercase=\'true\'></span></div>' +
                         '</div>'
                     );
                     $('.tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
                 }
             );
-            $('.tab-tech-tree-' + tierKey).css( 'left', tierKey*100 + 25 );
+            $('.tab-tech-tree-' + tierKey).css( 'left', tierKey*200 + 25 );
         }
     );
+    tab.settings.translate();
 }
 
