@@ -2,6 +2,7 @@ tab.tech = {};
 
 tab.tech.parsedTree = {};
 tab.tech.content = $('#tab-tech-content');
+tab.tech.linesDrawn = false;
 
 tab.tech.load = function(){
     $.post(
@@ -22,7 +23,7 @@ tab.tech.draw = function () {
             if (typeof tab.tech.parsedTree[ value.tier ] == 'undefined') {
                 tab.tech.parsedTree[ value.tier ] = [];
             }
-            tab.tech.parsedTree[ value.tier ][ value.branch ] = value; 
+            tab.tech.parsedTree[ value.tier ][ value.branch ] = value;
         }
     );
     //drawing
@@ -41,9 +42,41 @@ tab.tech.draw = function () {
                     tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
                 }
             );
-            tab.tech.content.find('.tab-tech-tree-' + tierKey).css( 'left', tierKey*250 + 25 );
+            tab.tech.content.find('.tab-tech-tree-' + tierKey).css( 'left', tierKey*270 + 25 );
         }
     );
     tab.settings.translate();
+}
+
+tab.tech.drawLines = function ( ) {
+    if ( tab.tech.linesDrawn == false ) {
+        $.each(
+            tab.tech.parsedTree,
+            function ( tierKey, tierValue ) {
+                $.each(
+                    tierValue,
+                    function ( itemKey, itemValue ) {
+                        if ( itemValue.require.length > 0 ) {
+                            $.each(
+                                itemValue.require,
+                                function ( key, value ) {
+                                    var elem = tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + itemKey);
+                                    var elemTo = tab.tech.content.find('#tab-tech-tree-' + key + '-' + value);
+                                    tab.tech.content.line(
+                                        elem.position()['left'] + 1,
+                                        elem.position()['top'] + elem.height()/2 + 1,
+                                        elemTo.position()['left'] + elemTo.width(),
+                                        elemTo.position()['top'] + elemTo.height()/2,
+                                        { 'stroke': 2 }
+                                    );
+                                }
+                            );
+                        }
+                    }
+                );
+            }
+        );
+        tab.tech.linesDrawn = true;
+    }
 }
 

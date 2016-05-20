@@ -14,7 +14,12 @@ $('#tabs').tabs({
         'effect': 'slide',
         'duration': 200
     },
-    'active': 0
+    'active': 0,
+    'activate': function( event, ui){
+        if ( ui.newPanel.attr('id') == tab.tech.content.parent().attr('id') ) {
+            tab.tech.drawLines();
+        }
+    }
 });
 
 $.post(
