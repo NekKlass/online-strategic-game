@@ -41,7 +41,7 @@ tab.tech.draw = function () {
                     $('.tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
                 }
             );
-            $('.tab-tech-tree-' + tierKey).css( 'left', tierKey*200 + 25 );
+            $('.tab-tech-tree-' + tierKey).css( 'left', tierKey*250 + 25 );
         }
     );
     tab.settings.translate();

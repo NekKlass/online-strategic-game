@@ -130,6 +130,8 @@ html, body {
         }
         .tab-tech-tree-item-name span {
             margin: auto 0;
+            width: 150px;
+            text-align: center;
         }
     /* tab settings */
 /* modal stuff */
