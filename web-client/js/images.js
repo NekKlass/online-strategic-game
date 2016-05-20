@@ -6,11 +6,6 @@ var imageConstructor = function( path ){
     return image;
 }
 
-images.buildings = {};
-images.buildings['iron-mine'] = imageConstructor( 'buildings/iron-mine.png' );
-images.buildings['food-farm'] = imageConstructor( 'buildings/food-farm.png' );
-images.buildings['water-well'] = imageConstructor( 'buildings/water-well.png' );
-
 images.icons = {};
 images.icons['refresh'] = imageConstructor( 'icons/refresh.png' );
 images.icons['upgrade'] = imageConstructor( 'icons/upgrade.png' );
