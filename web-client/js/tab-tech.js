@@ -33,15 +33,15 @@ tab.tech.draw = function () {
                 tierValue,
                 function ( key, value ) {
                     tab.tech.content.append(
-                        '<div class=\'tab-tech-tree-item tab-tech-tree-' + tierKey + ' tab-tech-tree-' + tierKey + '-' + key + '\'>' +
+                        '<div class=\'tab-tech-tree-item tab-tech-tree-' + tierKey + '\' id=\'tab-tech-tree-' + tierKey + '-' + key + '\'>' +
                             '<div><img class=\'tab-tech-tree-item-img\' src=\'' + resources_address +'tech/' + tierKey + '-' + key + '.png\'></div>' +
                             '<div class=\'tab-tech-tree-item-name\'><span locale-name=\'tech-' + tierKey + '-' + key + '-name\' locale-uppercase=\'true\'></span></div>' +
                         '</div>'
                     );
-                    $('.tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
+                    tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
                 }
             );
-            $('.tab-tech-tree-' + tierKey).css( 'left', tierKey*250 + 25 );
+            tab.tech.content.find('.tab-tech-tree-' + tierKey).css( 'left', tierKey*250 + 25 );
         }
     );
     tab.settings.translate();
