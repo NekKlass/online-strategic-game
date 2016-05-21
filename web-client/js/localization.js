@@ -25,3 +25,7 @@ localization['client-change-language'] = {
     'ru': 'Изменить язык',
     'en': 'Change language'
 }
+localization['client-tech-learn'] = {
+    'ru': 'Изучить',
+    'en': 'Learn'
+}

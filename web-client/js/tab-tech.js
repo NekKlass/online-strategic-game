@@ -40,6 +40,11 @@ tab.tech.draw = function () {
                         '</div>'
                     );
                     tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
+                    tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + key).click(
+                        function ( event ) {
+                            tab.tech.explore(value);
+                        }
+                    );
                 }
             );
             tab.tech.content.find('.tab-tech-tree-' + tierKey).css( 'left', tierKey*270 + 25 );
@@ -78,5 +83,21 @@ tab.tech.drawLines = function ( ) {
         );
         tab.tech.linesDrawn = true;
     }
+}
+
+tab.tech.explore = function ( tech ) {
+    modal.prepare();
+    modal.title.html('<span locale-name=\'client-tech-learn\' locale-uppercase=\'true\'></span>');
+    modal.content.append(
+        '<div class=\'tab-tech-modal-wrap\'>' +
+            '<div><img src=\'' + resources_address +'tech/' + tech.tier + '-' + tech.branch + '.png\'></div>' +
+            '<div>' +
+                '<div><span locale-name=\'tech-' + tech.tier + '-' + tech.branch + '-name\' locale-uppercase=\'true\'></span></div>' +
+                '<div><span locale-name=\'tech-' + tech.tier + '-' + tech.branch + '-description\' locale-uppercase=\'true\'></span></div>' +
+            '</div>' +
+        '</div>'
+    );
+    tab.settings.translate();
+    modal.show();
 }
 
