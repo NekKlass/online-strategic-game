@@ -2,9 +2,9 @@ tab.overview = {};
 
 tab.overview.content = $('#tab-overview');
 tab.overview.load = function () {
-    tab.overview.resources.load(api_address);
+    tab.overview.resources.load();
     $('#tab-overview-res-update').click(function(event){
-        tab.overview.resources.load(api_address)
+        tab.overview.resources.load()
     });
     $('#tab-overview-res-update').html( images.icons['refresh'].outerHTML );
 }
