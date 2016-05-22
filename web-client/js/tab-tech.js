@@ -128,6 +128,26 @@ tab.tech.explore = function ( tech ) {
             '<div><span locale-name=\'client-tech-learned-already\' locale-uppercase=\'true\'></span></div>'
         );
     }
+    modal.content.find('.img-button').click(function ( event ){
+        confirm_dlg.show(
+            function(){
+                $.post(
+                    api_address + 'api.php',
+                    JSON.stringify({ 'action': 'tech_learn', 'tier': tech.tier, 'branch': tech.branch }),
+                    function (data) {
+                        if ( JSON.parse(data)['status'] == 'success' ) {
+                            tab.tech.content.empty();
+                            tab.tech.draw();
+                            tab.tech.linesDrawn = false;
+                            tab.tech.drawLines();
+                        }
+                    }
+                );
+                modal.close();
+            },
+            function(){}
+        );
+    });
     tab.settings.translate();
     modal.show();
 }
