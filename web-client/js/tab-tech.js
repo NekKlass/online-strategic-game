@@ -90,7 +90,7 @@ tab.tech.explore = function ( tech ) {
     modal.title.html('<span locale-name=\'client-tech-learn\' locale-uppercase=\'true\'></span>');
     modal.content.append(
         '<div class=\'tab-tech-modal-wrap\'>' +
-            '<div><img src=\'' + resources_address +'tech/' + tech.tier + '-' + tech.branch + '.png\'></div>' +
+            '<div class=\'tab-tech-modal-img\'><img src=\'' + resources_address +'tech/' + tech.tier + '-' + tech.branch + '.png\'></div>' +
             '<div>' +
                 '<div><span locale-name=\'tech-' + tech.tier + '-' + tech.branch + '-name\' locale-uppercase=\'true\'></span></div>' +
                 '<div><span locale-name=\'tech-' + tech.tier + '-' + tech.branch + '-description\' locale-uppercase=\'true\'></span></div>' +
