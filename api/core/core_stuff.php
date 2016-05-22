@@ -7,7 +7,8 @@ function get_stuff( $name, $par = null ) {
             return array(
                 'iron' => 1000,
                 'food' => 1000,
-                'water' => 1000
+                'water' => 1000,
+                'wood' => 1000
             );
         case 'db':
             require_once( 'utils/db.php' );

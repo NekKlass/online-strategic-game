@@ -15,6 +15,10 @@ function get_localization () {
             'ru' => 'вода',
             'en' => 'water'
         ),
+        'wood' => array(
+            'ru' => 'дерево',
+            'en' => 'wood',
+        ),
     //tech
         'tech-0-0-name' => array(
             'ru' => 'Бумага для чертежей',
