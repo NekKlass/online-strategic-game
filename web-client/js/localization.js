@@ -29,3 +29,7 @@ localization['client-tech-learn'] = {
     'ru': 'Изучить',
     'en': 'Learn'
 }
+localization['client-tech-learned-already'] = {
+    'ru': 'Уже изучено!',
+    'en': 'Already learned'
+}

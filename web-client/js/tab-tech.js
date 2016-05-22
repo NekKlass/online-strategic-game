@@ -114,6 +114,20 @@ tab.tech.explore = function ( tech ) {
             '</div>' +
         '</div>'
     );
+    if ( (tab.tech.learned[tech.tier] == undefined) ) {
+        tab.tech.learned[tech.tier] = {};
+    }
+    if ( (tab.tech.learned[tech.tier][tech.branch] == undefined) ) {
+        tab.tech.learned[tech.tier][tech.branch] = {};
+    }
+    if ( (tab.tech.learned[tech.tier][tech.branch].learned == undefined) ) {
+        tab.tech.learned[tech.tier][tech.branch].learned = false;
+    }
+    if ( Boolean(tab.tech.learned[tech.tier][tech.branch].learned) == true ) {
+        modal.content.find('.tab-tech-modal-learn-wrap').html(
+            '<div><span locale-name=\'client-tech-learned-already\' locale-uppercase=\'true\'></span></div>'
+        );
+    }
     tab.settings.translate();
     modal.show();
 }
