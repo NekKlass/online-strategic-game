@@ -1,6 +1,5 @@
 tab.tech = {};
 
-tab.tech.parsedTree = {};
 tab.tech.content = $('#tab-tech-content');
 tab.tech.linesDrawn = false;
 
@@ -16,19 +15,9 @@ tab.tech.load = function(){
 };
 
 tab.tech.draw = function () {
-    //parsing
-    $.each(
-        tab.tech.tree,
-        function ( key, value ) {
-            if (typeof tab.tech.parsedTree[ value.tier ] == 'undefined') {
-                tab.tech.parsedTree[ value.tier ] = [];
-            }
-            tab.tech.parsedTree[ value.tier ][ value.branch ] = value;
-        }
-    );
     //drawing
     $.each(
-        tab.tech.parsedTree,
+        tab.tech.tree,
         function ( tierKey, tierValue ) {
             $.each(
                 tierValue,
@@ -40,6 +29,8 @@ tab.tech.draw = function () {
                         '</div>'
                     );
                     tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + key).css( 'top', key*100 + 25 );
+                    tab.tech.tree[tierKey][key].tier = tierKey;
+                    tab.tech.tree[tierKey][key].branch = key;
                     tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + key).click(
                         function ( event ) {
                             tab.tech.explore(value);
@@ -56,7 +47,7 @@ tab.tech.draw = function () {
 tab.tech.drawLines = function ( ) {
     if ( tab.tech.linesDrawn == false ) {
         $.each(
-            tab.tech.parsedTree,
+            tab.tech.tree,
             function ( tierKey, tierValue ) {
                 $.each(
                     tierValue,
