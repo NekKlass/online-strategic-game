@@ -21,7 +21,7 @@ function get_localization () {
             'en' => 'blueprint'
         ),
         'tech-0-0-description' => array(
-            'ru' => 'Наука всегда была такой-же синей, как и бумага, но которой она развивалась.',
+            'ru' => 'Наука всегда была такой-же синей, как и бумага, на которой она развивалась.',
             'en' => 'Science was always blue like paper,on which it was developing.'
         ),
         //--------------------
