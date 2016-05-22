@@ -19,7 +19,7 @@ function get_stuff( $name, $par = null ) {
             require_once( 'utils/s_update_res.php' );
             return true;
         case 'db_config':
-            require_once('config/db_config.php');
+            require_once( 'config/db_config.php' );
             return get_db_conf();
         case 'GM_BUILDINGS':
             require_once( 'config/buildings.php' );
