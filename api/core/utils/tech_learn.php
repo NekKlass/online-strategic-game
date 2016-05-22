@@ -1,12 +1,14 @@
 <?php
 function tech_learn( $par ) {
     //if all required techs learned
-    foreach ( $par['require'] as $key => $value ) {
-        if ( empty($par['tree'][$key][$value]) ) {
-            return array(
-                'status' => 'error',
-                'statusmessage' => 'not all required tech learned'
-            );
+    foreach ( $par['require'] as $tier_key => $tier_value ) {
+        foreach ( $tier_value as $branch_key => $branch_value ) {
+            if ( empty($par['tree'][$tier_key][$branch_value]) ) {
+                return array(
+                    'status' => 'error',
+                    'statusmessage' => 'not all required tech learned'
+                );
+            }
         }
     }
     //if enough resources
