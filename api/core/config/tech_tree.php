@@ -5,25 +5,29 @@ function get_tech_tree(){
 
         0 => array(
             0 => array(
-                'tier' => 0,
-                'branch' => 0,
-                'require' => array()
+                'require' => array(),
+                'price' => array(
+                    'wood' => 50
+                )
             )
         ),
 
         1 => array(
             0 => array(
-                'tier' => 1,
-                'branch' => 0,
                 'require' => array(
                     array( '0' => '0' )
+                ),
+                'price' => array(
+                    'wood' => 5
                 )
             ),
             1 => array(
-                'tier' => 1,
-                'branch' => 1,
                 'require' => array(
                     array( '0' => '0' )
+                ),
+                'price' => array(
+                    'wood' => 100,
+                    'iron' => 50
                 )
             )
         )
