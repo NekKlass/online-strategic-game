@@ -3,9 +3,9 @@
 function get_localization () {
     return array(
     //resources
-        'metal' => array(
-            'ru' => 'металл',
-            'en' => 'metal'
+        'iron' => array(
+            'ru' => 'железо',
+            'en' => 'iron'
         ),
         'food' => array(
             'ru' => 'еда',
