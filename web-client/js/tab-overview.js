@@ -18,13 +18,17 @@ tab.overview.resources.load = function() {
             //parsing
             var res = JSON.parse(data)['data'];
             //saving
-            tab.overview.resources.iron = res['iron'];
-            tab.overview.resources.food = res['food'];
-            tab.overview.resources.water = res['water'];
+            tab.overview.resources = res;
             //displaying
-            tab.overview.content.find('#res-iron').text( tab.overview.resources.iron );
-            tab.overview.content.find('#res-food').text( tab.overview.resources.food );
-            tab.overview.content.find('#res-water').text( tab.overview.resources.water );
+            $.each(
+                tab.overview.resources,
+                function( key, value ) {
+                    tab.overview.content.find('#res').prepend(
+                        '<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: <span>' + value + '</span></div>'
+                    );
+                }
+            );
+            tab.settings.translate();
         }
     );
 }
