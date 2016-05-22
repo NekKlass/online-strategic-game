@@ -30,6 +30,9 @@ function get_stuff( $name, $par = null ) {
         case 'api_file':
             require_once( 'config/api_files.php' );
             return get_api_file( $par );
+        case 'tech_learn':
+            require_once( 'utils/tech_learn.php' );
+            return tech_learn( $par );
     }
 }
 
