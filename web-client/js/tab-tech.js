@@ -41,6 +41,28 @@ tab.tech.draw = function () {
             tab.tech.content.find('.tab-tech-tree-' + tierKey).css( 'left', tierKey*270 + 25 );
         }
     );
+    //painting green learned
+    $.post(
+        api_address + 'api.php',
+        JSON.stringify({ 'action': 'tech_get' }),
+        function ( data ) {
+            data = JSON.parse(data)['data'];
+            $.each(
+                data,
+                function (tierKey, tierValue){
+                    $.each(
+                        tierValue,
+                        function( branchKey, branchValue ) {
+                            if ( Boolean(branchValue.learned) == true ) {
+                                var item = tab.tech.content.find('#tab-tech-tree-' + tierKey + '-' + branchKey);
+                                item.find('*').css( 'border-color', 'green');
+                            }
+                        }
+                    )
+                }
+            );
+        }
+    );
     tab.settings.translate();
 }
 
