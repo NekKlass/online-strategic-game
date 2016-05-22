@@ -2,7 +2,7 @@ tab.base = {};
 
 tab.base.content = $('#tab-base');
 tab.base.load = function () {
-    $('#base-build-btn').html( images.icons['build'].outerHTML );
+    $('#base-build-btn').attr( 'src', resources_address + 'icons/build.png' );
     $('#base-build-btn').unbind('click');
     $('#base-build-btn').click(tab.base.build_dlg);
     $.post(

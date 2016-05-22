@@ -5,8 +5,8 @@ confirm_dlg.btnYes = confirm_dlg.block.find('#confirm-yes');
 confirm_dlg.btnNo = confirm_dlg.block.find('#confirm-no');
 
 confirm_dlg.show = function( callbackYes, callbackNo ) {
-    confirm_dlg.btnYes.html( images.icons['yes'].outerHTML );
-    confirm_dlg.btnNo.html( images.icons['no'].outerHTML );
+    confirm_dlg.btnYes.attr( 'src', resources_address + 'icons/yes.png' );
+    confirm_dlg.btnNo.attr( 'src', resources_address + 'icons/no.png' );
     confirm_dlg.callbackYes = callbackYes;
     confirm_dlg.callbackNo = callbackNo;
     confirm_dlg.block.parents('.modal-background').css( 'display', 'flex' );

@@ -6,7 +6,7 @@ tab.overview.load = function () {
     $('#tab-overview-res-update').click(function(event){
         tab.overview.resources.load()
     });
-    $('#tab-overview-res-update').html( images.icons['refresh'].outerHTML );
+    $('#tab-overview-res-update').html( '<img class=\'img-button\' src=\'' + resources_address + 'icons/refresh.png\'>' );
 }
 
 tab.overview.resources = {};
