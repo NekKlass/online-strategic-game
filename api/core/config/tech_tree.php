@@ -15,7 +15,7 @@ function get_tech_tree(){
         1 => array(
             0 => array(
                 'require' => array(
-                    array( '0' => '0' )
+                    0 => array(0)
                 ),
                 'price' => array(
                     'wood' => 5
@@ -23,7 +23,7 @@ function get_tech_tree(){
             ),
             1 => array(
                 'require' => array(
-                    array( '0' => '0' )
+                    0 => array(0)
                 ),
                 'price' => array(
                     'wood' => 100,
