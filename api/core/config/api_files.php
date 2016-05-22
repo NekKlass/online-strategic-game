@@ -55,6 +55,10 @@ function get_api_file( $action ) {
                 return( 'core/tech_tree_get.php' );
                 break;
         //---------------------------
+            case 'tech_get':
+                return( 'core/tech_get.php' );
+                break;
+        //---------------------------
             case 'tech_learn':
                 return( 'core/tech_learn.php' );
                 break;
