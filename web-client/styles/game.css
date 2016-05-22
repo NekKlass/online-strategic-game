@@ -48,6 +48,7 @@ html, body {
             padding: 0;
             background-color: transparent;
             outline-width: 0;
+            cursor: pointer;
         }
     /* tab overview */
     /* tab base */
