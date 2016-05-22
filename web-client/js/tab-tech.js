@@ -46,9 +46,9 @@ tab.tech.draw = function () {
         api_address + 'api.php',
         JSON.stringify({ 'action': 'tech_get' }),
         function ( data ) {
-            data = JSON.parse(data)['data'];
+            tab.tech.learned = JSON.parse(data)['data'];
             $.each(
-                data,
+                tab.tech.learned,
                 function (tierKey, tierValue){
                     $.each(
                         tierValue,
