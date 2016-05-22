@@ -155,7 +155,7 @@ html, body {
     /* tab settings */
 /* modal stuff */
     /* background */
-        .modal-background {
+    .modal-background {
         display: none;
         position: fixed;
         z-index: 1;
