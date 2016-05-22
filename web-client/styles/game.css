@@ -148,11 +148,18 @@ html, body {
         .tab-tech-modal-wrap {
             display: flex;
         }
-        .tab-tech-modal-wrap img {
+        .tab-tech-modal-img img {
             display: block;
             width: 100px;
             height: 100px;
             margin: 4px;
+        }
+        .tab-tech-modal-learn-main {
+            display: flex;
+        }
+        .tab-tech-modal-learn-wrap {
+            display: flex;
+            margin: 4px auto;
         }
     /* tab settings */
 /* modal stuff */

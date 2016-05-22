@@ -94,6 +94,10 @@ tab.tech.explore = function ( tech ) {
             '<div>' +
                 '<div><span locale-name=\'tech-' + tech.tier + '-' + tech.branch + '-name\' locale-uppercase=\'true\'></span></div>' +
                 '<div><span locale-name=\'tech-' + tech.tier + '-' + tech.branch + '-description\' locale-uppercase=\'true\'></span></div>' +
+                '<div class=\'tab-tech-modal-learn-main\'><div class=\'tab-tech-modal-learn-wrap\'>' +
+                    '<div><img class=\'img-button\' src=\'' + resources_address + 'icons/learn.png\'></div>' +
+                    '<div id=\'tab-tech-modal-prices\'></div>' +
+                '</div></div>' +
             '</div>' +
         '</div>'
     );
