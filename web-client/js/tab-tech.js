@@ -72,7 +72,7 @@ tab.tech.drawLines = function ( ) {
                                         elem.position()['top'] + elem.height()/2 + 1,
                                         elemTo.position()['left'] + elemTo.width(),
                                         elemTo.position()['top'] + elemTo.height()/2,
-                                        { 'stroke': 2 }
+                                        { 'stroke': 2, 'zindex': 0 }
                                     );
                                 }
                             );
