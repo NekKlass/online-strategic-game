@@ -157,6 +157,9 @@ html, body {
         .tab-tech-modal-learn-main {
             display: flex;
         }
+        .tab-tech-modal-learn-main img {
+            margin: 0 5px;
+        }
         .tab-tech-modal-learn-wrap {
             display: flex;
             margin: 4px auto;
