@@ -10,6 +10,7 @@ confirm_dlg.show = function( callbackYes, callbackNo ) {
     confirm_dlg.callbackYes = callbackYes;
     confirm_dlg.callbackNo = callbackNo;
     confirm_dlg.block.parents('.modal-background').css( 'display', 'flex' );
+    tab.settings.translate();
 }
 
 confirm_dlg.btnYes.click(function(event){

@@ -33,3 +33,11 @@ localization['client-tech-learned-already'] = {
     'ru': 'Уже изучено!',
     'en': 'Already learned'
 }
+localization['client-confirm'] = {
+    'ru': 'Подтверждение',
+    'en': 'Confirmation'
+}
+localization['client-confirm-sure'] = {
+    'ru': 'Вы уверены?',
+    'en': 'Are you sure?'
+}
