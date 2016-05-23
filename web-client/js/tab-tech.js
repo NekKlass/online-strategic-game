@@ -114,6 +114,13 @@ tab.tech.explore = function ( tech ) {
             '</div>' +
         '</div>'
     );
+    var prices = modal.content.find('#tab-tech-modal-prices');
+    $.each(
+        tech.price,
+        function ( key, value ) {
+             prices.append('<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: ' + value + '</div>');
+        }
+    );
     if ( (tab.tech.learned[tech.tier] == undefined) ) {
         tab.tech.learned[tech.tier] = {};
     }
