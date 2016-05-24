@@ -5,10 +5,22 @@ function get_stuff( $name, $par = null ) {
         //сколько ресурсов дается при регистрации
         case 'GM_DEFAULT_RES':
             return array(
-                'iron' => 1000,
-                'food' => 1000,
-                'water' => 1000,
-                'wood' => 1000
+                'iron' => array(
+                    'count' => 1000,
+                    'time' => $_SERVER['REQUEST_TIME']
+                ),
+                'food' => array(
+                    'count' => 1000,
+                    'time' => $_SERVER['REQUEST_TIME']
+                ),
+                'water' => array(
+                    'count' => 1000,
+                    'time' => $_SERVER['REQUEST_TIME']
+                ),
+                'wood' => array(
+                    'count' => 1000,
+                    'time' => $_SERVER['REQUEST_TIME']
+                )
             );
         case 'db':
             require_once( 'utils/db.php' );
