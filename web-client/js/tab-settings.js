@@ -9,7 +9,19 @@ String.prototype.lowerCase = function() {
 tab.settings = {};
 
 tab.settings.load = function () {
-    tab.settings.translate();
+    $.post(
+        api_address + 'api.php',
+        JSON.stringify({ 'action': 'sys_get_localization' }),
+        function ( data ){
+            $.each(
+                JSON.parse( data )['data'],
+                function ( key, value ) {
+                    localization[ key ] = value;
+                    }
+            );
+            tab.settings.translate();
+        }
+    );
 }
 
 //***********************

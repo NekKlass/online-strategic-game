@@ -22,24 +22,12 @@ $('#tabs').tabs({
     }
 });
 
-$.post(
-    api_address + 'api.php',
-    JSON.stringify({ 'action': 'sys_get_localization' }),
-    function ( data ){
-        $.each(
-            JSON.parse( data )['data'],
-            function ( key, value ) {
-                localization[ key ] = value;
-                }
-        );
-        tab.overview.load();
-        tab.base.load();
-        tab.tech.load();
-        tab.settings.load();
-        resize();
-        update_buildable();
-    }
-);
+tab.overview.load();
+tab.base.load();
+tab.tech.load();
+tab.settings.load();
+resize();
+update_buildable();
 
 function update_buildable() {
     $.post(

@@ -13,6 +13,13 @@ tab.base.load = function () {
             tab.base.parse();
         }
     );
+    $.post(
+        api_address + 'api.php',
+        JSON.stringify({ 'action': 'base_get_buildable'}),
+        function (data) {
+            tab.base.buildable = JSON.parse(data)['data'];
+        }
+    );
 }
 tab.base.parse = function(){
     tab.base.content.find('.base-item:not(.base-item-build)').remove();
