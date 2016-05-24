@@ -24,7 +24,7 @@ tab.overview.resources.load = function() {
                 tab.overview.resources,
                 function( key, value ) {
                     tab.overview.content.find('#res').prepend(
-                        '<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: <span>' + value + '</span></div>'
+                        '<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: <span>' + value.count + '</span></div>'
                     );
                 }
             );
