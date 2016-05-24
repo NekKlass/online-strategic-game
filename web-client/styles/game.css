@@ -8,50 +8,50 @@ html, body {
     margin: 0;
 }
 /*--------------------
-    blocks
+        tabs
 ----------------------*/
-    /* tabs */
-        #tabs {
-            height: 100%
-        }
-        #tabs ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #444;
-        }
-        #tabs ul a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            outline-style: none;
-        }
-        #tabs .ui-tabs-active a {
-            background-color: #222;
-        }
-        #tabs .ui-state-hover a {
-            background-color: #111;
-        }
-        .tab {
-            padding: 5px;
-            overflow-y: auto;
-        }
-        .img-button {
-            display: block;
-            width: 50px;
-            height: 50px;
-            border: none;
-            padding: 0;
-            background-color: transparent;
-            outline-width: 0;
-            cursor: pointer;
-        }
-/* modal stuff */
-    /* background */
+    #tabs {
+        height: 100%
+    }
+    #tabs ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+    }
+    #tabs ul a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        outline-style: none;
+    }
+    #tabs .ui-tabs-active a {
+        background-color: #222;
+    }
+    #tabs .ui-state-hover a {
+        background-color: #111;
+    }
+    .tab {
+        padding: 5px;
+        overflow-y: auto;
+    }
+    .img-button {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        outline-width: 0;
+        cursor: pointer;
+    }
+/*--------------------
+      modal dialog
+----------------------*/
     .modal-background {
         display: none;
         position: fixed;
@@ -67,7 +67,6 @@ html, body {
     .modal-background-confirm {
         z-index: 2;
     }
-    /* box */
     .modal-box {
         background-color: #fefefe;
         margin: auto;
@@ -75,7 +74,6 @@ html, body {
         display: table;
         box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
     }
-    /* head */
     .modal-head {
         padding: 10px;
         background-color: #333;
@@ -98,7 +96,6 @@ html, body {
         cursor: pointer;
         transition-duration: 0.3s;
     }
-    /* content */
     .modal-content {
         margin: 20px;
     }
