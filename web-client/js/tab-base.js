@@ -116,7 +116,7 @@ tab.base.build_dlg = function ( event ) {
     var tabs = $('#base-build-tabs');
     var list = tabs.find('#base-build-list');
     $.each(
-        buildable,
+        tab.base.buildable,
         function ( key, value ) {
             list.append('<li><a href=\'#build-tab-' + key + '\'>' + localization[key] + '</a></li>');
             //build price
@@ -150,7 +150,7 @@ tab.base.build_dlg = function ( event ) {
                     '</div>' +
                     '<div class=\'base-build-item-info\'>' +
                         '<button class=\'base-build-confirm img-button\' name=\'' + key + '\' class=\'img-button base-build-build-img-button\'>' +
-                            images.icons['build'].outerHTML +
+                            '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\'></img>' +
                         '</button>' +
                     '</div' +
                 '</div>'
