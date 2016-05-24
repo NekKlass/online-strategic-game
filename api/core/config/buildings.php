@@ -11,7 +11,11 @@ function get_buildings () {
                     'branch' => 0
                 )
             ),
-            'price' => array ()
+            'price' => array (),
+            'income' => array(
+                'iron' => 5,
+                'water' => 10,
+            )
         )
 
     );
