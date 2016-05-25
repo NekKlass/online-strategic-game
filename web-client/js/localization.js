@@ -9,6 +9,14 @@ localization['client-tab-base'] = {
     'ru': 'База',
     'en': 'base'
 }
+localization['client-tab-base-build-price'] = {
+    'ru': 'стоимость',
+    'en': 'price'
+}
+localization['client-tab-base-build-price-free'] = {
+    'ru': 'бесплатно',
+    'en': 'free'
+}
 localization['client-tab-global'] = {
     'ru': 'Карта',
     'en': 'map'

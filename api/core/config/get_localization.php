@@ -45,6 +45,15 @@ function get_localization () {
         'tech-1-1-description' => array(
             'ru' => 'Инструменты - самая великая технология.',
             'en' => 'Instrumants are the gratest technology.'
+        ),
+    //постройки
+        'building-1-0-name' => array(
+            'ru' => 'Яма',
+            'en' => 'pit'
+        ),
+        'building-1-0-description' => array(
+            'ru' => 'Маленькая яма для добычи всего подряд.',
+            'en' => 'Little pit for collectiong everything.'
         )
     );
 }
