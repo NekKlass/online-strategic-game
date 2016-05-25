@@ -18,7 +18,7 @@ function process_request ( $request ) {
 
     if ( empty($info[$name]) ) {
         return array(
-            'status' => 'array',
+            'status' => 'error',
             'statusmessage' => 'unknown'
         );
     }
