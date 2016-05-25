@@ -145,13 +145,9 @@ tab.base.build_dlg = function ( event ) {
         }
     );
     //выполняем действия
-    $('.base-build-confirm').click(function(event){
+    buildList.find('.img-button').click(function(event){
         var target = event.target;
-        if ( target.localName == 'img' ) {
-            var name = $( target.parentNode ).attr('name');
-        } else {
-            var name = $( target ).attr('name');
-        }
+        var name = $( target ).attr('build-name');
         confirm_dlg.show(
             function(){
                 $.post(
