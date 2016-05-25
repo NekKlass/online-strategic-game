@@ -107,56 +107,38 @@ tab.base.upgrade = function ( event ) {
 tab.base.build_dlg = function ( event ) {
     modal.prepare();
     modal.title.text('Построить');
-    modal.content.append(
-        '<div id=\'base-build-tabs\'>' +
-            '<ul id=\'base-build-list\'>' +
-            '</ul>' +
-        '</div>'
-    );
-    var tabs = $('#base-build-tabs');
-    var list = tabs.find('#base-build-list');
+    modal.content.append('<div id=\'tab-base-build-list\'></div>');
+    var buildList = modal.content.find('#tab-base-build-list');
     $.each(
         tab.base.buildable,
         function ( key, value ) {
-            list.append('<li><a href=\'#build-tab-' + key + '\'>' + localization[key] + '</a></li>');
-            //build price
-            var price = '';
-            $.each(
-                value['build-price'],
-                function ( priceKey, priceValue ) {
-                    price = price + '<div>' + localization[priceKey] + ': ' + priceValue + '</div>';
-                }
-            );
-            var income = '';
-            if ( value['ifincome'] == true ) {
-                income = '<div class=\'base-build-item-info-item\'>' +
-                '<div>Доход</div>';
-                $.each(
-                    value['income'][1],
-                    function ( incomeKey, incomeValue ) {
-                        income = income + '<div>' + localization[incomeKey] + ': ' + incomeValue + '</div>';
-                    }
-                );
-                income = income + '</div>';
-            }
-            tabs.append(
-                '<div id=\'build-tab-' + key + '\' class=\'base-build-item\'>' +
-                    '<div class=\'base-build-item-info\'>' +
-                        '<div class=\'base-build-item-info-item\'>' +
-                            '<div>Стоимость</div>' +
-                            price +
+            buildList.append(
+                '<div class=\'tab-base-build-item\'>' +
+                    '<img class=\'tab-base-build-item-img\' src=\'' + resources_address + 'buildings/' + value.name + '.png\'></span>' +         
+                    '<div class=\'tab-base-build-item-info\'>' +
+                        '<div class=\'tab-base-build-item-title\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
+                        '<div><span locale-name=\'building-' + value.name + '-description\' locale-uppercase=\'true\'></span></div>' +
+                        '<div class=\'tab-base-build-button-wrap\'>' +
+                            '<img build-name=\'' + value.name + '\' class=\'img-button\' src=\'' + resources_address + '/icons/build.png\'>' +
+                            '<div id=\'tab-base-build-price-' + value.name + '\'></div>' +
                         '</div>' +
-                        income +
                     '</div>' +
-                    '<div class=\'base-build-item-info\'>' +
-                        '<button class=\'base-build-confirm img-button\' name=\'' + key + '\' class=\'img-button base-build-build-img-button\'>' +
-                            '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\'></img>' +
-                        '</button>' +
-                    '</div' +
                 '</div>'
+            );
+            buildList.find('#tab-base-build-price-' + value.name).append('<span locale-name=\'client-tab-base-build-price\' locale-uppercase=\'true\'>');
+            $.each(
+                value.price,
+                function ( priceKey, priceValue ) {
+                    buildList.find('#tab-base-build-price-' + value.name).append(
+                        '<div>' +
+                            '<span locale-name=\'' + priceKey + '-name\' locale-uppercase=\'true\'>: ' + priceValue +
+                        '</div>'
+                    );
+                }
             );
         }
     );
+    //выполняем действия
     $('.base-build-confirm').click(function(event){
         var target = event.target;
         if ( target.localName == 'img' ) {
@@ -179,6 +161,7 @@ tab.base.build_dlg = function ( event ) {
         );
     });
     tabs.tabs();
+    tab.settings.translate();
     modal.show();
 }
 

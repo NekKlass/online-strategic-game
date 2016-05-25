@@ -33,23 +33,32 @@
     width: inherit;
     height: inherit;
 }
-#base-build-btn {
-    margin: auto;
+/* диалог строительства */
+#tab-base-build-list {
+    display: flex;
+    flex-wrap: wrap;
 }
-#base-build-tabs  {
-    display: inline-flex;
+.tab-base-build-item {
+	width: 300px;
+	border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+	padding: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
 }
-#base-build-tabs ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+.tab-base-build-item-title {
+    text-align: center;
 }
-.base-build-item-info {
-    display:flex;
+.tab-base-build-button-wrap {
+    display: flex;
 }
-.base-build-item  .base-build-item-info-item {
-    margin: 10px;
+.tab-base-build-button-wrap img {
+    margin-right: 5px;
 }
-.base-build-build-img-button {
-    margin: auto;
+.tab-base-build-item-img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
 }
