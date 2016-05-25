@@ -125,17 +125,23 @@ tab.base.build_dlg = function ( event ) {
                     '</div>' +
                 '</div>'
             );
-            buildList.find('#tab-base-build-price-' + value.name).append('<span locale-name=\'client-tab-base-build-price\' locale-uppercase=\'true\'>');
-            $.each(
-                value.price,
-                function ( priceKey, priceValue ) {
-                    buildList.find('#tab-base-build-price-' + value.name).append(
-                        '<div>' +
-                            '<span locale-name=\'' + priceKey + '-name\' locale-uppercase=\'true\'>: ' + priceValue +
-                        '</div>'
-                    );
-                }
-            );
+            var priceBlock = buildList.find('#tab-base-build-price-' + value.name);
+            if ( $.isEmptyObject(value.price) == true ) {
+                priceBlock.append(
+                    '<div>' +
+                        '<span locale-name=\'client-tab-base-build-price\' locale-uppercase=\'true\'></span>: ' +
+                        '<span locale-name=\'client-tab-base-build-price-free\' locale-uppercase=\'false\'></span>' +
+                    '</div>'
+                );
+            } else {
+                priceBlock.append('<div><span locale-name=\'client-tab-base-build-price\' locale-uppercase=\'true\'></span></div>');
+                $.each(
+                    value.price,
+                    function ( priceKey, priceValue ) {
+                        priceBlock.append('<div><span locale-name=\'' + priceKey + '-name\' locale-uppercase=\'true\'>: ' + priceValue +'</div>');
+                    }
+                );
+            }
         }
     );
     //выполняем действия
