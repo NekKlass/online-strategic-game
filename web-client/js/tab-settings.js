@@ -17,7 +17,7 @@ tab.settings.load = function () {
 }
 
 //***********************
-//   unlocalization stuff
+//   все для перевода
 //***********************
 tab.settings.langswitcher = $('#tab-settings-lang-selector');
 
