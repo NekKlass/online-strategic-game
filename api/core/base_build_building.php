@@ -14,51 +14,47 @@ function process_request ( $request ) {
 
     s_update_res( $_SESSION['id'] );
 
-    $info = get_stuff('GM_BUILDINGS');
+    $info = get_stuff('buildings');
 
-    if ( empty($info[$name]) ) {
+    $building = array();
+    foreach ( $info as $value ) {
+        if ( $value['name'] == $name ) {
+            $building = $value;
+            break;
+        }
+    }
+    if ( empty($building) ) {
         return array(
             'status' => 'error',
             'statusmessage' => 'unknown'
         );
     }
-    $info = $info[$name]['build-price'];
 
-    $data = db_custom( "SELECT `rescount`, `base` FROM `bases` WHERE `id` = ?", array($_SESSION['id']) );
+    $data = db_custom( "SELECT `resources`, `base`, `tech` FROM `bases` WHERE `id` = ?", array($_SESSION['id']) );
     $base = json_decode( $data[0]['base'] , true );
-    $rescount = json_decode( $data[0]['rescount'] , true );
+    $resources = json_decode( $data[0]['resources'] , true );
+    $tech = json_decode( $data[0]['tech'] , true );
 
-    $if_build = true;
-    foreach ( $info as $key => $value ) {
-        if ( ($rescount[$key] - $value) < 0 ) {
-            $if_build = false;
+    foreach ( $building['price'] as $key => $value ) {
+        if ( ($resources[$key]['count'] - $value) < 0 ) {
+            return array(
+                'status' => 'error',
+                'statusmessage' => 'not enough'
+            );
         }
+        $resources[$key]['count'] = $resources[$key]['count'] - $value;
     }
 
-    if ( $if_build ) {
-        foreach ( $info as $key => $value ) {
-            $rescount[$key] = $rescount[$key] - $value;
-        }
-        $building['name'] = $name;
-        $building['level'] = 1;
-        array_push( $base, $building );
-        db_custom_no_return( "UPDATE `bases` SET `rescount` = ?, `base` = ? WHERE `id` = ?",
-            array( json_encode($rescount), json_encode($base), $_SESSION['id'] )
-        );
-        return array(
-            'status' => 'success',
-            'statusmessage' => 'success'
-        );
-    } else {
-        return array(
-            'status' => 'error',
-            'statusmessage' => 'not-enough'
-        );
-    }
-
-
-
-
+    $new_building['name'] = $name;
+    $new_building['level'] = 1;
+    array_push( $base, $new_building );
+    db_custom_no_return( "UPDATE `bases` SET `resources` = ?, `base` = ? WHERE `id` = ?",
+        array( json_encode($resources), json_encode($base), $_SESSION['id'] )
+    );
+    return array(
+        'status' => 'success',
+        'statusmessage' => 'success'
+    );
 
 }
 

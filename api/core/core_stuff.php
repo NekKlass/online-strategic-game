@@ -34,7 +34,7 @@ function get_stuff( $name, $par = null ) {
         case 'db_config':
             require_once( 'config/db_config.php' );
             return get_db_conf();
-        case 'GM_BUILDINGS':
+        case 'buildings':
             require_once( 'config/buildings.php' );
             return get_buildings();
         case 'tech_tree':

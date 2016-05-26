@@ -29,17 +29,13 @@ tab.base.parse = function(){
         function( key, value ) {
             tab.base.content.find('#tab-base-build').before(
                 '<div class=\'tab-base-item\'>' +
-                        '<div class=\'tab-base-item-image\'>' +
-                            images.buildings[ value['name'] ].outerHTML +
-                        '</div>' +
+                        '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
                         '<div class=\'tab-base-item-content\'>' +
                             '<div class=\'tab-base-item-head\'>' + localization[ value['name'] ] + '</div>' +
                             '<div class=\'tab-base-item-act-block\'>' +
                                 '<div>' +
                                     '<div>Уровень: ' + value['level'] + '</div>' +
-                                    '<button type=\'button\' class=\'tab-base-act img-button\' position=\'' + key + '\'>' +
-                                        images.icons['upgrade'].outerHTML +
-                                    '</button>' +
+                                    '<img class=\'img-button\' src=\'' + resources_address + 'icons/build.png\' class=\'img-button\'>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +

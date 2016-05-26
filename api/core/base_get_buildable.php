@@ -2,7 +2,7 @@
 
 function process_request() {
 
-    $buidable = get_stuff( 'GM_BUILDINGS' );
+    $buidable = get_stuff( 'buildings' );
 
     return array(
         'status' => 'success',
