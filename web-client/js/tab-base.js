@@ -35,9 +35,7 @@ tab.base.parse = function(){
                             '<div class=\'tab-base-item-act-block\'>' +
                                 '<div>' +
                                     '<div>Уровень: ' + value['level'] + '</div>' +
-                                    '<button type=\'button\' class=\'tab-base-act img-button\' position=\'' + key + '\'>' +
-                                        '<img class=\'img-button\' src=\'' + resources_address + 'icons/build.png\'>' +
-                                    '</button>' +
+                                    '<img class=\'img-button\' src=\'' + resources_address + 'icons/build.png\' class=\'img-button\'>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +
