@@ -29,10 +29,6 @@ $(window).resize(function(){
     resize();
 });
 
-function first_upper( str ){
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
 function resize() {
     tabs.css('height', $('body').height() - $('#tab-control').outerHeight(true) - ( tabs.outerHeight() - tabs.height() ) );
 }
