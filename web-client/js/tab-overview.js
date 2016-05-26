@@ -3,10 +3,10 @@ tab.overview = {};
 tab.overview.content = $('#tab-overview');
 tab.overview.load = function () {
     tab.overview.resources.load();
-    $('#tab-overview-res-update').click(function(event){
+    $('#tab-overview-resources-update').click(function(event){
         tab.overview.resources.load()
     });
-    $('#tab-overview-res-update').html( '<img class=\'img-button\' src=\'' + resources_address + 'icons/refresh.png\'>' );
+    $('#tab-overview-resources-update').html( '<img class=\'img-button\' src=\'' + resources_address + 'icons/refresh.png\'>' );
 }
 
 tab.overview.resources = {};
@@ -21,7 +21,7 @@ tab.overview.resources.load = function() {
             $.each(
                 tab.overview.resources,
                 function( key, value ) {
-                    tab.overview.content.find('#res').prepend(
+                    tab.overview.content.find('#tab-overview-resources').prepend(
                         '<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: <span>' + value.count + '</span></div>'
                     );
                 }
