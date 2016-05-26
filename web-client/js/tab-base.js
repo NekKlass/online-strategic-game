@@ -2,9 +2,10 @@ tab.base = {};
 
 tab.base.content = $('#tab-base');
 tab.base.load = function () {
-    $('#tab-base-build-btn').attr( 'src', resources_address + 'icons/build.png' );
-    $('#tab-base-build-btn').unbind('click');
-    $('#tab-base-build-btn').click(tab.base.build_dlg);
+    var buildBtn = $('#tab-base-build-btn');
+    buildBtn.attr( 'src', resources_address + 'icons/build.png' );
+    buildBtn.unbind('click');
+    buildBtn.click(tab.base.build_dlg);
     $.post(
         api_address + 'api.php',
         JSON.stringify({ 'action' : 'base_get' }),
