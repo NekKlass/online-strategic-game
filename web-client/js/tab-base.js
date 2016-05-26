@@ -2,9 +2,10 @@ tab.base = {};
 
 tab.base.content = $('#tab-base');
 tab.base.load = function () {
-    $('#base-build-btn').attr( 'src', resources_address + 'icons/build.png' );
-    $('#base-build-btn').unbind('click');
-    $('#base-build-btn').click(tab.base.build_dlg);
+    var buildBtn = $('#tab-base-build-btn');
+    buildBtn.attr( 'src', resources_address + 'icons/build.png' );
+    buildBtn.unbind('click');
+    buildBtn.click(tab.base.build_dlg);
     $.post(
         api_address + 'api.php',
         JSON.stringify({ 'action' : 'base_get' }),
@@ -22,21 +23,21 @@ tab.base.load = function () {
     );
 }
 tab.base.parse = function(){
-    tab.base.content.find('.base-item:not(.base-item-build)').remove();
+    tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
     $.each(
         tab.base.base,
         function( key, value ) {
-            tab.base.content.find('#base-build').before(
-                '<div class=\'base-item\'>' +
-                        '<div class=\'base-item-image\'>' +
+            tab.base.content.find('#tab-base-build').before(
+                '<div class=\'tab-base-item\'>' +
+                        '<div class=\'tab-base-item-image\'>' +
                             images.buildings[ value['name'] ].outerHTML +
                         '</div>' +
-                        '<div class=\'base-item-content\'>' +
-                            '<div class=\'base-item-head\'>' + localization[ value['name'] ] + '</div>' +
-                            '<div class=\'base-item-act-block\'>' +
+                        '<div class=\'tab-base-item-content\'>' +
+                            '<div class=\'tab-base-item-head\'>' + localization[ value['name'] ] + '</div>' +
+                            '<div class=\'tab-base-item-act-block\'>' +
                                 '<div>' +
                                     '<div>Уровень: ' + value['level'] + '</div>' +
-                                    '<button type=\'button\' class=\'base-act img-button\' position=\'' + key + '\'>' +
+                                    '<button type=\'button\' class=\'tab-base-act img-button\' position=\'' + key + '\'>' +
                                         images.icons['upgrade'].outerHTML +
                                     '</button>' +
                                 '</div>' +
@@ -46,7 +47,7 @@ tab.base.parse = function(){
             );
         }
     );
-    $('.base-act').click(tab.base.upgrade_dlg);
+    $('.tab-base-act').click(tab.base.upgrade_dlg);
 }
 tab.base.upgrade_dlg = function ( event ) {
     var target = event.target;
@@ -70,12 +71,12 @@ tab.base.upgrade_dlg = function ( event ) {
         modal.content.append(
             '<div>'+
                 str +
-                '<div><button id=\'base-upgrade-btn\' class=\' img-button\' position=\'' + position + '\' type=\'button\'>' +
+                '<div><button id=\'tab-base-upgrade-btn\' class=\' img-button\' position=\'' + position + '\' type=\'button\'>' +
                     images.icons['upgrade'].outerHTML +
                 '</button><div>' +
             '<div>'
         );
-        $('#base-upgrade-btn').click(tab.base.upgrade);
+        $('#tab-base-upgrade-btn').click(tab.base.upgrade);
     } else {
         modal.content.append('Достигнут максимальный уровень!');
     }
