@@ -1,6 +1,5 @@
 // values
 var tabs = $('.tab');
-var tab_map_global = $('#map-global');
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
 $('#tabs').tabs({
