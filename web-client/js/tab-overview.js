@@ -16,9 +16,7 @@ tab.overview.resources.load = function() {
         JSON.stringify({ 'action' : 'base_get_res' }),
         function (data){
             //parsing
-            var res = JSON.parse(data)['data'];
-            //saving
-            tab.overview.resources = res;
+            tab.overview.resources = JSON.parse(data)['data'];
             //displaying
             $.each(
                 tab.overview.resources,
