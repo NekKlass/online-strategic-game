@@ -32,71 +32,9 @@ tab.base.parse = function(){
                         '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
                         '<div class=\'tab-base-item-content\'>' +
                             '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
-                            '<div class=\'tab-base-item-act-block\'>' +
-                                '<div>' +
-                                    '<div>Уровень: ' + value['level'] + '</div>' +
-                                    '<img class=\'img-button\' src=\'' + resources_address + 'icons/build.png\' class=\'img-button\'>' +
-                                '</div>' +
-                            '</div>' +
                         '</div>' +
                 '</div>'
             );
-        }
-    );
-    $('.tab-base-act').click(tab.base.upgrade_dlg);
-}
-tab.base.upgrade_dlg = function ( event ) {
-    var target = event.target;
-    if ( target.localName == 'img' ) {
-        var position = $( target.parentNode ).attr('position');
-    } else {
-       var position = $( target ).attr('position');
-    }
-    var level = tab.base.base[position]['level'];
-    var name = tab.base.base[position]['name'];
-    modal.prepare();
-    modal.title.text('Улучшить постройку');
-    var str = '';
-    if ( buildable[ name ]['max-level'] > level ) {
-        $.each(
-            buildable[ tab.base.base[position]['name'] ]['upgrade-price'][ tab.base.base[position]['level'] ],
-            function ( key, value ) {
-                str = str + '<div>' + localization[key] + ': ' + value + '</div>';
-            }
-        );
-        modal.content.append(
-            '<div>'+
-                str +
-                '<div><button id=\'tab-base-upgrade-btn\' class=\' img-button\' position=\'' + position + '\' type=\'button\'>' +
-                    images.icons['upgrade'].outerHTML +
-                '</button><div>' +
-            '<div>'
-        );
-        $('#tab-base-upgrade-btn').click(tab.base.upgrade);
-    } else {
-        modal.content.append('Достигнут максимальный уровень!');
-    }
-    modal.show();
-}
-
-tab.base.upgrade = function ( event ) {
-    var target = event.target;
-    if ( target.localName == 'img' ) {
-        var position = $( target.parentNode ).attr('position');
-    } else {
-       var position = $( target ).attr('position');
-    }
-    $.post(
-        api_address + 'api.php',
-        JSON.stringify({ 'action': 'base_upgrade_building', 'position': position }),
-        function (data) {
-            var response = JSON.parse(data);
-            switch ( response['statusmessage'] ) {
-                case 'success':
-                    tab.base.load();
-                    modal.close();
-                    break;
-            }
         }
     );
 }
