@@ -14,7 +14,7 @@ function process_request ( $request ) {
 
     s_update_res( $_SESSION['id'] );
 
-    $info = get_stuff('GM_BUILDINGS');
+    $info = get_stuff('buildings');
 
     if ( empty($info[$name]) ) {
         return array(

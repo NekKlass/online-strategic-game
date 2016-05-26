@@ -28,7 +28,7 @@ function process_request ($request) {
     require('config.php');
     $name = $base[$position]['name'];
     $level = $base[$position]['level'];
-    $upgrade_info = get_stuff( 'GM_BUILDINGS' )[$name];
+    $upgrade_info = get_stuff( 'buildings' )[$name];
     $price = $upgrade_info['upgrade-price']($level);
 
     if ( $upgrade_info['upgradable'] == false ) {
