@@ -18,6 +18,8 @@ tab.profile.showProfile = function ( block, who ) {
         api_address + 'api.php',
         JSON.stringify({ 'action': 'sys_get_profile'}),
         function ( data ) {
+            var profile = JSON.parse(data)['data'];
+            block.append('<div>Время регистрации:' + profile.reg_time + '</div>')
         }
     );
 }
