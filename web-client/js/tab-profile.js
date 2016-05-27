@@ -1,5 +1,7 @@
 tab.profile = {};
 
+tab.profile.content = $('#tab-pofile-content');
+
 tab.profile.load = function () {
     $.post(
         api_address + 'api.php',
