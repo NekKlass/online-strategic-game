@@ -34,6 +34,10 @@ function s_update_res ( $id ) {
         }
     }
 
+    db_custom_no_return( "UPDATE `bases` SET `resources` = ? WHERE `id` = ?",
+        array( json_encode($resources), $_SESSION['id'] )
+    );
+
     return $resources;
 
 }
