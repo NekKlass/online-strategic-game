@@ -25,6 +25,10 @@ localization['client-tab-tech'] = {
     'ru': 'Исследования',
     'en': 'tech'
 }
+localization['client-tab-profile'] = {
+    'ru': 'профиль',
+    'en': 'profile'
+}
 localization['client-tab-settings'] = {
     'ru': 'Настройки',
     'en': 'settings'
