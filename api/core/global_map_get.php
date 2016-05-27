@@ -1,6 +1,6 @@
 <?php
 
-function process_request() {
+function process_request ( $request ) {
 
     var_dump($_POST);
 
