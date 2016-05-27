@@ -68,6 +68,9 @@ function process_request ( $request ) {
         db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `resources`, `base`, `tech` ) VALUES ( ?, ?, ?, ?, ?, ? )",
             array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_stuff('GM_DEFAULT_RES')), json_encode(array()) , json_encode(array()) )
         );
+        db_custom_no_return( "INSERT INTO `profiles` SET `id` = ? ",
+            array( $id['0']['id'] )
+        );
         //reporting success
         return array(
             'status' => 'success',
