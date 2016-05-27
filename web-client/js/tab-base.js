@@ -101,6 +101,3 @@ tab.base.build_dlg = function ( event ) {
     tab.settings.translate();
     modal.show();
 }
-
-
-
