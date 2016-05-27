@@ -3,10 +3,11 @@ tab.overview = {};
 tab.overview.content = $('#tab-overview');
 tab.overview.load = function () {
     tab.overview.resources.load();
-    $('#tab-overview-resources-update').click(function(event){
+    var updateBtn = $('#tab-overview-resources-update');
+    updateBtn.click(function(event){
         tab.overview.resources.load()
     });
-    $('#tab-overview-resources-update').attr( 'src', resources_address + 'icons/refresh.png' );
+    updateBtn.attr( 'src', resources_address + 'icons/refresh.png' );
 }
 
 tab.overview.resources = {};
