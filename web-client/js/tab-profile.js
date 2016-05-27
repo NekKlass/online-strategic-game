@@ -11,3 +11,12 @@ tab.profile.load = function () {
         }
     );
 }
+
+tab.profile.showProfile = function ( block, who ) {
+    $.post(
+        api_address + 'api.php',
+        JSON.stringify({ 'action': 'sys_get_profile'}),
+        function ( data ) {
+        }
+    );
+}
