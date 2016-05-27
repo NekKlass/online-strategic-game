@@ -48,7 +48,7 @@ function process_request ($request) {
 
         $tech_user[$tier][$branch] = array( 'learned' => 'true');
         db_custom_no_return(
-            'UPDATE `bases` SET `rescount` = ?, `tech`=?  WHERE `id` = ?' ,
+            'UPDATE `bases` SET `resources` = ?, `tech`=?  WHERE `id` = ?' ,
             array(
                 json_encode( $response['res'] ),
                 json_encode( $tech_user ),
