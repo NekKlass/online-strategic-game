@@ -80,13 +80,13 @@ function tech_learn( $par ) {
     }
     //if enough resources
     foreach ( $par['price'] as $key => $value ) {
-        if ( $par['res'][$key] < $value ) {
+        if ( $par['res'][$key]['count'] < $value ) {
             return array(
                 'status' => 'error',
                 'statusmessage' => 'not enough'
             );
         } else {
-            $par['res'][$key] = $par['res'][$key] - $value;
+            $par['res'][$key]['count'] = $par['res'][$key]['count'] - $value;
         }
     }
 
