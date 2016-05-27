@@ -63,8 +63,7 @@ function process_request ( $request ) {
         $id = db_custom( "SELECT `id` FROM `users` WHERE `uname` LIKE ?",
             array( $uname )
         );
-        require('utils/s_gen_base_cord.php');
-        $cord = s_gen_base_cord();
+        $cord = get_stuff('base_gen_cord');
         db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `resources`, `base`, `tech` ) VALUES ( ?, ?, ?, ?, ?, ? )",
             array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_stuff('GM_DEFAULT_RES')), json_encode(array()) , json_encode(array()) )
         );

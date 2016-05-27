@@ -46,6 +46,9 @@ function get_stuff( $name, $par = null ) {
         case 'tech_learn':
             require_once( 'utils/tech_learn.php' );
             return tech_learn( $par );
+        case 'base_gen_cord':
+            require('utils/s_gen_base_cord.php');
+            return s_gen_base_cord();
     }
 }
 
