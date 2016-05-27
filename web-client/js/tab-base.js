@@ -22,24 +22,19 @@ tab.base.loadBase = function () {
         JSON.stringify({ 'action' : 'base_get' }),
         function (data) {
             tab.base.base = JSON.parse(data)['data'];
-            tab.base.parse();
-        }
-    );
-    tab.base.parse();
-}
-
-tab.base.parse = function(){
-    tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
-    $.each(
-        tab.base.base,
-        function( key, value ) {
-            tab.base.content.find('#tab-base-build').before(
-                '<div class=\'tab-base-item\'>' +
-                        '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
-                        '<div class=\'tab-base-item-content\'>' +
-                            '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
-                        '</div>' +
-                '</div>'
+            tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
+            $.each(
+                tab.base.base,
+                function( key, value ) {
+                    tab.base.content.find('#tab-base-build').before(
+                        '<div class=\'tab-base-item\'>' +
+                                '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
+                                '<div class=\'tab-base-item-content\'>' +
+                                    '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
+                                '</div>' +
+                        '</div>'
+                    );
+                }
             );
         }
     );
