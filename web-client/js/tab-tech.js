@@ -158,4 +158,3 @@ tab.tech.explore = function ( tech ) {
     tab.settings.translate();
     modal.show();
 }
-
