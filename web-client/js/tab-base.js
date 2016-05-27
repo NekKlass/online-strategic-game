@@ -1,6 +1,7 @@
 tab.base = {};
 
 tab.base.content = $('#tab-base');
+
 tab.base.load = function () {
     var buildBtn = $('#tab-base-build-btn');
     buildBtn.attr( 'src', resources_address + 'icons/build.png' );
@@ -8,32 +9,33 @@ tab.base.load = function () {
     buildBtn.click(tab.base.build_dlg);
     $.post(
         api_address + 'api.php',
-        JSON.stringify({ 'action' : 'base_get' }),
-        function (data) {
-            tab.base.base = JSON.parse(data)['data'];
-            tab.base.parse();
-        }
-    );
-    $.post(
-        api_address + 'api.php',
         JSON.stringify({ 'action': 'base_get_buildable'}),
         function (data) {
             tab.base.buildable = JSON.parse(data)['data'];
         }
     );
+    tab.base.loadBase();
 }
-tab.base.parse = function(){
-    tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
-    $.each(
-        tab.base.base,
-        function( key, value ) {
-            tab.base.content.find('#tab-base-build').before(
-                '<div class=\'tab-base-item\'>' +
-                        '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
-                        '<div class=\'tab-base-item-content\'>' +
-                            '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
-                        '</div>' +
-                '</div>'
+
+tab.base.loadBase = function () {
+    $.post(
+        api_address + 'api.php',
+        JSON.stringify({ 'action' : 'base_get' }),
+        function (data) {
+            tab.base.base = JSON.parse(data)['data'];
+            tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
+            $.each(
+                tab.base.base,
+                function( key, value ) {
+                    tab.base.content.find('#tab-base-build').before(
+                        '<div class=\'tab-base-item\'>' +
+                                '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
+                                '<div class=\'tab-base-item-content\'>' +
+                                    '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
+                                '</div>' +
+                        '</div>'
+                    );
+                }
             );
         }
     );
@@ -89,7 +91,10 @@ tab.base.build_dlg = function ( event ) {
                     api_address + 'api.php',
                     JSON.stringify({ 'action': 'base_build_building', 'name': name }),
                     function (data) {
-                        alert(data);
+                        data = JSON.parse( data );
+                        if ( data.status == 'success' ) {
+                            tab.base.loadBase();
+                        }
                     }
                 );
                 modal.close();
