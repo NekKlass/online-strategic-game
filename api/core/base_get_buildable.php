@@ -1,6 +1,6 @@
 <?php
 
-function process_request() {
+function process_request ( $request ) {
 
     $buidable = get_stuff( 'buildings' );
 
