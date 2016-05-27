@@ -24,7 +24,7 @@ tab.overview.resources.load = function() {
             $.each(
                 tab.overview.resources.count,
                 function( key, value ) {
-                    resBlock.prepend(
+                    resBlock.find('img').before(
                         '<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: <span>' + value.count + '</span></div>'
                     );
                 }
