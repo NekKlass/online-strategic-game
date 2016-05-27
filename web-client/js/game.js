@@ -22,6 +22,7 @@ $('#tabs').tabs({
 tab.overview.load();
 tab.base.load();
 tab.tech.load();
+tab.profile.load();
 tab.settings.load();
 resize();
 
