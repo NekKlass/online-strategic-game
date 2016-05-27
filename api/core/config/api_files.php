@@ -8,6 +8,7 @@ function get_api_file( $action ) {
             case 'sys_register':
             case 'sys_get_localization':
             case 'sys_get_login':
+            case 'sys_get_profile':
         //---------------------------
             case 'base_get':
             case 'base_get_buildable':
