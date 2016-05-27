@@ -9,19 +9,23 @@ tab.base.load = function () {
     buildBtn.click(tab.base.build_dlg);
     $.post(
         api_address + 'api.php',
+        JSON.stringify({ 'action': 'base_get_buildable'}),
+        function (data) {
+            tab.base.buildable = JSON.parse(data)['data'];
+        }
+    );
+}
+
+tab.base.loadBase = function () {
+    $.post(
+        api_address + 'api.php',
         JSON.stringify({ 'action' : 'base_get' }),
         function (data) {
             tab.base.base = JSON.parse(data)['data'];
             tab.base.parse();
         }
     );
-    $.post(
-        api_address + 'api.php',
-        JSON.stringify({ 'action': 'base_get_buildable'}),
-        function (data) {
-            tab.base.buildable = JSON.parse(data)['data'];
-        }
-    );
+    tab.base.parse();
 }
 
 tab.base.parse = function(){
