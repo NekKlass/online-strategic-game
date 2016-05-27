@@ -1,6 +1,7 @@
 tab.base = {};
 
 tab.base.content = $('#tab-base');
+
 tab.base.load = function () {
     var buildBtn = $('#tab-base-build-btn');
     buildBtn.attr( 'src', resources_address + 'icons/build.png' );
@@ -22,6 +23,7 @@ tab.base.load = function () {
         }
     );
 }
+
 tab.base.parse = function(){
     tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
     $.each(
