@@ -16,10 +16,10 @@ tab.overview.resources.load = function() {
         JSON.stringify({ 'action' : 'base_get_res' }),
         function (data){
             //parsing
-            tab.overview.resources = JSON.parse(data)['data'];
+            tab.overview.resources.count = JSON.parse(data)['data'];
             //displaying
             $.each(
-                tab.overview.resources,
+                tab.overview.resources.count,
                 function( key, value ) {
                     tab.overview.content.find('#tab-overview-resources').prepend(
                         '<div><span locale-name=\'' + key + '\' locale-uppercase=\'true\'></span>: <span>' + value.count + '</span></div>'
