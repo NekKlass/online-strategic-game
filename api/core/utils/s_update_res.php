@@ -6,6 +6,9 @@ function s_update_res ( $id ) {
 
     $data = db_custom("SELECT `resources`, `base`, `tech` FROM `bases` WHERE `id` = ?", array($id) );
     $buildings = get_stuff('buildings');
+    $resources = $data[0]['resources'];
+    $base = $data[0]['base'];
+    $tech = $data[0]['tech'];
 
     $resources = json_decode($data[0]['resources'], true);
     $base = json_decode($data[0]['base'], true);
