@@ -49,5 +49,4 @@ function get_stuff( $name, $par = null ) {
     }
 }
 
-
 ?>
