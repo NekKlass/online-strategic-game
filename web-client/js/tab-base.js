@@ -91,7 +91,10 @@ tab.base.build_dlg = function ( event ) {
                     api_address + 'api.php',
                     JSON.stringify({ 'action': 'base_build_building', 'name': name }),
                     function (data) {
-                        alert(data);
+                        data = JSON.parse( data );
+                        if ( data.status == 'success' ) {
+                            tab.base.loadBase();
+                        }
                     }
                 );
                 modal.close();
