@@ -8,6 +8,7 @@ tab.profile.load = function () {
         JSON.stringify({ 'action': 'sys_get_login'}),
         function ( data ) {
             tab.profile.name = JSON.parse(data)['data']['uname'];
+            tab.profile.showProfile( tab.profile.content, tab.profile.name );
         }
     );
 }
