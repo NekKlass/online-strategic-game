@@ -14,6 +14,7 @@ tab.base.load = function () {
             tab.base.buildable = JSON.parse(data)['data'];
         }
     );
+    tab.base.loadBase();
 }
 
 tab.base.loadBase = function () {
