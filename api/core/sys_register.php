@@ -53,29 +53,35 @@ function process_request ( $request ) {
     get_stuff( 'db' );
 
     if (empty( db_custom("SELECT `id` FROM `users` WHERE `uname` LIKE ?",array($request['uname'])) )){
+
         $uname = trim($request['uname']);
         $uname = stripcslashes($uname);
         $uname = htmlspecialchars($uname);
-        //saving
+
+        //пользователь
         db_custom_no_return( "INSERT INTO `users` (`id`, `uname`, `upass`, `umail`, `reg_time`) VALUES (NULL, ?, ?, ?, ?)",
             array( $uname, password_hash($request['upass'], PASSWORD_DEFAULT), $request['umail'], time() )
         );
         $id = db_custom( "SELECT `id` FROM `users` WHERE `uname` LIKE ?",
             array( $uname )
         );
-        require('utils/s_gen_base_cord.php');
-        $cord = s_gen_base_cord();
+
+        //база
+        $cord = get_stuff('base_gen_cord');
         db_custom_no_return( "INSERT INTO `bases` ( `id`, `x`, `y`, `resources`, `base`, `tech` ) VALUES ( ?, ?, ?, ?, ?, ? )",
             array( $id['0']['id'], $cord['x'], $cord['y'], json_encode(get_stuff('GM_DEFAULT_RES')), json_encode(array()) , json_encode(array()) )
         );
+
+        //профиль
         db_custom_no_return( "INSERT INTO `profiles` SET `id` = ? ",
             array( $id['0']['id'] )
         );
-        //reporting success
+
         return array(
             'status' => 'success',
             'statusmessage' => 'success'
         );
+
     } else {
         return array(
             'status' => 'error',
@@ -84,4 +90,5 @@ function process_request ( $request ) {
     }
 
 }
+
 ?>
