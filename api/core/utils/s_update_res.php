@@ -28,10 +28,18 @@ function s_update_res ( $id ) {
                             $resources[$income_key]['count'] = $resources[$income_key]['count'] + $units;
                             $resources[$income_key]['time'] = $resources[$income_key]['time'] + $units * $resources_unit_time;
                         }
+                        $resources[$income_key]['update'] = true;
                     }
                 }
             }
         }
+    }
+
+    foreach ( $resources as $key => $value ) {
+        if ( !isset($value['update']) ) {
+            $resources[$key]['time'] = $_SERVER['REQUEST_TIME'];
+        }
+        unset( $resources[$key]['update'] );
     }
 
     db_custom_no_return( "UPDATE `bases` SET `resources` = ? WHERE `id` = ?",
