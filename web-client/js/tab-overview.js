@@ -17,6 +17,7 @@ tab.overview.resources.load = function() {
         function (data){
             //parsing
             tab.overview.resources.count = JSON.parse(data)['data'];
+            tab.overview.content.find('#tab-overview-resources').find('div:not(img)').remove();
             //displaying
             $.each(
                 tab.overview.resources.count,
