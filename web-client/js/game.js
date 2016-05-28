@@ -24,15 +24,6 @@ tab.base.load();
 tab.tech.load();
 tab.profile.load();
 tab.settings.load();
-resize();
-
-$(window).resize(function(){
-    resize();
-});
-
-function resize() {
-    tabs.css('height', $('body').height() - $('#tab-control').outerHeight(true) - ( tabs.outerHeight() - tabs.height() ) );
-}
 
 
 
