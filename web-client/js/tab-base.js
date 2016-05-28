@@ -27,7 +27,7 @@ tab.base.loadBase = function () {
             $.each(
                 tab.base.base,
                 function( key, value ) {
-                    tab.base.content.find('#tab-base-build').before(
+                    tab.base.content.append(
                         '<div class=\'tab-base-item\'>' +
                                 '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
                                 '<div class=\'tab-base-item-content\'>' +
