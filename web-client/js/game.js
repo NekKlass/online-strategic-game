@@ -15,6 +15,9 @@ tabs.children('#tab-control').children('li').click(function ( event ) {
     tabs.children('#tab-control').children('li').removeClass( 'tab-active' );
     tabs.children( '#' + target.attr('href') ).css( 'display', 'flex' );
     target.addClass( 'tab-active' );
+    if ( target.attr('href') == 'tab-tech' ) {
+        tab.tech.drawLines();
+    }
 });
 
 tab.overview.load();
