@@ -31,7 +31,7 @@
     height: 170px;
     margin: 10px;
 }
-.tab-base-item-build {
+#tab-base-build {
     display: flex;
     align-self: stretch;
 }

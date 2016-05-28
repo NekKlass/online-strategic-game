@@ -23,7 +23,7 @@ tab.base.loadBase = function () {
         JSON.stringify({ 'action' : 'base_get' }),
         function (data) {
             tab.base.base = JSON.parse(data)['data'];
-            tab.base.content.find('.tab-base-item:not(.tab-base-item-build)').remove();
+            tab.base.content.find('.tab-base-item:not(#tab-base-build)').remove();
             $.each(
                 tab.base.base,
                 function( key, value ) {
