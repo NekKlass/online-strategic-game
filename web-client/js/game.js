@@ -2,6 +2,7 @@
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
 $('#tabs').children('div:not(:first)').hide();
+$('#tabs').children('div:first').css( 'display', 'flex' );
 $('#tabs').children('#tab-control').children('li').click(function ( event ) {
     if ( event.target.tagName == 'SPAN' ) {
         var target = $( event.target ).parent();
