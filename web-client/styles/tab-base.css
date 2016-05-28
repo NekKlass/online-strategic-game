@@ -36,7 +36,7 @@
     align-self: stretch;
 }
 .tab-base-item-build-img {
-    margin: 0 auto;
+    margin: auto;
 }
 /* диалог строительства */
 #tab-base-build-list {
