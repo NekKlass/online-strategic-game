@@ -1,13 +1,17 @@
 // values
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
-$('#tabs').tabs({
-    'active': 0,
-    'activate': function( event, ui){
-        if ( ui.newPanel.attr('id') == tab.tech.content.parent().attr('id') ) {
-            tab.tech.drawLines();
-        }
+$('#tabs').children('div:not(:first)').hide();
+$('#tabs').children('#tab-control').children('li').click(function ( event ) {
+    if ( event.target.tagName == 'SPAN' ) {
+        var target = $( event.target ).parent();
+    } else {
+        var target = $( event.target );
     }
+    $('#tabs').children('div').hide();
+    $('#tabs').children('#tab-control').children('li').removeClass( 'tab-active' );
+    $('#tabs').children( '#' + target.attr('href') ).css( 'display', 'flex' );
+    target.addClass( 'tab-active' );
 });
 
 tab.overview.load();
