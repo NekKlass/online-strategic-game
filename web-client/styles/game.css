@@ -32,21 +32,15 @@ html, body {
         color: white;
         text-align: center;
         flex-grow: 1;
+        cursor: pointer;
     }
-    #tabs #tab-control .ui-tabs-active  {
+    #tabs #tab-control .tab-active  {
         background-color: #222;
     }
-    #tabs #tab-control .ui-state-hover  {
+    #tabs #tab-control li:hover  {
         background-color: #111;
     }
-    #tabs #tab-control a {
-        display: flex;
-        flex-grow: 1;
-        color: white;
-        text-decoration: none;
-        outline-style: none;
-    }
-    #tabs #tab-control a  span{
+    #tabs #tab-control  span{
         display: block;
         margin: auto;
     }
@@ -54,6 +48,8 @@ html, body {
         padding: 5px;
         overflow-y: auto;
         flex-grow: 1;
+        align-items: flex-start;
+        flex-wrap: wrap;
     }
     .img-button {
         display: block;

@@ -1,4 +1,5 @@
 .tab-base-item {
+    flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
@@ -30,11 +31,12 @@
     height: 170px;
     margin: 10px;
 }
-.tab-base-item-build {
+#tab-base-build {
     display: flex;
+    align-self: stretch;
 }
 .tab-base-item-build-img {
-    margin: 0 auto;
+    margin: auto;
 }
 /* диалог строительства */
 #tab-base-build-list {
