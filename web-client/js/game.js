@@ -3,14 +3,6 @@ var tabs = $('.tab');
 var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 
 $('#tabs').tabs({
-    'hide': {
-        'effect': 'slide',
-        'duration': 200
-    },
-    'show': {
-        'effect': 'slide',
-        'duration': 200
-    },
     'active': 0,
     'activate': function( event, ui){
         if ( ui.newPanel.attr('id') == tab.tech.content.parent().attr('id') ) {
