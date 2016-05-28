@@ -33,6 +33,7 @@
 }
 .tab-base-item-build {
     display: flex;
+    align-self: stretch;
 }
 .tab-base-item-build-img {
     margin: 0 auto;
