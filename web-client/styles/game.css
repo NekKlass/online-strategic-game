@@ -48,6 +48,7 @@ html, body {
         padding: 5px;
         overflow-y: auto;
         flex-grow: 1;
+        align-items: flex-start;
     }
     .img-button {
         display: block;
