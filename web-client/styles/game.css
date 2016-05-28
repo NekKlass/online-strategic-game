@@ -49,6 +49,7 @@ html, body {
         overflow-y: auto;
         flex-grow: 1;
         align-items: flex-start;
+        flex-wrap: wrap;
     }
     .img-button {
         display: block;
