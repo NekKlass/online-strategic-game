@@ -102,7 +102,6 @@ tab.base.build_dlg = function ( event ) {
             function(){}
         );
     });
-    tabs.tabs();
     tab.settings.translate();
     modal.show();
 }
