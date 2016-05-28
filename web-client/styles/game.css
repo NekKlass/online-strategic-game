@@ -12,6 +12,8 @@ html, body {
 ----------------------*/
     #tabs {
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     #tabs #tab-control {
         display: flex;
@@ -19,6 +21,7 @@ html, body {
         align-content: stretch;
         list-style-type: none;
         height: 46px;
+        min-height: 46px;
         margin: 0;
         padding: 0;
         overflow: hidden;
@@ -50,6 +53,7 @@ html, body {
     .tab {
         padding: 5px;
         overflow-y: auto;
+        flex-grow: 1;
     }
     .img-button {
         display: block;
