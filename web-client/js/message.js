@@ -1,5 +1,11 @@
 var message = {};
 
+localization['message-head'] = {
+    'ru': 'Уведомление',
+    'en': 'message'
+}
+
+
 message.content = $('#modal-message').find('#modal-content');
 
 message.show = function ( messageToShow ) {

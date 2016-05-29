@@ -1,5 +1,22 @@
 var confirm_dlg = {};
 
+localization['client-confirm'] = {
+    'ru': 'Подтверждение',
+    'en': 'Confirmation'
+}
+localization['client-confirm-sure'] = {
+    'ru': 'Вы уверены?',
+    'en': 'Are you sure?'
+}
+localization['client-confirm-yes'] = {
+    'ru': 'да',
+    'en': 'yes'
+}
+localization['client-confirm-no'] = {
+    'ru': 'нет',
+    'en': 'no'
+}
+
 confirm_dlg.block = $('#modal-confirm');
 
 confirm_dlg.show = function( callbackYes, callbackNo ) {

@@ -1,5 +1,18 @@
 tab.tech = {};
 
+localization['client-tab-tech'] = {
+    'ru': 'Исследования',
+    'en': 'tech'
+}
+localization['client-tech-learn'] = {
+    'ru': 'Изучить',
+    'en': 'Learn'
+}
+localization['client-tech-learned-already'] = {
+    'ru': 'Уже изучено!',
+    'en': 'Already learned'
+}
+
 tab.tech.content = $('#tab-tech-content');
 tab.tech.linesDrawn = false;
 

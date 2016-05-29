@@ -1,5 +1,10 @@
 tab.profile = {};
 
+localization['client-tab-profile'] = {
+    'ru': 'профиль',
+    'en': 'profile'
+}
+
 tab.profile.content = $('#tab-pofile-content');
 
 tab.profile.load = function () {

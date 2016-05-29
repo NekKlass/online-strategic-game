@@ -1,5 +1,26 @@
 tab.base = {};
 
+localization['client-tab-overview'] = {
+    'ru': 'основное',
+    'en': 'overview'
+}
+localization['client-tab-base'] = {
+    'ru': 'База',
+    'en': 'base'
+}
+localization['client-tab-base-build-price'] = {
+    'ru': 'стоимость',
+    'en': 'price'
+}
+localization['client-tab-base-build-price-free'] = {
+    'ru': 'бесплатно',
+    'en': 'free'
+}
+localization['client-tab-base-destroy'] = {
+    'ru': 'уничтожить',
+    'en': 'destroy'
+}
+
 tab.base.content = $('#tab-base');
 
 tab.base.load = function () {

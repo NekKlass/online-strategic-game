@@ -1,5 +1,10 @@
 tab.settings = {};
 
+localization['client-tab-settings'] = {
+    'ru': 'Настройки',
+    'en': 'settings'
+}
+
 tab.settings.load = function () {
     $.post(
         api_address + 'api.php',
