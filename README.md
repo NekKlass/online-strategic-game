@@ -1,1 +1,1 @@
-Very online, very strategic, very game!
+Web-client for game. Optimized for PC
