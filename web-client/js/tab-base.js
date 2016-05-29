@@ -39,7 +39,7 @@ tab.base.loadBase = function () {
                     modal.prepare();
                     var baseBuilding = tab.base.base[ $( event.target ).attr( 'base-count' ) ];
                     modal.title.html( '<span locale-name=\'building-' + baseBuilding.name + '-name\' locale-uppercase=\'true\'></span>' );
-                    modal.content.append( '<span locale-name=\'building-' + baseBuilding.name + '-description\' locale-uppercase=\'true\'></span>' );
+                    modal.content.append( '<div><span locale-name=\'building-' + baseBuilding.name + '-description\' locale-uppercase=\'true\'></span></div>' );
                     tab.settings.translate();
                     modal.show();
                 }
