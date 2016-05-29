@@ -57,3 +57,11 @@ localization['client-confirm-sure'] = {
     'ru': 'Вы уверены?',
     'en': 'Are you sure?'
 }
+localization['client-confirm-yes'] = {
+    'ru': 'да',
+    'en': 'yes'
+}
+localization['client-confirm-no'] = {
+    'ru': 'нет',
+    'en': 'no'
+}

@@ -1,0 +1,21 @@
+.confirm-wrap {
+    display: flex;
+    width: 400px;
+}
+.confirm-btn {
+    padding: 10px;
+    display: flex;
+    color: white;
+    flex-grow: 1;
+    margin: 5px;
+}
+.confirm-btn span {
+    display: block;
+    margin: auto;
+}
+#confirm-yes {
+    background-color: #139923;
+}
+#confirm-no {
+    background-color: #990000;
+}
