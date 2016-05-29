@@ -65,3 +65,7 @@ localization['client-confirm-no'] = {
     'ru': 'нет',
     'en': 'no'
 }
+localization['message-head'] = {
+    'ru': 'Уведомление',
+    'en': 'message'
+}
