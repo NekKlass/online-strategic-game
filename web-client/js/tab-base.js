@@ -28,13 +28,20 @@ tab.base.loadBase = function () {
                 tab.base.base,
                 function( key, value ) {
                     tab.base.content.append(
-                        '<div class=\'tab-base-item\'>' +
-                                '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
-                                '<div class=\'tab-base-item-content\'>' +
-                                    '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
-                                '</div>' +
+                        '<div base-count=\'' + key + '\' class=\'tab-base-item\'>' +
+                                '<img base-count=\'' + key + '\' src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
                         '</div>'
                     );
+                }
+            );
+            tab.base.content.find('.tab-base-item:not(#tab-base-build)').click(
+                function ( event ) {
+                    modal.prepare();
+                    var baseBuilding = tab.base.base[ $( event.target ).attr( 'base-count' ) ];
+                    modal.title.html( '<span locale-name=\'building-' + baseBuilding.name + '-name\' locale-uppercase=\'true\'></span>' );
+                    modal.content.append( '<span locale-name=\'building-' + baseBuilding.name + '-description\' locale-uppercase=\'true\'></span>' );
+                    tab.settings.translate();
+                    modal.show();
                 }
             );
         }
