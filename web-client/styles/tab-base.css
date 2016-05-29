@@ -37,6 +37,17 @@
 .tab-base-item-build-img {
     margin: auto;
 }
+.client-tab-base-destroy {
+    display: flex;
+    padding: 10px;
+    background-color: #b30000;
+    color: #ffe6e6;
+    font-weight: bold;
+}
+.client-tab-base-destroy span {
+    display: block;
+    margin: auto;
+}
 /* диалог строительства */
 #tab-base-build-list {
     display: flex;
