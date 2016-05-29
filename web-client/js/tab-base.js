@@ -37,6 +37,7 @@ tab.base.loadBase = function () {
             tab.base.content.find('.tab-base-item:not(#tab-base-build)').click(
                 function ( event ) {
                     modal.prepare();
+                    var baseBuildingCount = $( event.target ).attr( 'base-count' );
                     var baseBuilding = tab.base.base[ $( event.target ).attr( 'base-count' ) ];
                     modal.title.html( '<span locale-name=\'building-' + baseBuilding.name + '-name\' locale-uppercase=\'true\'></span>' );
                     modal.content.append( '<div><span locale-name=\'building-' + baseBuilding.name + '-description\' locale-uppercase=\'true\'></span></div>' );
@@ -47,7 +48,7 @@ tab.base.loadBase = function () {
                                 function(){
                                     $.post(
                                         api_address + 'api.php',
-                                        JSON.stringify({ 'action': 'base_destroy_building', 'count': $( event.target ).attr( 'base-count' ) }),
+                                        JSON.stringify({ 'action': 'base_destroy_building', 'count': baseBuildingCount }),
                                         function (data) {
                                             data = JSON.parse( data );
                                             if ( data.status == 'success' ) {
