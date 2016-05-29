@@ -30,9 +30,6 @@ tab.base.loadBase = function () {
                     tab.base.content.append(
                         '<div class=\'tab-base-item\'>' +
                                 '<img src=\'' + resources_address + 'buildings/' + value.name + '.png\' class=\'tab-base-item-image\'>' +
-                                '<div class=\'tab-base-item-content\'>' +
-                                    '<div class=\'tab-base-item-head\'><span locale-name=\'building-' + value.name + '-name\' locale-uppercase=\'true\'></span></div>' +
-                                '</div>' +
                         '</div>'
                     );
                 }
