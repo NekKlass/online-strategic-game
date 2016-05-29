@@ -8,6 +8,7 @@
         <link rel='stylesheet' type='text/css' href='styles/tab-base.css'>
         <link rel='stylesheet' type='text/css' href='styles/tab-tech.css'>
         <link rel='stylesheet' type='text/css' href='styles/tab-settings.css'>
+        <link rel='stylesheet' type='text/css' href='styles/confirm.css'>
     </head>
     <body>
 
@@ -82,10 +83,10 @@
                     <span id='modal-confirm-close' class='hover-button modal-close'>X</span>
                 </div>
                 <div id='modal-content' class='modal-content'>
-                    <div><span locale-name='client-confirm-sure' locale-uppercase='true'></div>
-                    <div>
-                        <img id='confirm-yes'>
-                        <img id='confirm-no'>
+                    <div class='confirm-sure'><span locale-name='client-confirm-sure' locale-uppercase='true'></div>
+                    <div class='confirm-wrap'>
+                        <div value='yes' id='confirm-yes' class='confirm-btn'><span value='yes' locale-name='client-confirm-yes' locale-uppercase='true'></div>
+                        <div value='no' id='confirm-no' class='confirm-btn'><span value='no' locale-name='client-confirm-no' locale-uppercase='true'></div>
                     </div>
                 </div>
             </div>
