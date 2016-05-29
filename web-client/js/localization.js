@@ -17,6 +17,10 @@ localization['client-tab-base-build-price-free'] = {
     'ru': 'бесплатно',
     'en': 'free'
 }
+localization['client-tab-base-destroy'] = {
+    'ru': 'уничтожить',
+    'en': 'destroy'
+}
 localization['client-tab-global'] = {
     'ru': 'Карта',
     'en': 'map'

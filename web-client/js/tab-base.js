@@ -40,6 +40,27 @@ tab.base.loadBase = function () {
                     var baseBuilding = tab.base.base[ $( event.target ).attr( 'base-count' ) ];
                     modal.title.html( '<span locale-name=\'building-' + baseBuilding.name + '-name\' locale-uppercase=\'true\'></span>' );
                     modal.content.append( '<div><span locale-name=\'building-' + baseBuilding.name + '-description\' locale-uppercase=\'true\'></span></div>' );
+                    modal.content.append( '<div class=\'client-tab-base-destroy\'><span locale-name=\'client-tab-base-destroy\' locale-uppercase=\'true\'><span></div>' );
+                    modal.content.find('.client-tab-base-destroy').click(
+                        function ( event ) {
+                            confirm_dlg.show(
+                                function(){
+                                    $.post(
+                                        api_address + 'api.php',
+                                        JSON.stringify({ 'action': 'base_destroy_building', 'count': $( event.target ).attr( 'base-count' ) }),
+                                        function (data) {
+                                            data = JSON.parse( data );
+                                            if ( data.status == 'success' ) {
+                                                tab.base.loadBase();
+                                            }
+                                        }
+                                    );
+                                    modal.close();
+                                },
+                                function(){}
+                            );
+                        }
+                    );
                     tab.settings.translate();
                     modal.show();
                 }
