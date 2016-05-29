@@ -53,3 +53,7 @@ localization['client-confirm-sure'] = {
     'ru': 'Вы уверены?',
     'en': 'Are you sure?'
 }
+localization['message-head'] = {
+    'ru': 'Уведомление',
+    'en': 'message'
+}
